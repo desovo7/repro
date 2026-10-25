@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Test, lint, and notebook caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+
+# Generated experiment artifacts and model weights
+checkpoints/
+outputs/
+multirun/
+wandb/
+tensorboard/
+*.log
+*.pt
+*.pth
+*.safetensors
+
+# Downloaded datasets and caches
+data/raw/
+data/cache/
