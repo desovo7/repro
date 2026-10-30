@@ -3,8 +3,8 @@
     "data": {
       "tokenizer": null,
       "use_shm": false,
-      "train_files": "/data_b/hhchang/wlx/verl-agent-runs/v83_data/train.parquet",
-      "val_files": "/data_b/hhchang/wlx/verl-agent-runs/v83_data/test.parquet",
+      "train_files": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/v83_data/train.parquet",
+      "val_files": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/v83_data/test.parquet",
       "prompt_key": "prompt",
       "reward_fn_key": "data_source",
       "max_prompt_length": 2048,
@@ -30,7 +30,7 @@
     "actor_rollout_ref": {
       "hybrid_engine": true,
       "model": {
-        "path": "/data_b/hhchang/wlx/models/Qwen2.5-1.5B-Instruct",
+        "path": "/data_b/qzluo/workspace/wlx/models/Qwen2.5-1.5B-Instruct",
         "use_shm": false,
         "external_lib": null,
         "override_config": {},
@@ -180,7 +180,7 @@
       "model": {
         "path": "~/models/deepseek-llm-7b-chat",
         "use_shm": false,
-        "tokenizer_path": "/data_b/hhchang/wlx/models/Qwen2.5-1.5B-Instruct",
+        "tokenizer_path": "/data_b/qzluo/workspace/wlx/models/Qwen2.5-1.5B-Instruct",
         "override_config": {},
         "external_lib": null,
         "enable_gradient_checkpointing": true,
@@ -227,7 +227,7 @@
       "enable": false,
       "strategy": "fsdp",
       "model": {
-        "input_tokenizer": "/data_b/hhchang/wlx/models/Qwen2.5-1.5B-Instruct",
+        "input_tokenizer": "/data_b/qzluo/workspace/wlx/models/Qwen2.5-1.5B-Instruct",
         "path": "~/models/FsfairX-LLaMA3-RM-v0.1",
         "use_shm": false,
         "external_lib": null,
@@ -294,7 +294,7 @@
       "total_epochs": 150,
       "total_training_steps": null,
       "project_name": "repro-v831",
-      "experiment_name": "repro-v831-qwen25-tier1b-a800-s0-r6",
+      "experiment_name": "repro-v831-qwen25-tier2-h800-s0-r6",
       "logger": [
         "console"
       ],
@@ -312,7 +312,7 @@
       "critic_warmup": 0,
       "default_hdfs_dir": null,
       "del_local_ckpt_after_load": false,
-      "default_local_dir": "/data_b/hhchang/wlx/verl-agent-runs/runs/repro-v831-qwen25-tier1b-a800-s0-r6/checkpoints",
+      "default_local_dir": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/repro-v831-qwen25-tier2-h800-s0-r6/checkpoints",
       "max_actor_ckpt_to_keep": 2,
       "max_critic_ckpt_to_keep": null,
       "ray_wait_register_center_timeout": 300,
@@ -321,14 +321,17 @@
     "ray_init": {
       "num_cpus": 32,
       "object_store_memory": 8589934592,
-      "_temp_dir": "/tmp/rv831-a4f19fe2518e",
+      "_temp_dir": "/tmp/rv831-6679fd8250ad",
       "runtime_env": {
         "env_vars": {
-          "PYTHONPATH": "/data_b/hhchang/wlx/verl-agent-runs/v83_releases/0607ff62e225:/data_b/hhchang/wlx/verl-agent-official:/data_b/hhchang/wlx/verl-agent-official/agent_system/environments/env_package/alfworld",
+          "PYTHONPATH": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/v83_releases/0607ff62e225:/data_b/qzluo/workspace/wlx/Repro-verl-agent/vendor/verl_agent:/data_b/qzluo/workspace/wlx/Repro-verl-agent/vendor/verl_agent/agent_system/environments/env_package/alfworld",
           "PYTHONDONTWRITEBYTECODE": "1",
-          "ALFWORLD_DATA": "/data_b/hhchang/wlx/verl-agent-runs/v83_data/alfworld",
+          "ALFWORLD_DATA": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/v83_data/alfworld",
           "VLLM_ATTENTION_BACKEND": "FLASH_ATTN",
-          "PATH": "/data_b/hhchang/wlx/repro/.venv/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+          "PATH": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/.venv/bin:/data_b/qzluo/miniconda3/envs/cuda128/bin:/data_b/qzluo/miniconda3/envs/verl-agent/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "CUDA_HOME": "/data_b/qzluo/miniconda3/envs/cuda128",
+          "CC": "/usr/bin/gcc",
+          "CXX": "/usr/bin/g++"
         }
       }
     },
@@ -371,14 +374,14 @@
       "enabled": false
     },
     "repro_v83": {
-      "run_id": "repro-v831-qwen25-tier1b-a800-s0-r6",
-      "output_dir": "/data_b/hhchang/wlx/verl-agent-runs/runs/repro-v831-qwen25-tier1b-a800-s0-r6/v83",
+      "run_id": "repro-v831-qwen25-tier2-h800-s0-r6",
+      "output_dir": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/repro-v831-qwen25-tier2-h800-s0-r6/v83",
       "config_hash": "PENDING",
       "model_contract_hash": "cb8b6badf4f68765c677445e5911afcb29eec50cc89c4f51f8ed5fa2afbd0de6",
       "enable_tier1a": true,
       "enable_tier1b": true,
-      "enable_tier2": false,
-      "deployment_host": "a800",
+      "enable_tier2": true,
+      "deployment_host": "h800",
       "spec_version": "8.3.1",
       "tier2_pool_mode": "mixed_only",
       "credit": {

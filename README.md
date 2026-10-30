@@ -1,6 +1,6 @@
-# RePro v8.3.1 — Tier1（1A＋1B）
+# RePro v8.3.1 — Tier1＋Tier2（1A＋1B＋2）
 
-本分支保存 **Tier1（1A＋1B）** 的代码与冻结配置，对应 `codex/repro-v831-tier1`。
+本分支保存 **Tier1＋Tier2（1A＋1B＋2）** 的代码与冻结配置，对应 `codex/repro-v831-tier1-tier2`。
 两版共用已部署的核心源码 `0607ff62e225`，通过算法开关区分。`configs/default.yaml` 是本分支的默认入口配置；其配套 contract/card 均保留原始字节。
 
 | 分支 | Tier1A | Tier1B | Tier2 | 默认配置来源 |
@@ -22,7 +22,7 @@
 ## 获取与校验
 
 ```sh
-git clone --branch codex/repro-v831-tier1 --recurse-submodules https://github.com/desovo7/repro.git
+git clone --branch codex/repro-v831-tier1-tier2 --recurse-submodules https://github.com/desovo7/repro.git
 cd repro
 python scripts/verify_snapshot.py
 ```
@@ -44,7 +44,7 @@ python -m unittest test_repro_v83_rules test_repro_v831_table test_repro_v831_ru
 - `tests_v83/`、`test_repro_v83*.py`：规则、数值、历史隔离、断点与原生接入检查。
 - `ops_v83/`：源码冻结、数据准备、阶段配置与启动检查。
 - `ops_v831_eval/`：固定 step150 的 140 seen＋134 unseen 评估及独立重数；见其 README。
-- `reports/v83_20261030/prepared_configs_r6/`：原始五套阶段配置、合约与实验卡。分支默认来源是 `repro-v831-qwen25-tier1b-a800-s0-r6`。
+- `reports/v83_20261030/prepared_configs_r6/`：原始五套阶段配置、合约与实验卡。分支默认来源是 `repro-v831-qwen25-tier2-h800-s0-r6`。
 - `reports/v83_20261030/replayed_traces.jsonl`：真实轨迹单测所需的 45 条重放样例；训练全量日志、权重和完整数据集不包含在快照中。
 - `snapshot_manifest.json`：本分支文件摘要；`release_0607ff62e225.json` 保留原始 58 文件摘要。
 
