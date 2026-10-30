@@ -1,0 +1,36 @@
+{
+  "status": "resolved_from_primary_evidence",
+  "scope": "Reference and arithmetic corrections only; original state machine and full TD formula retained",
+  "original_spec_sha256": "d640762fc5fca12e11b2729719534cea54a1ebc156b938ada701e77d56c9e4d3",
+  "replay_sha256": "734779e2d140e382e47f4a3bd5a28bc1eee091ae1b1cf8ba124438362ad5eae7",
+  "corrections": [
+    {
+      "id": "UT-2",
+      "replacement": "F22-GiGPO step 7: confirmed release of pot 1, p -1 to 0, delta +0.15"
+    },
+    {
+      "id": "UT-4",
+      "complete_formula_delta": 0.048,
+      "prior_component": 0.098,
+      "navigation_component": -0.05
+    },
+    {
+      "id": "UT-6",
+      "complete_formula_delta": 0.04,
+      "discounted_potential_component": -0.01,
+      "navigation_component": 0.05
+    }
+  ],
+  "basis": [
+    "Original immutable trajectories and exact CPU replays establish the reference error in UT2",
+    "Original section 3.3 full equation fixes UT4 and UT6 arithmetic without choosing new coefficients"
+  ],
+  "user_approval_claimed": false,
+  "tier2_estimator": "Resolved by v8.3.1 sections 4.1-4.4; implement exact formulas.",
+  "version": "8.3.1",
+  "scientific_limitations": [
+    "Conflict-state negative prior gives a defined shrinkage potential, not a literal Beta posterior.",
+    "Within-bucket floors do not guarantee all cross-bucket or terminal TD signs; exact formulas retained, value ranges and signs monitored.",
+    "96 finite regularized estimates do not imply 96 empirically supported cells."
+  ]
+}

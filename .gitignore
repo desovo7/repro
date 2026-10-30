@@ -39,3 +39,9 @@ tensorboard/
 # Downloaded datasets and caches
 data/raw/
 data/cache/
+
+# Local experiment runtime
+runs/
+evaluations/
+v83_data/
+*.tar.gz

@@ -1,0 +1,147 @@
+{
+  "reviewed_document": "/Users/leonard7/Downloads/repro_method_summary.md",
+  "scope": "Read-only comparison with source, frozen deployment, historical audits, and focused CPU counterexamples. Training code/configuration and user document unchanged.",
+  "verdict": "Core architecture and formulas are implemented; claims of guaranteed learning effects, empirical coverage, exact Beta posterior semantics, audit interpretation, UT references, and runtime cost need qualification.",
+  "deployment": [
+    {
+      "checked_at": "2026-10-30T22:07:30.589159",
+      "host": "a800",
+      "run": "repro-v831-qwen25-tier1a-a800-s0-r6",
+      "release": "0607ff62e225",
+      "files_checked": 58,
+      "mismatches": [],
+      "enabled": {
+        "enable_tier1a": true,
+        "enable_tier1b": false,
+        "enable_tier2": false
+      },
+      "completed_training_steps": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "service": "MainPID=2840055\nActiveState=active\n",
+      "af_native_cpu_check": {
+        "scope": "CPU native GiGPO with eight synthetic 50-step zero-outcome trajectories; only invalid-action penalty differs",
+        "mode": "mean_std_norm",
+        "step_advantage_w": 1,
+        "all_valid_max_abs": 0,
+        "one_invalid_max_abs": 39.892024993896484,
+        "one_invalid_nonzero_tokens": 800,
+        "cuda_initialized": false,
+        "current_first4_AF_groups": 48,
+        "current_first4_AF_groups_with_invalid": 45
+      }
+    },
+    {
+      "checked_at": "2026-10-30T22:08:24.348759",
+      "host": "h800",
+      "run": "repro-v831-qwen25-tier1a-h800-s0-r6",
+      "release": "0607ff62e225",
+      "files_checked": 58,
+      "mismatches": [],
+      "enabled": {
+        "enable_tier1a": true,
+        "enable_tier1b": false,
+        "enable_tier2": false
+      },
+      "completed_training_steps": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "service": "MainPID=516547\nActiveState=active\n"
+    }
+  ],
+  "matches": [
+    "Six-family instance-aware tracking, confirmed retrieval removes delivered object.",
+    "Non-AF anchors (normalized observation, progress, navigation), P50-triggered critical-only fallback.",
+    "No-Op raw TD=-0.05 and lambda=0, candidate-aware exploration/navigation.",
+    "Tier1B applies only to AF groups, action-level within-group budget centering and AF response-token-weighted standard deviation at actor injection.",
+    "96 canonical nonterminal cells, previous four committed training iterations, non-AF donor pool, per-trajectory first-visit counting, alpha0=5, ordered projection floors."
+  ],
+  "findings": [
+    {
+      "id": "AF_zero",
+      "document_section": "1.1 / 4.2",
+      "severity": "substantive_definition",
+      "actual": "AF means zero binary task-success outcomes. Current native rewards additionally include invalid-action penalty 0.1, and actor training has entropy/KL terms. AF does not imply zero native advantage or total gradient.",
+      "evidence": "Native CPU check: all-valid zero-outcome group has zero advantage; one invalid-action penalty yields nonzero advantage. 45 of 48 AF groups in first four A800 iterations contain invalid-format actions.",
+      "source": "vendor/verl_agent/verl/trainer/ppo/ray_trainer.py:200"
+    },
+    {
+      "id": "tier1a_scope",
+      "document_section": "2 / 4.1",
+      "severity": "overclaim",
+      "actual": "Tier1A changes anchor grouping, not allowed actions. It records p2->p1 on confirmed retrieval; direct auxiliary credit is zero for non-AF groups and while Tier1B is disabled. It does not guarantee prevention or a negative actor update.",
+      "source": "repro_v83/credit.py:113"
+    },
+    {
+      "id": "centered_credit",
+      "document_section": "4.2",
+      "severity": "overclaim",
+      "actual": "No-Op truncates outgoing GAE recursion, not neural-network backpropagation. Raw -0.05 need not remain negative or nonzero after centering.",
+      "cpu_examples": {
+        "center([-0.05,-0.20])": [
+          0.075,
+          -0.075
+        ],
+        "8_trajectories_of_50_inventory_steps": "400 raw values -0.05; all centered values zero"
+      },
+      "source": "repro_v83/credit.py:59"
+    },
+    {
+      "id": "coverage_beta",
+      "document_section": "4.3",
+      "severity": "mathematical_semantics",
+      "actual": "96 finite regularized estimates are not 96 empirically observed cells. At cold start empirical count is zero everywhere, 18 estimates equal zero. Negative conflict prior produces negative Beta alpha; projected values can exceed 1. Formula implements a signed shrinkage shaping potential.",
+      "source": "repro_v83/value_table.py:160"
+    },
+    {
+      "id": "recovery_guarantee",
+      "document_section": "4.3 / UT7",
+      "severity": "scope_qualification",
+      "actual": "For non-No-Op p=-1 to p>=0 transitions, raw TD>=0.05 is valid even across buckets; this guarantee does not extend to GAE, centered auxiliary, or total actor advantage. Ordinary progress/recycling signs are not universally guaranteed.",
+      "historical_tier2_replay": {
+        "recovery_nonpositive": 0,
+        "recovery_count": 4169,
+        "forward_nonpositive": 189,
+        "forward_count": 5387,
+        "nav1_same_stage_nonpositive": 6750,
+        "nav1_same_stage_count": 22873
+      },
+      "source": "repro_v83/value_table.py:76"
+    },
+    {
+      "id": "sign_flip_interpretation",
+      "document_section": "1.2 / diagram",
+      "severity": "evidence_scope",
+      "actual": "2596/41998=6.181% is a restricted offline comparison of step-relative returns from environment rewards before copying/token expansion. It omits native invalid-action penalties, episode-level combination and actor regularization. It is not proof that 6.18% of actual actor-credit errors were corrected. For fixed Q, increasing baseline decreases Q-V, contrary to the document's verbal example.",
+      "source": "run_step0_audit.py:59"
+    },
+    {
+      "id": "ut_errata",
+      "document_section": "5",
+      "severity": "citation_errors",
+      "actual": "UT2 recovery uses F22/GiGPO step7, not F03. UT4 is lamp activation/repetition; examine is covered by generic No-Op tests. F01 has 9 use actions total, first valid plus 8 repeated, not 9 repeated consecutive actions. Tier1B F12 first lamp TD=0.048; F31 candidate revisit TD=0.04.",
+      "source": "reports/v83_20261030/implementation_errata.v831.json"
+    },
+    {
+      "id": "runtime_cost",
+      "document_section": "2 / 6",
+      "severity": "measurement_scope",
+      "actual": "0.085623s mean/0.130235s max are historical offline Step0 state/anchor/Tier1 auxiliary timings, not full Tier2 online end-to-end overhead. The documented 180-300s step duration does not match current first-four live steps (H800 about 521-562s, A800 about 846-919s). End-to-end acceleration remains a hypothesis.",
+      "source": "run_step0_audit.py:59"
+    },
+    {
+      "id": "replication_details",
+      "document_section": "4",
+      "severity": "omissions",
+      "actual": "Document should specify token-weighted AF normalization; singleton or variance<=1e-12 buckets zeroed; Tier2 success boundary=1, failed terminal=0; Tier2 embeds navigation in table without adding Tier1 nav reward; Tier2 lamp event adds 0.10 for first activation with before.p<=1, without an empty-hand restriction; fallback reduces splitting but does not guarantee P50>=2.",
+      "source": "repro_v83/credit.py:34"
+    }
+  ],
+  "continued_goal": "Two full-size same-host staged experiments remain active. Current runs are Tier1A only; subsequent Tier1B and H800 Tier2 require complete predecessor evidence. No full experimental completion claimed."
+}

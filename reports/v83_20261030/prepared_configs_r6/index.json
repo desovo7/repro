@@ -1,0 +1,27 @@
+[
+  {
+    "run_id": "repro-v831-qwen25-tier1a-h800-s0-r6",
+    "config_sha256": "800df193df26c613b8efa8002e1138ae7b83fcb8d874cf44c32b68608c0fe4e1",
+    "status": "PREPARED_BLOCKED"
+  },
+  {
+    "run_id": "repro-v831-qwen25-tier1b-h800-s0-r6",
+    "config_sha256": "1531f3fdc45d5909716f3d5bba17b3c56582297ca476ec783ef06cae0402a710",
+    "status": "PREPARED_BLOCKED"
+  },
+  {
+    "run_id": "repro-v831-qwen25-tier2-h800-s0-r6",
+    "config_sha256": "f0be10d301d288e64a91e3164ce5af51e2dbae6e1028cd4103fddd2ea551634e",
+    "status": "PREPARED_BLOCKED"
+  },
+  {
+    "run_id": "repro-v831-qwen25-tier1a-a800-s0-r6",
+    "config_sha256": "8d0d27470c973cde5832efa8b160ab6a21c0227537c5362f6529ba8c2165e4a2",
+    "status": "PREPARED_BLOCKED"
+  },
+  {
+    "run_id": "repro-v831-qwen25-tier1b-a800-s0-r6",
+    "config_sha256": "6685bab99db37f1f4e00975cf36a3f180cd4726127d1f4cbe489b6f2daba91f7",
+    "status": "PREPARED_BLOCKED"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "version": "8.3.1",
+  "recorded_at": "2026-10-30T12:04:24.333449+00:00",
+  "decisions": [
+    "New user specification supersedes missing-Tier2 and hard CPU-latency blockers.",
+    "Preserve original UT2 trace erratum: F03/34 is navigation; F22-GiGPO/7 is the confirmed recovery example.",
+    "Strict phases: A800 1A then 1A+1B; H800 1A then 1A+1B then Tier2, each 150 iterations from original weights.",
+    "Compare ablations within the same hardware and TP2; no cross-host-only causal claims.",
+    "Use exact Tier2 numerical formulas; claimed universal positivity is tested and delimited rather than silently repaired.",
+    "Retain default Python GC; user accepts measured overhead, no <0.1s gate."
+  ],
+  "latency_evidence": {
+    "step0": {
+      "mean": 0.08562343367064992,
+      "max": 0.1302350361365825,
+      "iterations_over_0_1": 46
+    },
+    "native_dependency_probe": {
+      "max": 0.21711506601423025,
+      "description": "Separate later CPU probe established generation-2 GC pauses around 0.125s; do not assert these caused all initial 46 exceedances."
+    }
+  },
+  "progress": "Implementation and CPU validation; no v8.3.1 GPU training submitted yet"
+}

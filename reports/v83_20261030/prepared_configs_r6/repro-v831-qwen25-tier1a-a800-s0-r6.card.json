@@ -1,0 +1,65 @@
+{
+  "status": "PREPARED_BLOCKED",
+  "prepared_at": "2026-10-30T12:29:40.961440+00:00",
+  "run_id": "repro-v831-qwen25-tier1a-a800-s0-r6",
+  "host": "a800",
+  "phase": "tier1a",
+  "config_hash": "1e229c99d79822eaac466322161d781bab2eb04723211dd553c26875aedac51e",
+  "config_sha256": "8d0d27470c973cde5832efa8b160ab6a21c0227537c5362f6529ba8c2165e4a2",
+  "release_identity": "0607ff62e225",
+  "intended_gpu_indices": [
+    2,
+    3
+  ],
+  "initialization": "Original Qwen2.5-1.5B-Instruct weights; no warm-start from another ablation",
+  "hypothesis": "Tier1A separates aliased mixed-group anchors; Tier1B adds all-failed action credit; Tier2 tests history-conditioned potentials beyond fixed priors",
+  "alternative": "Changes can reflect hardware stochasticity, task ordering, or integration effects rather than useful credit",
+  "primary_metric": "Full-protocol ALFWorld success rate at fixed iteration 150; seen and unseen reported separately",
+  "secondary_metrics": [
+    "Per-family success",
+    "Invalid/no-op rates",
+    "AF group fraction",
+    "Anchor sizes",
+    "Credit signs and scales",
+    "Wall time and GPU hours"
+  ],
+  "configuration": {
+    "iterations": 150,
+    "task_groups": 16,
+    "trajectories_per_group": 8,
+    "horizon": 50,
+    "prompt_tokens": 2048,
+    "response_tokens": 512,
+    "gpus": 2
+  },
+  "preceding_gate": "Complete Step0 and UT1-8 plus native CPU integration checks",
+  "documented_errata": "UT2 uses the verified F22-GiGPO step7 recovery; UT4/UT6 use the full original equation (+0.048/+0.04)",
+  "pending": [
+    "Latest complete native CPU checks and UT1-8",
+    "Fresh GPU UUID/process and frozen source/data/config validation"
+  ],
+  "tier2_status": "Fully specified in v8.3.1; 96 cells, 4 preceding committed iterations, first-visit counts, alpha=5 and exact projection floors",
+  "automatic_launch": false,
+  "time_limit": null,
+  "gpu_hour_limit": null,
+  "runtime_optimizations": [
+    "One-time complete native task metadata preload with recorded startup cost",
+    "Equivalent repeated anchor serialization reuse"
+  ],
+  "cpu_cost_policy": "Observed CPU cost accepted by user v8.3.1; no hard 0.10-second gate, default garbage collection retained",
+  "stop_conditions": [
+    "Nonfinite optimizer update",
+    "Contract/hash mismatch",
+    "Missing or duplicated trajectory identities",
+    "Resource or runtime failure"
+  ],
+  "interpretation": "One seed is an engineering feasibility result; no statistical superiority claim",
+  "protocol_notes": [
+    "Both hosts use full identical data and canonical task enumeration",
+    "Canonical task order differs from historical baseline enumeration",
+    "Validation retains 128 samples in batches of 32 as in the prior runs",
+    "1A vs 1A+1B is compared within the same host; cross-host differences are not a causal ablation",
+    "H800 progresses 1A -> 1A+1B -> 1A+1B+2; A800 progresses 1A -> 1A+1B",
+    "Each stage restarts from the same original pretrained weights and retains the full protocol"
+  ]
+}
