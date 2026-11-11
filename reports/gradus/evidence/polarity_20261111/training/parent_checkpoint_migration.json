@@ -1,0 +1,110 @@
+{
+  "at": "2026-11-11T08:29:00.242642+00:00",
+  "changed_fields": [
+    "run_id",
+    "config_hash",
+    "method label",
+    "gradus_state.schema",
+    "gradus_state.config"
+  ],
+  "history_identical": true,
+  "inherited_files_byte_identical": true,
+  "inherited_model_optimizer_rank_rng_driver_rng_data_cursors": true,
+  "method_contract_migration": "Explicit intervention fork; not an unchanged-method continuation",
+  "new_identity": {
+    "config_hash": "95daf6b37badc6b29d1428279ce25195be61d147a24179a75668ad87c482adf1",
+    "model_contract_hash": "bb8cc6766e2b87d8efe73fb19f38945b3fe87fc9c03fd92e65eba94d035c6eb8",
+    "run_id": "gradus-webshop-h800-s0-polarity-from115-20261111"
+  },
+  "parent": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/checkpoints/best_checkpoints/global_step_115",
+  "parent_code_hashes": {
+    "__init__.py": "b7c48438e7d2d85dd8fb4c0622c919944c76ebee3a166f188def5213ea48690d",
+    "actor_audit.py": "a0b43f8a4dfd6a20370b02f5b25e4c47a02192711c48625c4186ac9f5986d5a4",
+    "adapter.py": "82454e0ac56dfa2f32494f184f45c21c062f132833748d382802646a88b2a35c",
+    "core.py": "ff48834d56e10e327d2ad99b31e7c9e3477c8466c376a4647d19bbc0d522e804",
+    "entry.py": "51f7266eb75a4bb61a6d1afd348fa6b2d7116853e3874c876ea0877d31f8578f",
+    "integration.py": "c4fb32ff57bd5a2c0270de5874e3c3ccc0df254982fcc7c9b41c16ffc76c222b",
+    "native_retention.py": "fc636f6318c8c0b447c59e3949ed61d97ca078389016f5e11b0da8ecb3d6ff2e",
+    "persistence.py": "669e132fcb545fe7aea5d8393cb8e8b4b2ca388ff94e8edf2c11a79b01e24c57",
+    "r2_credit.py": "5e8fba962e62d9d8c4a116c480c7c2cb260a62d8aa52d0ec719c47942f068039"
+  },
+  "parent_full_manifest": {
+    "actor/added_tokens.json": {
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "size": 605
+    },
+    "actor/chat_template.jinja": {
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "size": 2507
+    },
+    "actor/config.json": {
+      "sha256": "1fc12486eb7bbf2be021fec6304d8613fc02ca4d61a26ac78c11d723a2899c04",
+      "size": 1315
+    },
+    "actor/extra_state_world_size_2_rank_0.pt": {
+      "sha256": "0fd35a071b7eb1fd0bbbe2e848a85ee78815e209c3a6d3278735d73ff78768c7",
+      "size": 15077
+    },
+    "actor/extra_state_world_size_2_rank_1.pt": {
+      "sha256": "72b24a63b5b4eaaa42d92316054d29a4fa68b603ccd897c7d60c909db2651115",
+      "size": 15077
+    },
+    "actor/generation_config.json": {
+      "sha256": "cd3e781699b69eb78534f464b0d57590b9babf52d8123d71eb99f001eb5e8a00",
+      "size": 242
+    },
+    "actor/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "size": 1671853
+    },
+    "actor/model_world_size_2_rank_0.pt": {
+      "sha256": "a5892610f2834b494aca2cd712dc2336546d6be08f25cf3c87e1ab15f483784e",
+      "size": 3554363243
+    },
+    "actor/model_world_size_2_rank_1.pt": {
+      "sha256": "a12feffcc2a614335b60bc20bbe81bbf0f0df1c74bb009656d27dfcfa21d48c2",
+      "size": 3554363243
+    },
+    "actor/optim_world_size_2_rank_0.pt": {
+      "sha256": "a743b57a2e21a9df076eb5db0c35ec8b9ddbd991335abb2d0b5c7cfdcba8db18",
+      "size": 6174884272
+    },
+    "actor/optim_world_size_2_rank_1.pt": {
+      "sha256": "e14ab0ef61cf14c91a611b512c5a819917e2da8e42240e3170d4edc012135ceb",
+      "size": 6174884272
+    },
+    "actor/special_tokens_map.json": {
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "size": 613
+    },
+    "actor/tokenizer.json": {
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "size": 11421896
+    },
+    "actor/tokenizer_config.json": {
+      "sha256": "0a04a9d7d4a62b28482bdfe726c122756de85714fb64166ace92ae75b8f57614",
+      "size": 4686
+    },
+    "actor/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "size": 2776833
+    },
+    "data.pt": {
+      "sha256": "9a129cb1dc7d2fc48aaed74351bb89287b8b00c016ab1d5a2ec25d85be739735",
+      "size": 1947
+    },
+    "native_driver_rng.pt": {
+      "sha256": "e4fd36cfa5eb062e0f34d0ffa73ca623215b2a94f8b6a34cb16cbb0fef09b35a",
+      "size": 56590168
+    },
+    "native_runtime.json": {
+      "sha256": "4b3939074d5b2cd0e5afb0234b3065713299ceafb84cb2d3ed1ffac83c847479",
+      "size": 81341
+    }
+  },
+  "parent_iteration": 115,
+  "parent_marker_sha256": "01ccf048872848f756ff25d5fffc255135a8c22e2d0625bf9fa76e133cf3948c",
+  "parent_run_id": "gradus-webshop-h800-s0-r2aligned-20261109",
+  "source_checkpoint_unmodified": true,
+  "status": "PASS"
+}

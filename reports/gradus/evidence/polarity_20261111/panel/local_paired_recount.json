@@ -1,0 +1,140 @@
+{
+  "verified_at": "2026-11-11T12:16:14.454448+00:00",
+  "valid_episodes": 4608,
+  "raw_recount": {
+    "r2_150": {
+      "episodes": 1536,
+      "wins": 1127.0,
+      "timeouts": 29.0,
+      "means": {
+        "success": 0.7337239583333334,
+        "score": 0.8554951674482925,
+        "timeout": 0.018880208333333332,
+        "steps": 5.782552083333333
+      },
+      "action_counts": {
+        "format_invalid_actions": 67,
+        "unexecutable_actions": 269,
+        "repeated_option_actions": 29,
+        "option_loop": 1,
+        "failed_buy": 380,
+        "steps": 8882
+      },
+      "raw_terminal_recount": "passed",
+      "native_projection_and_action_recount": "passed"
+    },
+    "aligned_150": {
+      "episodes": 1536,
+      "wins": 999.0,
+      "timeouts": 44.0,
+      "means": {
+        "success": 0.650390625,
+        "score": 0.7921986748060966,
+        "timeout": 0.028645833333333332,
+        "steps": 5.421223958333333
+      },
+      "action_counts": {
+        "format_invalid_actions": 1573,
+        "unexecutable_actions": 187,
+        "repeated_option_actions": 14,
+        "option_loop": 0,
+        "failed_buy": 493,
+        "steps": 8327
+      },
+      "raw_terminal_recount": "passed",
+      "native_projection_and_action_recount": "passed"
+    },
+    "gigpo_150": {
+      "episodes": 1536,
+      "wins": 1085.0,
+      "timeouts": 57.0,
+      "means": {
+        "success": 0.7063802083333334,
+        "score": 0.8398549694301647,
+        "timeout": 0.037109375,
+        "steps": 5.482421875
+      },
+      "action_counts": {
+        "format_invalid_actions": 3,
+        "unexecutable_actions": 96,
+        "repeated_option_actions": 66,
+        "option_loop": 0,
+        "failed_buy": 394,
+        "steps": 8421
+      },
+      "raw_terminal_recount": "passed",
+      "native_projection_and_action_recount": "passed"
+    }
+  },
+  "paired_contrasts": [
+    {
+      "candidate": "r2_150",
+      "reference": "aligned_150",
+      "metrics": {
+        "success": {
+          "difference": 0.08333333333333334,
+          "ci95": [
+            0.052083333333333336,
+            0.11523437500000001
+          ]
+        },
+        "score": {
+          "difference": 0.06329649264219576,
+          "ci95": [
+            0.03834982274850439,
+            0.08880124316782032
+          ]
+        },
+        "timeout": {
+          "difference": -0.009765625,
+          "ci95": [
+            -0.0234375,
+            0.0039062499999999983
+          ]
+        },
+        "steps": {
+          "difference": 0.361328125,
+          "ci95": [
+            0.229150390625,
+            0.49283854166666663
+          ]
+        }
+      }
+    },
+    {
+      "candidate": "r2_150",
+      "reference": "gigpo_150",
+      "metrics": {
+        "success": {
+          "difference": 0.02734375,
+          "ci95": [
+            0.0026041666666666618,
+            0.052734375
+          ]
+        },
+        "score": {
+          "difference": 0.0156401980181277,
+          "ci95": [
+            -0.004267508722830989,
+            0.03649752265963203
+          ]
+        },
+        "timeout": {
+          "difference": -0.018229166666666664,
+          "ci95": [
+            -0.03190104166666667,
+            -0.005859375000000001
+          ]
+        },
+        "steps": {
+          "difference": 0.3001302083333333,
+          "ci95": [
+            0.15688476562499998,
+            0.44140625
+          ]
+        }
+      }
+    }
+  ],
+  "method": "Parse terminal observations from copied raw JSONL; average three repeats per task; paired task-cluster bootstrap with10000 resamples, seed20261109. Matches remote independent verifier."
+}

@@ -1,11 +1,13 @@
 # RePro / GRADUS experiment snapshots
 
-This branch archives three completed GRADUS experiments with
-**Qwen/Qwen2.5-1.5B-Instruct**, training seed **0**, and **150 iterations**.
+This branch archives three completed GRADUS experiments and one continuation
+with **Qwen/Qwen2.5-1.5B-Instruct**, training seed **0**. The original three runs
+each trained **150 iterations**; the new polarity intervention resumes aligned
+iteration **115** for **35 additional iterations**, ending at **150**.
 Each experiment has its own import root.
 
-**[当前实验情况与问题（中文，2026-11-10）](reports/gradus/EXPERIMENT_STATUS.md)**
-summarizes ALFWorld and both WebShop results, evaluation protocols, known
+**[当前实验情况与问题（中文，2026-11-11）](reports/gradus/EXPERIMENT_STATUS.md)**
+summarizes ALFWorld and all WebShop results, evaluation protocols, known
 problems, completed checks, checkpoint status, and proposed next validations.
 
 | Snapshot | Run | Main implementation |
@@ -13,8 +15,9 @@ problems, completed checks, checkpoint status, and proposed next validations.
 | [ALFWorld R2](experiments/alfworld_r2/README.md) | `gradus-qwen25-h800-s0-r2` | `repro_v83/gradus.py` |
 | [WebShop R2](experiments/webshop_r2/README.md) | `gradus-webshop-h800-s0-r2-jvmcap-20261108` | `webshop/core.py` |
 | [WebShop R2 aligned](experiments/webshop_r2_aligned/README.md) | `gradus-webshop-h800-s0-r2aligned-20261109` | `webshop/adapter.py`, `r2_credit.py`, `core.py` |
+| [WebShop R2 polarity intervention](experiments/webshop_r2_polarity/README.md) | `gradus-webshop-h800-s0-polarity-from115-20261111` | Three independent credit gates, jointly enabled for the 35-round continuation |
 
-ALFWorld code comes from the frozen `gradus-20261106a` release. Both WebShop
+ALFWorld code comes from the frozen `gradus-20261106a` release. All WebShop
 implementations come from their actual run directories and match the SHA-256
 hashes recorded by those runs. Historical configuration and launch files retain
 their original machine paths.
@@ -41,7 +44,7 @@ Java, its product data/search index, and the dependencies described by upstream.
 
 ## Reusing the code
 
-Run tests from the individual experiment directory; both WebShop snapshots use
+Run tests from the individual experiment directory; all WebShop snapshots use
 the package name `webshop`. Their READMEs list the commands. Training requires
 separately installed dependencies, model weights, benchmark data, two GPUs, and
 configuration paths adapted to the new machine. WebShop verifies code, data, and
@@ -64,9 +67,27 @@ generation repeats. Iteration 150 results are:
 | Local GiGPO | 70.64% | 0.8399 |
 | WebShop R2 | 65.43% | 0.7576 |
 | WebShop R2 aligned | 65.04% | 0.7922 |
+| WebShop R2 polarity, aligned115→150 | **73.37%** | **0.8555** |
 
-The aligned version did not outperform local GiGPO. These are single-training-seed
-results on an already used development panel. Numeric summaries and historical
+The original aligned version did not outperform local GiGPO. The new combined
+intervention achieved **1127/1536** successes, **+2.73 percentage points** over
+GiGPO (paired task-cluster 95% interval **[+0.26, +5.27]**). It did not meet every
+behavior target: **67 format-invalid actions (0.75%)** and **one option-loop
+episode** remain; unexecutable actions increased from **187 to 269** relative to
+the aligned version. Timeout rate was **1.89%**. This is one training seed, three
+joint interventions, and an already used development panel, so component effects
+and training-seed robustness remain unestablished.
+
+See the [full continuation report](reports/gradus/evidence/polarity_20261111/README.md).
+All **4608 per-episode metric rows** for the candidate and two reused references
+are published. Recompute their counts, means, and paired intervals with NumPy:
+
+```bash
+python3 scripts/verify_polarity_results.py
+```
+
+This recount uses extracted metrics, not the unpublished raw observation text.
+Numeric summaries and historical
 execution checks are in [results.json](reports/gradus/results.json).
 Publication-time checks are recorded separately in
 [publication_checks.json](reports/gradus/publication_checks.json).

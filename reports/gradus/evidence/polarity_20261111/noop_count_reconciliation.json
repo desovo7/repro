@@ -1,0 +1,9 @@
+{
+  "source": "Prior audit all150 categories: semantic noop minus overlap with format invalid.",
+  "noop_positive": 740,
+  "overlap_positive": 142,
+  "difference": 598,
+  "replay_positive": 598,
+  "quoted_user_positive": 594,
+  "note": "The pasted594 does not equal prior audit740 minus142; correct strictpositive count is598. Above1e-12 it is735 minus140=595."
+}

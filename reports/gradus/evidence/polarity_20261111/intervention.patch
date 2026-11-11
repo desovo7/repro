@@ -1,0 +1,198 @@
+--- a/experiments/webshop_r2_aligned/webshop/core.py
++++ b/experiments/webshop_r2_aligned/webshop/core.py
+@@ -7,7 +7,7 @@
+ import random
+ import re
+ 
+-SCHEMA = 'gradus-webshop-r2-aligned-v1'
++SCHEMA = 'gradus-webshop-r2-polarity-v1'
+ JVM = '-Xmx128m -Xms16m -XX:+UseSerialGC'
+ from .adapter import NAV, norm, parts, parse_trace, visible_product, price_relation
+ from .r2_credit import empty_stats, add_trace_stats, merge_stats, build_tables, credit
+@@ -37,6 +37,9 @@
+     max_abs_injection: float = 5.0
+     control: str = 'none'  # none | permute | coverage_only | rank_shuffle
+     control_seed: int = 0
++    gate_invalid_noop: bool = False
++    return_credit_mode: str = 'none'  # none | negative_delta_clip | neutral
++    neutral_terminal_buy: bool = False
+ 
+     def __post_init__(self):
+         if self.horizon != 15 or self.group_size != 8 or self.window < 1:
+@@ -51,6 +54,10 @@
+             raise ValueError('Invalid deployed R2 support or potential parameters')
+         if self.control not in {'none', 'permute', 'coverage_only', 'rank_shuffle'}:
+             raise ValueError('Unknown control')
++        if type(self.gate_invalid_noop) is not bool or type(self.neutral_terminal_buy) is not bool:
++            raise ValueError('Credit intervention switches must be booleans')
++        if self.return_credit_mode not in {'none', 'negative_delta_clip', 'neutral'}:
++            raise ValueError('Unknown return credit mode')
+ 
+ 
+ def shuffle_ranks(ranks, seed, iteration):
+--- a/experiments/webshop_r2_aligned/webshop/adapter.py
++++ b/experiments/webshop_r2_aligned/webshop/adapter.py
+@@ -195,11 +195,20 @@
+         verb, arg = parsed.groups() if parsed else ('', '')
+         executable = verb == 'search' or (verb == 'click' and arg in clickables and arg != 'search')
+         noop = not executable
++        # Format validity and semantic no-op remain distinct observables. The
++        # credit module gates them without changing executed actions or states.
++        format_valid = step.get('format_valid')
++        if getattr(config, 'gate_invalid_noop', False) and type(format_valid) is not bool:
++            raise ValueError('Credit format gate requires captured boolean format_valid')
++        return_nav = False
++        terminal_buy = bool(step['environment_done'] and executable and verb == 'click' and arg == 'buy now')
+         new = []
+         # Never parse terminal HTML, even if the buy failed.
+         if not step['environment_done']:
+             after = step['observation_after']
+             after_page = page_type(after, page, f'{verb}[{arg}]')
++            return_nav = bool(executable and verb == 'click' and arg in {'back to search', '< prev'}
++                              and page in {'item', 'detail'} and after_page in {'home', 'results'})
+             after_available = step.get('available_after')
+             if after_available is None and i+1 < len(steps) and steps[i+1]['observation_before'] == after:
+                 after_available = steps[i+1]['available_before']
+@@ -244,6 +253,16 @@
+         else:
+             t.states.append(t.states[-1])
+         t.noops.append(noop)
++        t.format_valids.append(bool(format_valid))
++        t.return_navs.append(return_nav)
++        t.terminal_buys.append(terminal_buy)
++        if (getattr(config, 'gate_invalid_noop', False)
++                or getattr(config, 'return_credit_mode', 'none') != 'none'
++                or getattr(config, 'neutral_terminal_buy', False)):
++            audit['executable_return_navigation'] += int(return_nav)
++            audit['format_invalid_actions'] += int(not format_valid)
++            audit['format_invalid_not_noop_actions'] += int(not format_valid and not noop)
++            audit['terminal_buy_actions'] += int(terminal_buy)
+         t.reveals.append(new)
+         previous = step['observation_after']
+     t.room = tuple((pool or {}).values())
+--- a/experiments/webshop_r2_aligned/webshop/r2_credit.py
++++ b/experiments/webshop_r2_aligned/webshop/r2_credit.py
+@@ -30,6 +30,9 @@
+     sightings: list = field(default_factory=list)
+     skeleton: str = ''
+     slots: dict = field(default_factory=dict)
++    format_valids: list = field(default_factory=list)
++    return_navs: list = field(default_factory=list)
++    terminal_buys: list = field(default_factory=list)
+ 
+ 
+ def empty_stats():
+@@ -245,6 +248,12 @@
+         tables = table_transform(tables)
+     cfg = credit_config
+     raw, deltas, centered = {}, {}, {}
++    gate_invalid = getattr(cfg, 'gate_invalid_noop', False)
++    return_mode = getattr(cfg, 'return_credit_mode', 'none')
++    neutral_buy = getattr(cfg, 'neutral_terminal_buy', False)
++    intervention = gate_invalid or return_mode != 'none' or neutral_buy
++    excluded, gate_reasons = set(), {}
++    clipped_return_deltas = 0
+     anchors = defaultdict(list)
+     unknown_states = af_states = 0
+     for t in traces:
+@@ -259,9 +268,34 @@
+         unknown_states += unknown
+         af_states += len(phi)
+         d = [config.difference_gamma * phi[i + 1] - phi[i] for i in range(len(t.steps))]
++        if intervention:
++            if not all(len(v) == len(t.steps) for v in (t.noops, t.format_valids, t.return_navs, t.terminal_buys)):
++                raise ValueError('Credit intervention requires per-action adapter metadata')
++            for i, step in enumerate(t.steps):
++                uid = step['action_uid']
++                reasons = []
++                if gate_invalid and t.noops[i]:
++                    reasons.append('semantic_noop')
++                if gate_invalid and not t.format_valids[i]:
++                    reasons.append('format_invalid')
++                if return_mode == 'neutral' and t.return_navs[i]:
++                    reasons.append('return_navigation')
++                if neutral_buy and t.terminal_buys[i]:
++                    reasons.append('terminal_buy')
++                if reasons:
++                    excluded.add(uid)
++                    gate_reasons[uid] = reasons
++                    d[i] = 0.0
++                elif return_mode == 'negative_delta_clip' and t.return_navs[i] and d[i] < 0:
++                    d[i] = 0.0
++                    clipped_return_deltas += 1
+         tail = 0.0
+         aux = [0.0] * len(d)
+         for i in reversed(range(len(d))):
++            if t.steps[i]['action_uid'] in excluded:
++                # No auxiliary signal at this action or propagation through it.
++                tail = aux[i] = 0.0
++                continue
+             # A no-op cuts its own outgoing GAE edge: it cannot inherit later progress.
+             decay = 0.0 if t.noops[i] else cfg.lambda_aux
+             tail = d[i] + cfg.gamma * decay * tail
+@@ -281,12 +315,15 @@
+             buckets[('bucket', group, budget_bucket(step_id, horizon))].append(uid)
+     zero_variance = 0
+     for members in buckets.values():
+-        values = center_within_bucket([raw[uid] for uid in members])
++        # Keep the original anchor/fallback assignment. Removing an ineligible
++        # member must not create a new cross-state fallback comparison.
++        eligible = [uid for uid in members if uid not in excluded]
++        values = center_within_bucket([raw[uid] for uid in eligible])
+         if centered_transform is not None:
+-            values = centered_transform(values, members)
++            values = centered_transform(values, eligible)
+         if not any(values):
+             zero_variance += 1
+-        for uid, v in zip(members, values):
++        for uid, v in zip(eligible, values):
+             centered[uid] = v
+     af_uids = [s['action_uid'] for t in traces if af[t.group_uid] for s in t.steps]
+     diagnostics = dict(
+@@ -302,5 +339,16 @@
+         unknown_state_ratio=(unknown_states / af_states) if af_states else 0.0,
+         donor_iterations=len(history),
+         **{k: v for k, v in tables.diagnostics().items() if k != 'orders'})
+-    return dict(centered=centered, raw=raw, deltas=deltas, af=af, diagnostics=diagnostics, tables=tables)
+-
++    result = dict(centered=centered, raw=raw, deltas=deltas, af=af, diagnostics=diagnostics, tables=tables)
++    if intervention:
++        diagnostics.update(
++            auxiliary_excluded_actions=len(excluded),
++            auxiliary_excluded_format=sum('format_invalid' in v for v in gate_reasons.values()),
++            auxiliary_excluded_noop=sum('semantic_noop' in v for v in gate_reasons.values()),
++            auxiliary_excluded_return=sum('return_navigation' in v for v in gate_reasons.values()),
++            auxiliary_excluded_buy=sum('terminal_buy' in v for v in gate_reasons.values()),
++            auxiliary_return_negative_deltas_clipped=clipped_return_deltas,
++        )
++        result['gate_reasons'] = gate_reasons
++    return result
++
+--- a/experiments/webshop_r2_aligned/webshop/integration.py
++++ b/experiments/webshop_r2_aligned/webshop/integration.py
+@@ -182,6 +182,14 @@
+         combined = base + delta
+         if not torch.isfinite(combined).all():
+             raise FloatingPointError('Nonfinite injected advantage')
++        if 'gate_reasons' in self.result:
++            gated_rows = torch.tensor([u in self.result['gate_reasons'] for u in uids], device=base.device)
++            gated_mask = gated_rows[:, None] & mask.bool()
++            if torch.count_nonzero(delta[gated_mask]) or not torch.equal(combined[gated_mask], base[gated_mask]):
++                raise ValueError('An ineligible action acquired auxiliary token credit')
++            self.injection.update(auxiliary_gated_actor_rows=int(gated_rows.sum()),
++                                  auxiliary_gated_response_tokens=int(gated_mask.sum()),
++                                  auxiliary_gated_nonzero_tokens=int(torch.count_nonzero(delta[gated_mask])))
+         batch.batch['advantages'] = combined.detach()
+         batch.batch['repro_aux_delta'] = (combined - base).detach()
+         batch.meta_info['ws_credit_applied'] = True
+--- a/experiments/webshop_r2_aligned/webshop/persistence.py
++++ b/experiments/webshop_r2_aligned/webshop/persistence.py
+@@ -112,7 +112,7 @@
+             driver['validation_dataloader'] = self.val_dataloader.state_dict()
+             result = super()._save_checkpoint()
+             runtime = dict(self.identity, iteration_id=self.global_steps,
+-                           method='GRADUS-WebShop aligned with deployed ALFWorld R2', gradus_state=self.ws_runtime.engine.state_dict(), task_cursors=cursors,
++                           method='WebShop R2 auxiliary eligibility with neutral return and terminal buy', gradus_state=self.ws_runtime.engine.state_dict(), task_cursors=cursors,
+                            boundary='completed training iteration before next collector reset', world_size=2)
+             write_json(folder / 'native_runtime.json', runtime)
+             temporary = folder / 'native_driver_rng.pt.tmp'

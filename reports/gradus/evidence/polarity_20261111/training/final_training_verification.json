@@ -1,0 +1,379 @@
+{
+  "at": "2026-11-11T11:54:55.021075+00:00",
+  "status": "PASS",
+  "final": true,
+  "verified_step": 150,
+  "config_and_release_unchanged": true,
+  "completed_iterations": [
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150
+  ],
+  "resume_decision": {
+    "created_at": "2026-11-11T08:56:09.416547+00:00",
+    "identity": {
+      "config_hash": "95daf6b37badc6b29d1428279ce25195be61d147a24179a75668ad87c482adf1",
+      "model_contract_hash": "bb8cc6766e2b87d8efe73fb19f38945b3fe87fc9c03fd92e65eba94d035c6eb8",
+      "run_id": "gradus-webshop-h800-s0-polarity-from115-20261111"
+    },
+    "interrupted_artifacts": [],
+    "native_candidates": [
+      {
+        "completion_sha256": "ecf59820a6af735b0cd940d179fc076b848ea0bd052509d633b31502c0e73a17",
+        "file_count": 20,
+        "kind": "native",
+        "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/global_step_115",
+        "status": "complete",
+        "step": 115
+      },
+      {
+        "completion_sha256": "304b50f21ed0c4bcc5d3296838593110bf6709809e960619d0121093348ac672",
+        "file_count": 20,
+        "kind": "native",
+        "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/global_step_116",
+        "status": "complete",
+        "step": 116
+      }
+    ],
+    "record_path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/best_checkpoints/resume_decisions/46dbf62ce0d64bd4b3ad6a7a19cc1bdf.json",
+    "replay_after_step": 116,
+    "requested_mode": "auto",
+    "requested_path": null,
+    "selected": {
+      "completion_sha256": "304b50f21ed0c4bcc5d3296838593110bf6709809e960619d0121093348ac672",
+      "file_count": 20,
+      "kind": "native",
+      "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/global_step_116",
+      "status": "complete",
+      "step": 116
+    },
+    "selection_rule": "highest complete iteration; matching native preferred over protected copy",
+    "status": "loaded",
+    "trace_tail_handling": "Recorded here; training trace/log segmentation remains the recovery workflow responsibility",
+    "tracker_action": "unchanged",
+    "tracker_before": {
+      "content": "116",
+      "sha256": "e5b861a6d8a966dfca7e7341cd3eb6be9901688d547a72ebed0b1f5e14f3d08d",
+      "status": "valid_integer",
+      "step": 116
+    }
+  },
+  "actual_update_audit": [
+    {
+      "iteration": 116,
+      "before": 1845,
+      "after": 1857,
+      "updates": 12
+    },
+    {
+      "iteration": 117,
+      "before": 1857,
+      "after": 1868,
+      "updates": 11
+    },
+    {
+      "iteration": 118,
+      "before": 1868,
+      "after": 1879,
+      "updates": 11
+    },
+    {
+      "iteration": 119,
+      "before": 1879,
+      "after": 1891,
+      "updates": 12
+    },
+    {
+      "iteration": 120,
+      "before": 1891,
+      "after": 1902,
+      "updates": 11
+    },
+    {
+      "iteration": 121,
+      "before": 1902,
+      "after": 1913,
+      "updates": 11
+    },
+    {
+      "iteration": 122,
+      "before": 1913,
+      "after": 1925,
+      "updates": 12
+    },
+    {
+      "iteration": 123,
+      "before": 1925,
+      "after": 1936,
+      "updates": 11
+    },
+    {
+      "iteration": 124,
+      "before": 1936,
+      "after": 1947,
+      "updates": 11
+    },
+    {
+      "iteration": 125,
+      "before": 1947,
+      "after": 1959,
+      "updates": 12
+    },
+    {
+      "iteration": 126,
+      "before": 1959,
+      "after": 1973,
+      "updates": 14
+    },
+    {
+      "iteration": 127,
+      "before": 1973,
+      "after": 1985,
+      "updates": 12
+    },
+    {
+      "iteration": 128,
+      "before": 1985,
+      "after": 1997,
+      "updates": 12
+    },
+    {
+      "iteration": 129,
+      "before": 1997,
+      "after": 2009,
+      "updates": 12
+    },
+    {
+      "iteration": 130,
+      "before": 2009,
+      "after": 2020,
+      "updates": 11
+    },
+    {
+      "iteration": 131,
+      "before": 2020,
+      "after": 2031,
+      "updates": 11
+    },
+    {
+      "iteration": 132,
+      "before": 2031,
+      "after": 2042,
+      "updates": 11
+    },
+    {
+      "iteration": 133,
+      "before": 2042,
+      "after": 2053,
+      "updates": 11
+    },
+    {
+      "iteration": 134,
+      "before": 2053,
+      "after": 2064,
+      "updates": 11
+    },
+    {
+      "iteration": 135,
+      "before": 2064,
+      "after": 2077,
+      "updates": 13
+    },
+    {
+      "iteration": 136,
+      "before": 2077,
+      "after": 2088,
+      "updates": 11
+    },
+    {
+      "iteration": 137,
+      "before": 2088,
+      "after": 2099,
+      "updates": 11
+    },
+    {
+      "iteration": 138,
+      "before": 2099,
+      "after": 2111,
+      "updates": 12
+    },
+    {
+      "iteration": 139,
+      "before": 2111,
+      "after": 2122,
+      "updates": 11
+    },
+    {
+      "iteration": 140,
+      "before": 2122,
+      "after": 2133,
+      "updates": 11
+    },
+    {
+      "iteration": 141,
+      "before": 2133,
+      "after": 2146,
+      "updates": 13
+    },
+    {
+      "iteration": 142,
+      "before": 2146,
+      "after": 2159,
+      "updates": 13
+    },
+    {
+      "iteration": 143,
+      "before": 2159,
+      "after": 2171,
+      "updates": 12
+    },
+    {
+      "iteration": 144,
+      "before": 2171,
+      "after": 2182,
+      "updates": 11
+    },
+    {
+      "iteration": 145,
+      "before": 2182,
+      "after": 2193,
+      "updates": 11
+    },
+    {
+      "iteration": 146,
+      "before": 2193,
+      "after": 2204,
+      "updates": 11
+    },
+    {
+      "iteration": 147,
+      "before": 2204,
+      "after": 2215,
+      "updates": 11
+    },
+    {
+      "iteration": 148,
+      "before": 2215,
+      "after": 2225,
+      "updates": 10
+    },
+    {
+      "iteration": 149,
+      "before": 2225,
+      "after": 2236,
+      "updates": 11
+    },
+    {
+      "iteration": 150,
+      "before": 2236,
+      "after": 2247,
+      "updates": 11
+    }
+  ],
+  "ranks": [
+    {
+      "rank": 0,
+      "optimizer_step": 2247,
+      "scheduler_epoch": 150,
+      "all_optimizer_tensors_finite": true,
+      "nonzero_first_moment": true,
+      "rng_present": true
+    },
+    {
+      "rank": 1,
+      "optimizer_step": 2247,
+      "scheduler_epoch": 150,
+      "all_optimizer_tensors_finite": true,
+      "nonzero_first_moment": true,
+      "rng_present": true
+    }
+  ],
+  "checkpoints": {
+    "115": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 115
+    },
+    "116": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 116
+    },
+    "140": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 140
+    },
+    "145": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 145
+    },
+    "150": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 150
+    }
+  },
+  "best": [
+    {
+      "score": 0.72265625,
+      "step": 150
+    },
+    {
+      "score": 0.71875,
+      "step": 145
+    },
+    {
+      "score": 0.671875,
+      "step": 140
+    }
+  ],
+  "latest": {
+    "score": 0.72265625,
+    "step": 150
+  },
+  "pinned_steps": [
+    115,
+    116
+  ],
+  "worker_states": {
+    "train": 128,
+    "validation": 128
+  },
+  "driver_rng_and_cursors_and_dataloader_verified": true,
+  "method_history_continuation_verified": true,
+  "limitation": "Reload and continuation verified; this does not establish bitwise identity to an uninterrupted GPU run."
+}

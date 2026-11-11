@@ -1,0 +1,257 @@
+{
+  "baseline_commit": "a865ba3965f6da15462f159f6f7404124c3e0f13",
+  "files": {
+    "experiments/webshop_r2_polarity/webshop/__init__.py": {
+      "source_artifact": "release/__init__.py",
+      "source_sha256": "b7c48438e7d2d85dd8fb4c0622c919944c76ebee3a166f188def5213ea48690d",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/core.py": {
+      "source_artifact": "release/core.py",
+      "source_sha256": "1c72ed983b41a15d864eb97a5d0f16b5fa742f7a880d0705078a2b11a92f0477",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/adapter.py": {
+      "source_artifact": "release/adapter.py",
+      "source_sha256": "f227953e5930b3bc4aa6287175b664ae97c0bee510bb2ee76a7fa9825fccaed7",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/r2_credit.py": {
+      "source_artifact": "release/r2_credit.py",
+      "source_sha256": "f381dfd14b422c0048035bcad3a01959a8c38efebdfe0f5b6becd985085de11f",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/integration.py": {
+      "source_artifact": "release/integration.py",
+      "source_sha256": "f2102fd3d97ab44d34c5390fd62512fef6f283476cb787bd3487f51eb87537c9",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/entry.py": {
+      "source_artifact": "release/entry.py",
+      "source_sha256": "51f7266eb75a4bb61a6d1afd348fa6b2d7116853e3874c876ea0877d31f8578f",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/persistence.py": {
+      "source_artifact": "release/persistence.py",
+      "source_sha256": "3c31fb742f3129262bb798fa941bdcba40628e189f720a748edf0f7af15aed35",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/native_retention.py": {
+      "source_artifact": "release/native_retention.py",
+      "source_sha256": "fc636f6318c8c0b447c59e3949ed61d97ca078389016f5e11b0da8ecb3d6ff2e",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/actor_audit.py": {
+      "source_artifact": "release/actor_audit.py",
+      "source_sha256": "a0b43f8a4dfd6a20370b02f5b25e4c47a02192711c48625c4186ac9f5986d5a4",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/test_webshop.py": {
+      "source_artifact": "release/test_webshop.py",
+      "source_sha256": "dfe1624546e666cfe0437444ec77fdeaa9572cc9f8bcd1dfd83e50c0c73db081",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/webshop/test_r2_aligned.py": {
+      "source_artifact": "release/test_r2_aligned.py",
+      "source_sha256": "bd6bcb641c6241500b157e35c91893586ebb4c4c4a9823680958e5c22ad096b4",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/test_intervention.py": {
+      "source_artifact": "test_intervention.py",
+      "source_sha256": "3b4716b5d3065ff62ed59899d3840897b792cfccda29078bfad5dfcca45dc1a3",
+      "byte_identical": false,
+      "change": "Only default package path adapted to repository layout; environment override and tests unchanged."
+    },
+    "experiments/webshop_r2_polarity/frozen_run/config.json": {
+      "source_artifact": "training/config.json",
+      "source_sha256": "7182f6c4ea4aeabcc5e564951294bc3454923e16ac15ec6c6a42b0ba248a80c6",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/replay_intervention.py": {
+      "source_artifact": "replay_intervention.py",
+      "source_sha256": "709cc44f19717c89e2db7ce89f4a9b71ec0b937316c0f8d597e95000b542a3ca",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/prepare_h800.py": {
+      "source_artifact": "prepare_h800.py",
+      "source_sha256": "b6586efcf3d8b2dc1579774dc71411c3ba33c2f00c00892a3526fa2822af508b",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/verify_first_checkpoint.py": {
+      "source_artifact": "verify_first_checkpoint.py",
+      "source_sha256": "9a592cf55007b8ec47cacd13c49682f806227adcca4923eaedc716043fa4a0d2",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/verify_training.py": {
+      "source_artifact": "verify_training.py",
+      "source_sha256": "79e222813a3a99e7f675fdbb22970f94d90c31e78bc806ceaee9fead0e0f58ef",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/summarize_training.py": {
+      "source_artifact": "summarize_training.py",
+      "source_sha256": "2d4cf407a09f0c77ffa1b2c2a5e66aae1e16a664171b4a299c64b6ee0bcb46b3",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/common.py": {
+      "source_artifact": "panel/common.py",
+      "source_sha256": "cef1446c27ab0bb48677df552dc223e2c6e600700c14684ab938e8fd504a11f8",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/evaluate.py": {
+      "source_artifact": "panel/evaluate.py",
+      "source_sha256": "b8d4134f73bec2fc0f5e937345e42daa36dc27be2cb26fe2edd305165a02c19a",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/recording.py": {
+      "source_artifact": "panel/recording.py",
+      "source_sha256": "9546bd92bce6eec27cdd718c88015c2b783aeb6f278c87c2399108f576a4df3d",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/panel_env.py": {
+      "source_artifact": "panel/panel_env.py",
+      "source_sha256": "3f8cd7e452ba094c74e38ec4f893db1572a8e73b0ca338d6dfca60026bf8758e",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/merge.py": {
+      "source_artifact": "panel/merge.py",
+      "source_sha256": "c801f10ef9e245d02ec6df3c880bdb0a20a1744c7b484dd0108b2d60db69b951",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/verify.py": {
+      "source_artifact": "panel/verify.py",
+      "source_sha256": "b8fcc976ffb416a42e3e8ad123037c4d21bedf37c9be1dccc35c17f9d97d5cb3",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/freeze_reuse.py": {
+      "source_artifact": "panel/freeze_reuse.py",
+      "source_sha256": "4c9853e4fa6cc5d25222f399f3d7124653619648e40dbcd910003feebe494758",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/launch.sh": {
+      "source_artifact": "panel/launch.sh",
+      "source_sha256": "2ea5026a0339ac1d92f3848ba6c30003187c0a709767cdf9c6f2ce860a03590e",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/native_projection.py": {
+      "source_artifact": "panel/native_projection.py",
+      "source_sha256": "0808d4643459acf2a4c496eab3fc8735025c440f28cc517066355a1f5fbc048f",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/recount_local.py": {
+      "source_artifact": "panel/recount_local.py",
+      "source_sha256": "8cc791110a23daf3a0d58c57a12c32f975da14e568b2402c72a7a262701fc942",
+      "byte_identical": true
+    },
+    "experiments/webshop_r2_polarity/analysis/panel/test_recording.py": {
+      "source_artifact": "panel/test_recording.py",
+      "source_sha256": "48276b20ee8603c4c2cfb382027dd986ab8ac4fdde590a14f2f516407d413408",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/EXPERIMENT_CARD.md": {
+      "source_artifact": "EXPERIMENT_CARD.md",
+      "source_sha256": "3db158ccc7da96d66860774e94c48266074831149b97b584b34cb8e965b4eb98",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/PRE_GPU_GATE.json": {
+      "source_artifact": "PRE_GPU_GATE.json",
+      "source_sha256": "deb0bc4700e9d8dd8219ae61b6c32f7b9ea80518883714d311d2cdabafc0619a",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/candidate_manifest.json": {
+      "source_artifact": "candidate_manifest.json",
+      "source_sha256": "dbe20968f7c6973a855418016097de146964d22991be87e02453c0970132010e",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/baseline_manifest.json": {
+      "source_artifact": "baseline_manifest.json",
+      "source_sha256": "f584e54eb10c6294f4296e8bf5553ee66534606ec4f92ea56df2cde5dc63a8ea",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/config_changes.json": {
+      "source_artifact": "config_changes.json",
+      "source_sha256": "86a9159697ae8136a6c422d7a992e95e63678355c7bdce78e3fa474ae2dd8f16",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/fixed_commit_verification.json": {
+      "source_artifact": "fixed_commit_verification.json",
+      "source_sha256": "e90b41cb932d923271b26fc5a4461dfde88be4a2840446e23b41ad4f06e8819f",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/intervention.patch": {
+      "source_artifact": "intervention.patch",
+      "source_sha256": "f9977fc979a4b74f54e27a2a60c567bc3b4cfaca2fc07f18a1b4c8a65a5ef0b9",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/noop_count_reconciliation.json": {
+      "source_artifact": "noop_count_reconciliation.json",
+      "source_sha256": "9ed5a0bece67936cec6678d4675bcbab89170cec4732b265966a060f0346673e",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/final_replay/SUMMARY.json": {
+      "source_artifact": "final_replay/SUMMARY.json",
+      "source_sha256": "72e353e487bc4e586b2ce5137e9746cee49499d2836b72a96e113eb816c43979",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/replay/SUMMARY.json": {
+      "source_artifact": "replay/SUMMARY.json",
+      "source_sha256": "b8142d5b30cb62c9dc25f021fe50233471006c8afce25c3d90394d0a4ce26b80",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/remote_cpu_tests.log": {
+      "source_artifact": "remote_cpu_tests.log",
+      "source_sha256": "fcb06c29ea0e19035d49ebe10a5ae3b2fbaac55f8bc97f39556116e08abe8871",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/training/parent_checkpoint_migration.json": {
+      "source_artifact": "training/parent_checkpoint_migration.json",
+      "source_sha256": "9718b7e79d8d44d43f0029292f0fddc2016e3676b7b5aff7e64a785ae926dc7a",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/training/actual_resume_verification.json": {
+      "source_artifact": "training/actual_resume_verification.json",
+      "source_sha256": "d51fae7170d8c133194562d267727226c26f472fe2664d7b50c7d1bf1093c5e1",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/training/final_training_verification.json": {
+      "source_artifact": "training/final_training_verification.json",
+      "source_sha256": "3428b29fdd6c4cdc4569d79a3fac4926640e65215f6bbdf3b7dd6d57426f5eb2",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/training/training_trace_recount.json": {
+      "source_artifact": "training/training_trace_recount.json",
+      "source_sha256": "5e847b065826e77704b10942a3da1c2b60cce10f69b0a378e480c22c17fb082e",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/panel/local_paired_recount.json": {
+      "source_artifact": "panel/local_paired_recount.json",
+      "source_sha256": "bbc8aa8743dd9c152cfb1805ec84339f1d64117696198c8c25925f5e2dd7a5cb",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/panel/local_raw_recount.json": {
+      "source_artifact": "panel/local_raw_recount.json",
+      "source_sha256": "558cdbbe713274a1b35901e13dd27ae66d55256db2bcb588c33d9de8a3bff9ee",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/panel/behavior_details.json": {
+      "source_artifact": "panel/behavior_details.json",
+      "source_sha256": "c5bbe8f176f04a89246068de6df32c746f7fdc1b47d8329e0a383e6d7f558e6a",
+      "byte_identical": true
+    },
+    "reports/gradus/evidence/polarity_20261111/results.json": {
+      "source_artifact": "RESULTS.json",
+      "source_sha256": "dc60215b60548c9459ced1ff99cc91419518c1270eca091f2d03a4aafc7496a5",
+      "byte_identical": false,
+      "change": "Omit shared-host process details and add publication scope; experiment metrics unchanged."
+    },
+    "reports/gradus/evidence/polarity_20261111/panel/metrics.json": {
+      "source_artifacts": {
+        "panel/jobs/r2_150/verification.json": "2cd1010a1be9441bf37e636892ac8593dca90f01fa2095346998be03d4efb1ca",
+        "panel/jobs/aligned_150/verification.json": "e52c47402e53554c99897ffc4a58c4e9365f678355f963c339f703f88080cba0",
+        "panel/jobs/gigpo_150/verification.json": "782d23ddd7bbabd3dcf9adca945bfc1c852c8264f6990b143c50b79640164593"
+      },
+      "change": "Lossless metric columns from all4608 verified episodes; integer formatting normalized; original observation text excluded."
+    }
+  },
+  "raw_records_published": false,
+  "all_panel_metric_rows_published": true
+}

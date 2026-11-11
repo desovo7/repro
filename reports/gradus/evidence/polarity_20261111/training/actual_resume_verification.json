@@ -1,0 +1,115 @@
+{
+  "at": "2026-11-11T09:03:24.085197+00:00",
+  "status": "PASS",
+  "final": false,
+  "verified_step": 117,
+  "config_and_release_unchanged": true,
+  "completed_iterations": [
+    116,
+    117
+  ],
+  "resume_decision": {
+    "created_at": "2026-11-11T08:56:09.416547+00:00",
+    "identity": {
+      "config_hash": "95daf6b37badc6b29d1428279ce25195be61d147a24179a75668ad87c482adf1",
+      "model_contract_hash": "bb8cc6766e2b87d8efe73fb19f38945b3fe87fc9c03fd92e65eba94d035c6eb8",
+      "run_id": "gradus-webshop-h800-s0-polarity-from115-20261111"
+    },
+    "interrupted_artifacts": [],
+    "native_candidates": [
+      {
+        "completion_sha256": "ecf59820a6af735b0cd940d179fc076b848ea0bd052509d633b31502c0e73a17",
+        "file_count": 20,
+        "kind": "native",
+        "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/global_step_115",
+        "status": "complete",
+        "step": 115
+      },
+      {
+        "completion_sha256": "304b50f21ed0c4bcc5d3296838593110bf6709809e960619d0121093348ac672",
+        "file_count": 20,
+        "kind": "native",
+        "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/global_step_116",
+        "status": "complete",
+        "step": 116
+      }
+    ],
+    "record_path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/best_checkpoints/resume_decisions/46dbf62ce0d64bd4b3ad6a7a19cc1bdf.json",
+    "replay_after_step": 116,
+    "requested_mode": "auto",
+    "requested_path": null,
+    "selected": {
+      "completion_sha256": "304b50f21ed0c4bcc5d3296838593110bf6709809e960619d0121093348ac672",
+      "file_count": 20,
+      "kind": "native",
+      "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints/global_step_116",
+      "status": "complete",
+      "step": 116
+    },
+    "selection_rule": "highest complete iteration; matching native preferred over protected copy",
+    "status": "loaded",
+    "trace_tail_handling": "Recorded here; training trace/log segmentation remains the recovery workflow responsibility",
+    "tracker_action": "unchanged",
+    "tracker_before": {
+      "content": "116",
+      "sha256": "e5b861a6d8a966dfca7e7341cd3eb6be9901688d547a72ebed0b1f5e14f3d08d",
+      "status": "valid_integer",
+      "step": 116
+    }
+  },
+  "actual_update_audit": [
+    {
+      "iteration": 116,
+      "before": 1845,
+      "after": 1857,
+      "updates": 12
+    },
+    {
+      "iteration": 117,
+      "before": 1857,
+      "after": 1868,
+      "updates": 11
+    }
+  ],
+  "ranks": [
+    {
+      "rank": 0,
+      "optimizer_step": 1868,
+      "scheduler_epoch": 117,
+      "all_optimizer_tensors_finite": true,
+      "nonzero_first_moment": true,
+      "rng_present": true
+    },
+    {
+      "rank": 1,
+      "optimizer_step": 1868,
+      "scheduler_epoch": 117,
+      "all_optimizer_tensors_finite": true,
+      "nonzero_first_moment": true,
+      "rng_present": true
+    }
+  ],
+  "checkpoints": {
+    "117": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 117
+    }
+  },
+  "best": [],
+  "latest": {
+    "score": null,
+    "step": 117
+  },
+  "pinned_steps": [
+    115,
+    116
+  ],
+  "worker_states": {
+    "train": 128,
+    "validation": 128
+  },
+  "driver_rng_and_cursors_and_dataloader_verified": true,
+  "method_history_continuation_verified": true,
+  "limitation": "Reload and continuation verified; this does not establish bitwise identity to an uninterrupted GPU run."
+}

@@ -1,0 +1,111 @@
+{
+  "panel_tasks": 512,
+  "replicate_seeds": [
+    0,
+    1,
+    2
+  ],
+  "batch_size": 128,
+  "max_steps": 15,
+  "temperature": 0.4,
+  "top_p": 1.0,
+  "top_k": -1,
+  "history_length": 2,
+  "max_prompt_length": 4096,
+  "max_response_length": 512,
+  "tensor_parallel_size": 2,
+  "gpu_indices": [
+    0,
+    1
+  ],
+  "gpu_memory_utilization": 0.6,
+  "seed_protocol": "SHA256(webshop-fixed-panel-v1,task_uid,replicate_seed,turn) mod(2^63-1) per generation request. Identical task/turn seed across all models; native sampling/padding/EOS code retained.",
+  "analysis": "Mean over3generation repeats per task; paired bootstrap512task clusters,10000resamples,seed20261109,95percentile CI. Othercheckpoint contrasts descriptive; no training-seed uncertainty inferred.",
+  "schema": "webshop-polarity-reused-panel-v1",
+  "frozen_at": "2026-11-11T11:55:17.132341+00:00",
+  "authorization": "User selected aligned complete115 continuation to150 with existing fixed512x3 panel.",
+  "candidate_run": "gradus-webshop-h800-s0-polarity-from115-20261111",
+  "evaluation_order": [
+    "r2_150"
+  ],
+  "reference_tags": [
+    "aligned_150",
+    "gigpo_150"
+  ],
+  "expected_record_tags": {
+    "r2_150": "r2_150",
+    "aligned_150": "r2_150",
+    "gigpo_150": "gigpo_150"
+  },
+  "original_card_sha256": "ceca3d1f3e8268243af9806fc86acfff439aad05ae7066780e72a5fe1654af35",
+  "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+  "reference_reuse": {
+    "aligned_150": {
+      "original_path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/evaluations/gradus-webshop-r2aligned-panel-20261109/jobs/r2_150",
+      "original_record_tag": "r2_150",
+      "verification_sha256": "666fa3b4b85479795a20f2049357c18ee2267fe0484bb732212c5f5879922268",
+      "raw_source_hashes": {
+        "seed_0_batch_0.jsonl": "34cda9f29c0f16540bac32490273981cd91ec3b00a76cc3b6ef709bdc7d1c32d",
+        "seed_0_batch_1.jsonl": "920ef2451167134aa426443cbeb605b447195d9abda8fb080a370c83d3ebf559",
+        "seed_0_batch_2.jsonl": "d32f09ed86938d3177ac64bec63a95802c9e984a0278407a1d4fbfcfae19b628",
+        "seed_0_batch_3.jsonl": "7464e9dc76dbde6ee58659bf6791d18357a5b4e21c9743727bc6c79b1184fad1",
+        "seed_1_batch_0.jsonl": "248b1eec2ad375f21d9f183f5a9ceeeeafbddcb5d2de9f06b53ab7279cb2f5fc",
+        "seed_1_batch_1.jsonl": "41314ca2af079a90bf7140278be16ecde31f1e5fc2c715bfb2506e4b69e16dfb",
+        "seed_1_batch_2.jsonl": "350e253ca2700de7f06e72752afb3039b03fe8e1d342ca121190a41b2ff00dcb",
+        "seed_1_batch_3.jsonl": "aece45f5387feddc39800ca1f0de2672b0f217db591b8045aea3ef8dc1fff409",
+        "seed_2_batch_0.jsonl": "d985c6a70139f16be4754ccbbb2e5369feae91dc666905680cf685d856a4b387",
+        "seed_2_batch_1.jsonl": "e99998cb3bd5bc7637db7f2e351f1ced645ead3ba9226b4bac54856b8fc8da8c",
+        "seed_2_batch_2.jsonl": "3b6ab94db803244b8014238274d235fc0c14305f3edfb98b313dc25ad8f3e0af",
+        "seed_2_batch_3.jsonl": "8a9c00c34700da1292422292154fc934ccf331fb892363d3452db1721bcb9483"
+      },
+      "new_inference": false
+    },
+    "gigpo_150": {
+      "original_path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/evaluations/gradus-webshop-r2aligned-panel-20261109/jobs/gigpo_150",
+      "original_record_tag": "gigpo_150",
+      "verification_sha256": "4e12d108c76fe09c6abf0e4a82daee1d6b1f9cc9a60c7c7d9563efa9d8774e82",
+      "raw_source_hashes": {
+        "seed_0_batch_0.jsonl": "3c1074fc402fa8ea5f32451604db9decb8d73732bdb76508134f96f3dbea4387",
+        "seed_0_batch_1.jsonl": "13277d52e7a11a5629078970c6966564fe11a7bd78e3b41dcee15938c10feb17",
+        "seed_0_batch_2.jsonl": "05a8b661be40326d5f7acabc45e45d0350d480b3e9bfdd1538a7ac0dc0caa9b8",
+        "seed_0_batch_3.jsonl": "76e68022c1f126396808c5a81f8d8d19c64603d693a7f52f867a9efdf4ece208",
+        "seed_1_batch_0.jsonl": "b20011b71998b83646eefe4518d8f38de7836f1c270331787cd9ecb7d65d21d9",
+        "seed_1_batch_1.jsonl": "509b9fe916d4c41faa6dfcab8decae0940a4478c69e2963cdeb0945243763bf3",
+        "seed_1_batch_2.jsonl": "872e21b11c979b7ea20649633d7e1e550aa4aabea11d75cf0445f34db20710d8",
+        "seed_1_batch_3.jsonl": "60eff157f2e8c7f0619ad81070cea978923a6668b8e840cec8f2c33a15ff7e64",
+        "seed_2_batch_0.jsonl": "2dc879d90a6848be2ed37096eeec51d138effe8fb61a782617c6a1c631757748",
+        "seed_2_batch_1.jsonl": "c7f4b676a64152f230017dea166524dc180b85befe5cd7b27b769def70c99315",
+        "seed_2_batch_2.jsonl": "dc7de45b81c2b7682513b5508ffe59d451f249c4d2f218fef8e24bb7c2316c0b",
+        "seed_2_batch_3.jsonl": "cdc13b0159b0a45ca66fe8326f824392f55be3b632a5328f0136d8323e4491cb"
+      },
+      "new_inference": false
+    }
+  },
+  "primary": "Intervention150 minus original aligned150 and GiGPO150 task-averaged success.",
+  "secondary": "Taskscore, format-invalid counts and rates, option loops, timeouts, failed purchases.",
+  "targets": {
+    "format_invalid_count_lt": 50,
+    "format_invalid_rate_lt": 0.006,
+    "option_loop_count": 0,
+    "timeout_rate_le": 0.04,
+    "success_count_gt": 1085
+  },
+  "budget": {
+    "new_evaluation_episodes": 1536,
+    "reference_reused_episodes": 3072,
+    "max_wall_hours": 3,
+    "max_two_gpu_hours": 6
+  },
+  "stops": [
+    "All1536new episodes verified",
+    "Environment/inference/integrity error",
+    "3hour wall cap"
+  ],
+  "limitation": "Single training seed; previously used development panel; combined intervention, no component causal attribution.",
+  "source_card_sha256": "aaa0e995e734bc42681d8ced9a13d3cc272b5a08dda935286569011d13962e1e",
+  "omitted_fields": [
+    "frozen_files",
+    "resource_preflight",
+    "checkpoints"
+  ]
+}

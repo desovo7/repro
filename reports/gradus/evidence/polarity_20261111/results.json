@@ -1,0 +1,1864 @@
+{
+  "at": "2026-11-11T14:36:06.290962+00:00",
+  "status": "COMPLETED",
+  "experiment": "WebShop auxiliary eligibility, neutral return, and neutral terminal purchase",
+  "run_id": "gradus-webshop-h800-s0-polarity-from115-20261111",
+  "parent": "aligned complete115",
+  "new_training_iterations": 35,
+  "new_training_trajectories": 4480,
+  "final_step": 150,
+  "new_panel_episodes": 1536,
+  "reused_reference_episodes": 3072,
+  "panel_tasks": 512,
+  "generation_repeats": 3,
+  "CPU_tests": 42,
+  "offline_replay_iterations": 300,
+  "offline": {
+    "format_invalid_not_noop": {
+      "baseline": {
+        "n": 10247,
+        "positive": 4019,
+        "robust_positive": 4018,
+        "negative": 3408,
+        "nonzero": 7427,
+        "sum_centered": 28.22553747233002,
+        "sum_raw": 725.6137248654687,
+        "mean_centered": 0.0027545171730584584,
+        "mean_raw": 0.07081230846740204
+      },
+      "combined": {
+        "n": 10247,
+        "positive": 0,
+        "robust_positive": 0,
+        "negative": 0,
+        "nonzero": 0,
+        "sum_centered": 0.0,
+        "sum_raw": 0.0,
+        "mean_centered": 0.0,
+        "mean_raw": 0.0
+      }
+    },
+    "noop_not_format_invalid": {
+      "baseline": {
+        "n": 14644,
+        "positive": 598,
+        "robust_positive": 595,
+        "negative": 2584,
+        "nonzero": 3182,
+        "sum_centered": -51.958027834793924,
+        "sum_raw": 0.0,
+        "mean_centered": -0.003548076197404666,
+        "mean_raw": 0.0
+      },
+      "combined": {
+        "n": 14644,
+        "positive": 0,
+        "robust_positive": 0,
+        "negative": 0,
+        "nonzero": 0,
+        "sum_centered": 0.0,
+        "sum_raw": 0.0,
+        "mean_centered": 0.0,
+        "mean_raw": 0.0
+      }
+    },
+    "return_navigation": {
+      "baseline": {
+        "n": 1030,
+        "positive": 246,
+        "robust_positive": 246,
+        "negative": 276,
+        "nonzero": 522,
+        "sum_centered": -15.259112388787765,
+        "sum_raw": -18.42738102939521,
+        "mean_centered": -0.014814672222124044,
+        "mean_raw": -0.017890661193587582
+      },
+      "combined": {
+        "n": 1030,
+        "positive": 0,
+        "robust_positive": 0,
+        "negative": 0,
+        "nonzero": 0,
+        "sum_centered": 0.0,
+        "sum_raw": 0.0,
+        "mean_centered": 0.0,
+        "mean_raw": 0.0
+      }
+    },
+    "terminal_buy": {
+      "baseline": {
+        "n": 5419,
+        "positive": 156,
+        "robust_positive": 155,
+        "negative": 499,
+        "nonzero": 655,
+        "sum_centered": -7.973934409614604,
+        "sum_raw": 0.0,
+        "mean_centered": -0.0014714771008700136,
+        "mean_raw": 0.0
+      },
+      "combined": {
+        "n": 5419,
+        "positive": 0,
+        "robust_positive": 0,
+        "negative": 0,
+        "nonzero": 0,
+        "sum_centered": 0.0,
+        "sum_raw": 0.0,
+        "mean_centered": 0.0,
+        "mean_raw": 0.0
+      }
+    },
+    "all_AF": {
+      "baseline": {
+        "n": 53227,
+        "positive": 11757,
+        "robust_positive": 11749,
+        "negative": 12685,
+        "nonzero": 24442,
+        "sum_centered": 1.2684298056342413e-14,
+        "sum_raw": 2320.465842775349,
+        "mean_centered": 2.3830571056686293e-19,
+        "mean_raw": 0.04359565338597608
+      },
+      "combined": {
+        "n": 53227,
+        "positive": 3252,
+        "robust_positive": 3251,
+        "negative": 4950,
+        "nonzero": 8202,
+        "sum_centered": 1.3933298959045715e-14,
+        "sum_raw": 1293.8231002343741,
+        "mean_centered": 2.617712619355912e-19,
+        "mean_raw": 0.024307646499603097
+      }
+    }
+  },
+  "actual_full_save_reload_update_verified": true,
+  "all_training_gated_tokens_zero": true,
+  "training_trace_recount": {
+    "at": "2026-11-11T11:48:19.725081+00:00",
+    "status": "PASS",
+    "run_id": "gradus-webshop-h800-s0-polarity-from115-20261111",
+    "new_training_iterations": [
+      116,
+      150
+    ],
+    "inherited_complete_iteration": 115,
+    "all4480_training_task_id_and_instruction_order_matches_original": true,
+    "trace_sha256": "eacd1c8cb7e2116babb65e886da6eda311195aff6c488f5e24aa1144554eedd8",
+    "counts": {
+      "trajectories": 4480,
+      "successes": 2887,
+      "af_groups": 113,
+      "actions": 24762,
+      "format_invalid": 3310,
+      "semantic_noop": 2644,
+      "return_navigation_all": 48,
+      "terminal_buy_all": 4431,
+      "af_actions": 5075,
+      "return_navigation_AF": 23,
+      "terminal_buy_AF": 888,
+      "format_invalid_AF": 676
+    },
+    "rounds": [
+      {
+        "iteration": 116,
+        "counts": {
+          "trajectories": 128,
+          "successes": 92,
+          "af_groups": 2,
+          "actions": 754,
+          "format_invalid": 139,
+          "semantic_noop": 89,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 127,
+          "af_actions": 83,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 16,
+          "format_invalid_AF": 17
+        },
+        "nonzero_centered_actions": 10,
+        "gated_actor_rows": 46,
+        "gated_response_tokens": 6409,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.1571953248508577,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 117,
+        "counts": {
+          "trajectories": 128,
+          "successes": 78,
+          "af_groups": 4,
+          "actions": 665,
+          "format_invalid": 138,
+          "semantic_noop": 23,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 161,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 32,
+          "format_invalid_AF": 35
+        },
+        "nonzero_centered_actions": 28,
+        "gated_actor_rows": 67,
+        "gated_response_tokens": 9013,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.24549882486639232,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 118,
+        "counts": {
+          "trajectories": 128,
+          "successes": 92,
+          "af_groups": 2,
+          "actions": 670,
+          "format_invalid": 139,
+          "semantic_noop": 24,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 127,
+          "af_actions": 89,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 16,
+          "format_invalid_AF": 17
+        },
+        "nonzero_centered_actions": 31,
+        "gated_actor_rows": 34,
+        "gated_response_tokens": 5174,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.18793698291225536,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 119,
+        "counts": {
+          "trajectories": 128,
+          "successes": 72,
+          "af_groups": 4,
+          "actions": 719,
+          "format_invalid": 138,
+          "semantic_noop": 88,
+          "return_navigation_all": 3,
+          "terminal_buy_all": 127,
+          "af_actions": 184,
+          "return_navigation_AF": 2,
+          "terminal_buy_AF": 31,
+          "format_invalid_AF": 35
+        },
+        "nonzero_centered_actions": 0,
+        "gated_actor_rows": 106,
+        "gated_response_tokens": 13979,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.0,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 120,
+        "counts": {
+          "trajectories": 128,
+          "successes": 93,
+          "af_groups": 3,
+          "actions": 674,
+          "format_invalid": 120,
+          "semantic_noop": 70,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 127,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 24,
+          "format_invalid_AF": 22
+        },
+        "nonzero_centered_actions": 16,
+        "gated_actor_rows": 74,
+        "gated_response_tokens": 8972,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.21608062614747744,
+        "AF_clipped_fraction": 0.005839605502206073
+      },
+      {
+        "iteration": 121,
+        "counts": {
+          "trajectories": 128,
+          "successes": 83,
+          "af_groups": 4,
+          "actions": 687,
+          "format_invalid": 115,
+          "semantic_noop": 83,
+          "return_navigation_all": 3,
+          "terminal_buy_all": 126,
+          "af_actions": 203,
+          "return_navigation_AF": 3,
+          "terminal_buy_AF": 30,
+          "format_invalid_AF": 30
+        },
+        "nonzero_centered_actions": 32,
+        "gated_actor_rows": 112,
+        "gated_response_tokens": 13554,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2739998949116133,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 122,
+        "counts": {
+          "trajectories": 128,
+          "successes": 114,
+          "af_groups": 0,
+          "actions": 757,
+          "format_invalid": 93,
+          "semantic_noop": 69,
+          "return_navigation_all": 9,
+          "terminal_buy_all": 125
+        },
+        "nonzero_centered_actions": 0,
+        "gated_actor_rows": 0,
+        "gated_response_tokens": 0,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.0,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 123,
+        "counts": {
+          "trajectories": 128,
+          "successes": 86,
+          "af_groups": 4,
+          "actions": 658,
+          "format_invalid": 96,
+          "semantic_noop": 41,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 166,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 32,
+          "format_invalid_AF": 26
+        },
+        "nonzero_centered_actions": 31,
+        "gated_actor_rows": 83,
+        "gated_response_tokens": 10578,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.24935782080098323,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 124,
+        "counts": {
+          "trajectories": 128,
+          "successes": 75,
+          "af_groups": 5,
+          "actions": 682,
+          "format_invalid": 71,
+          "semantic_noop": 48,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 193,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 40,
+          "format_invalid_AF": 23
+        },
+        "nonzero_centered_actions": 85,
+        "gated_actor_rows": 80,
+        "gated_response_tokens": 11360,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.269572165659162,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 125,
+        "counts": {
+          "trajectories": 128,
+          "successes": 84,
+          "af_groups": 3,
+          "actions": 754,
+          "format_invalid": 69,
+          "semantic_noop": 102,
+          "return_navigation_all": 1,
+          "terminal_buy_all": 128,
+          "af_actions": 132,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 24,
+          "format_invalid_AF": 9
+        },
+        "nonzero_centered_actions": 52,
+        "gated_actor_rows": 47,
+        "gated_response_tokens": 5897,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.20110379698589323,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 126,
+        "counts": {
+          "trajectories": 128,
+          "successes": 60,
+          "af_groups": 5,
+          "actions": 858,
+          "format_invalid": 106,
+          "semantic_noop": 239,
+          "return_navigation_all": 4,
+          "terminal_buy_all": 119,
+          "af_actions": 236,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 40,
+          "format_invalid_AF": 32
+        },
+        "nonzero_centered_actions": 43,
+        "gated_actor_rows": 123,
+        "gated_response_tokens": 14431,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2595795327186192,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 127,
+        "counts": {
+          "trajectories": 128,
+          "successes": 85,
+          "af_groups": 4,
+          "actions": 732,
+          "format_invalid": 87,
+          "semantic_noop": 111,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 126,
+          "af_actions": 215,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 30,
+          "format_invalid_AF": 20
+        },
+        "nonzero_centered_actions": 75,
+        "gated_actor_rows": 106,
+        "gated_response_tokens": 13424,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2745375806719281,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 128,
+        "counts": {
+          "trajectories": 128,
+          "successes": 65,
+          "af_groups": 4,
+          "actions": 750,
+          "format_invalid": 64,
+          "semantic_noop": 111,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 127,
+          "af_actions": 190,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 31,
+          "format_invalid_AF": 15
+        },
+        "nonzero_centered_actions": 46,
+        "gated_actor_rows": 85,
+        "gated_response_tokens": 10899,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2572458560234205,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 129,
+        "counts": {
+          "trajectories": 128,
+          "successes": 72,
+          "af_groups": 4,
+          "actions": 737,
+          "format_invalid": 93,
+          "semantic_noop": 162,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 125,
+          "af_actions": 180,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 32,
+          "format_invalid_AF": 27
+        },
+        "nonzero_centered_actions": 24,
+        "gated_actor_rows": 128,
+        "gated_response_tokens": 14733,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.24564741048334446,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 130,
+        "counts": {
+          "trajectories": 128,
+          "successes": 92,
+          "af_groups": 1,
+          "actions": 671,
+          "format_invalid": 75,
+          "semantic_noop": 41,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 127,
+          "af_actions": 40,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 8,
+          "format_invalid_AF": 5
+        },
+        "nonzero_centered_actions": 11,
+        "gated_actor_rows": 13,
+        "gated_response_tokens": 1702,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.1272732642202336,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 131,
+        "counts": {
+          "trajectories": 128,
+          "successes": 99,
+          "af_groups": 1,
+          "actions": 702,
+          "format_invalid": 86,
+          "semantic_noop": 46,
+          "return_navigation_all": 4,
+          "terminal_buy_all": 128,
+          "af_actions": 40,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 8,
+          "format_invalid_AF": 5
+        },
+        "nonzero_centered_actions": 8,
+        "gated_actor_rows": 13,
+        "gated_response_tokens": 1580,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.12137125645647148,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 132,
+        "counts": {
+          "trajectories": 128,
+          "successes": 85,
+          "af_groups": 2,
+          "actions": 647,
+          "format_invalid": 91,
+          "semantic_noop": 20,
+          "return_navigation_all": 2,
+          "terminal_buy_all": 128,
+          "af_actions": 88,
+          "return_navigation_AF": 2,
+          "terminal_buy_AF": 16,
+          "format_invalid_AF": 12
+        },
+        "nonzero_centered_actions": 41,
+        "gated_actor_rows": 43,
+        "gated_response_tokens": 4485,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.18029286326814867,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 133,
+        "counts": {
+          "trajectories": 128,
+          "successes": 78,
+          "af_groups": 3,
+          "actions": 699,
+          "format_invalid": 79,
+          "semantic_noop": 48,
+          "return_navigation_all": 3,
+          "terminal_buy_all": 128,
+          "af_actions": 128,
+          "return_navigation_AF": 1,
+          "terminal_buy_AF": 24,
+          "format_invalid_AF": 11
+        },
+        "nonzero_centered_actions": 55,
+        "gated_actor_rows": 38,
+        "gated_response_tokens": 4706,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.21365873010400627,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 134,
+        "counts": {
+          "trajectories": 128,
+          "successes": 79,
+          "af_groups": 4,
+          "actions": 695,
+          "format_invalid": 115,
+          "semantic_noop": 95,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 127,
+          "af_actions": 188,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 31,
+          "format_invalid_AF": 30
+        },
+        "nonzero_centered_actions": 38,
+        "gated_actor_rows": 103,
+        "gated_response_tokens": 12230,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.267375716317563,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 135,
+        "counts": {
+          "trajectories": 128,
+          "successes": 71,
+          "af_groups": 5,
+          "actions": 784,
+          "format_invalid": 123,
+          "semantic_noop": 161,
+          "return_navigation_all": 1,
+          "terminal_buy_all": 122,
+          "af_actions": 208,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 40,
+          "format_invalid_AF": 37
+        },
+        "nonzero_centered_actions": 34,
+        "gated_actor_rows": 109,
+        "gated_response_tokens": 12195,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.25403339592575114,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 136,
+        "counts": {
+          "trajectories": 128,
+          "successes": 80,
+          "af_groups": 4,
+          "actions": 693,
+          "format_invalid": 108,
+          "semantic_noop": 72,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 126,
+          "af_actions": 174,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 31,
+          "format_invalid_AF": 30
+        },
+        "nonzero_centered_actions": 28,
+        "gated_actor_rows": 103,
+        "gated_response_tokens": 12581,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2576131876233123,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 137,
+        "counts": {
+          "trajectories": 128,
+          "successes": 94,
+          "af_groups": 1,
+          "actions": 676,
+          "format_invalid": 122,
+          "semantic_noop": 54,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 31,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 8,
+          "format_invalid_AF": 8
+        },
+        "nonzero_centered_actions": 0,
+        "gated_actor_rows": 21,
+        "gated_response_tokens": 2004,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.0,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 138,
+        "counts": {
+          "trajectories": 128,
+          "successes": 64,
+          "af_groups": 5,
+          "actions": 760,
+          "format_invalid": 128,
+          "semantic_noop": 128,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 123,
+          "af_actions": 219,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 40,
+          "format_invalid_AF": 40
+        },
+        "nonzero_centered_actions": 12,
+        "gated_actor_rows": 109,
+        "gated_response_tokens": 12013,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2626654460080718,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 139,
+        "counts": {
+          "trajectories": 128,
+          "successes": 67,
+          "af_groups": 5,
+          "actions": 694,
+          "format_invalid": 123,
+          "semantic_noop": 54,
+          "return_navigation_all": 5,
+          "terminal_buy_all": 125,
+          "af_actions": 235,
+          "return_navigation_AF": 5,
+          "terminal_buy_AF": 38,
+          "format_invalid_AF": 39
+        },
+        "nonzero_centered_actions": 28,
+        "gated_actor_rows": 105,
+        "gated_response_tokens": 11922,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2974088059561545,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 140,
+        "counts": {
+          "trajectories": 128,
+          "successes": 107,
+          "af_groups": 1,
+          "actions": 659,
+          "format_invalid": 118,
+          "semantic_noop": 55,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 47,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 8,
+          "format_invalid_AF": 8
+        },
+        "nonzero_centered_actions": 0,
+        "gated_actor_rows": 24,
+        "gated_response_tokens": 2939,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.0,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 141,
+        "counts": {
+          "trajectories": 128,
+          "successes": 78,
+          "af_groups": 3,
+          "actions": 779,
+          "format_invalid": 114,
+          "semantic_noop": 124,
+          "return_navigation_all": 7,
+          "terminal_buy_all": 123,
+          "af_actions": 204,
+          "return_navigation_AF": 7,
+          "terminal_buy_AF": 19,
+          "format_invalid_AF": 21
+        },
+        "nonzero_centered_actions": 19,
+        "gated_actor_rows": 121,
+        "gated_response_tokens": 12846,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.20717478793716784,
+        "AF_clipped_fraction": 0.0052259887005649715
+      },
+      {
+        "iteration": 142,
+        "counts": {
+          "trajectories": 128,
+          "successes": 99,
+          "af_groups": 2,
+          "actions": 787,
+          "format_invalid": 89,
+          "semantic_noop": 120,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 126,
+          "af_actions": 102,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 16,
+          "format_invalid_AF": 10
+        },
+        "nonzero_centered_actions": 20,
+        "gated_actor_rows": 45,
+        "gated_response_tokens": 5065,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.1813754284730871,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 143,
+        "counts": {
+          "trajectories": 128,
+          "successes": 59,
+          "af_groups": 5,
+          "actions": 711,
+          "format_invalid": 86,
+          "semantic_noop": 93,
+          "return_navigation_all": 2,
+          "terminal_buy_all": 127,
+          "af_actions": 253,
+          "return_navigation_AF": 2,
+          "terminal_buy_AF": 39,
+          "format_invalid_AF": 25
+        },
+        "nonzero_centered_actions": 56,
+        "gated_actor_rows": 126,
+        "gated_response_tokens": 12245,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.29083336304015256,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 144,
+        "counts": {
+          "trajectories": 128,
+          "successes": 70,
+          "af_groups": 5,
+          "actions": 702,
+          "format_invalid": 94,
+          "semantic_noop": 75,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 209,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 40,
+          "format_invalid_AF": 32
+        },
+        "nonzero_centered_actions": 48,
+        "gated_actor_rows": 98,
+        "gated_response_tokens": 9746,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2740705556032685,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 145,
+        "counts": {
+          "trajectories": 128,
+          "successes": 79,
+          "af_groups": 3,
+          "actions": 694,
+          "format_invalid": 78,
+          "semantic_noop": 61,
+          "return_navigation_all": 1,
+          "terminal_buy_all": 128,
+          "af_actions": 145,
+          "return_navigation_AF": 1,
+          "terminal_buy_AF": 24,
+          "format_invalid_AF": 15
+        },
+        "nonzero_centered_actions": 33,
+        "gated_actor_rows": 66,
+        "gated_response_tokens": 6437,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.22477801459756275,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 146,
+        "counts": {
+          "trajectories": 128,
+          "successes": 87,
+          "af_groups": 4,
+          "actions": 665,
+          "format_invalid": 54,
+          "semantic_noop": 31,
+          "return_navigation_all": 2,
+          "terminal_buy_all": 128,
+          "af_actions": 163,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 32,
+          "format_invalid_AF": 15
+        },
+        "nonzero_centered_actions": 49,
+        "gated_actor_rows": 59,
+        "gated_response_tokens": 5979,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.2490364920548441,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 147,
+        "counts": {
+          "trajectories": 128,
+          "successes": 90,
+          "af_groups": 4,
+          "actions": 675,
+          "format_invalid": 44,
+          "semantic_noop": 22,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 163,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 32,
+          "format_invalid_AF": 10
+        },
+        "nonzero_centered_actions": 67,
+        "gated_actor_rows": 48,
+        "gated_response_tokens": 4470,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.23597498186896196,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 148,
+        "counts": {
+          "trajectories": 128,
+          "successes": 83,
+          "af_groups": 3,
+          "actions": 638,
+          "format_invalid": 37,
+          "semantic_noop": 35,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 117,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 24,
+          "format_invalid_AF": 3
+        },
+        "nonzero_centered_actions": 45,
+        "gated_actor_rows": 44,
+        "gated_response_tokens": 4345,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.21964626256047953,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 149,
+        "counts": {
+          "trajectories": 128,
+          "successes": 92,
+          "af_groups": 1,
+          "actions": 663,
+          "format_invalid": 53,
+          "semantic_noop": 8,
+          "return_navigation_all": 1,
+          "terminal_buy_all": 128,
+          "af_actions": 40,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 8,
+          "format_invalid_AF": 4
+        },
+        "nonzero_centered_actions": 12,
+        "gated_actor_rows": 12,
+        "gated_response_tokens": 1620,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.1312965595704542,
+        "AF_clipped_fraction": 0.0
+      },
+      {
+        "iteration": 150,
+        "counts": {
+          "trajectories": 128,
+          "successes": 83,
+          "af_groups": 3,
+          "actions": 671,
+          "format_invalid": 25,
+          "semantic_noop": 41,
+          "return_navigation_all": 0,
+          "terminal_buy_all": 128,
+          "af_actions": 122,
+          "return_navigation_AF": 0,
+          "terminal_buy_AF": 24,
+          "format_invalid_AF": 8
+        },
+        "nonzero_centered_actions": 47,
+        "gated_actor_rows": 48,
+        "gated_response_tokens": 4895,
+        "gated_nonzero_tokens": 0,
+        "injection_rms": 0.21373157719368713,
+        "AF_clipped_fraction": 0.0
+      }
+    ],
+    "total_gated_rows": 2439,
+    "total_gated_tokens": 284428,
+    "total_gated_nonzero_tokens": 0,
+    "final_native_validation": {
+      "episodes": 256,
+      "wins": 185,
+      "success_rate": 0.72265625,
+      "task_score": 0.8343131228580452,
+      "timeouts": 7
+    },
+    "interpretation": "Native validation is not the fixed panel; count-return targets must distinguish new116-150 from inherited100-115 and all trajectories from AF-only."
+  },
+  "checkpoints": {
+    "115": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 115
+    },
+    "116": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 116
+    },
+    "140": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 140
+    },
+    "145": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 145
+    },
+    "150": {
+      "files": 18,
+      "all_sizes_and_sha256_verified": true,
+      "method_last_iteration": 150
+    }
+  },
+  "best": [
+    {
+      "score": 0.72265625,
+      "step": 150
+    },
+    {
+      "score": 0.71875,
+      "step": 145
+    },
+    {
+      "score": 0.671875,
+      "step": 140
+    }
+  ],
+  "latest": {
+    "score": 0.72265625,
+    "step": 150
+  },
+  "panel": {
+    "r2_150": {
+      "means": {
+        "success": 0.7337239583333334,
+        "score": 0.8554951674482925,
+        "timeout": 0.018880208333333332,
+        "steps": 5.782552083333333,
+        "failed_buy": 0.24739583333333334,
+        "option_loop": 0.0006510416666666666
+      },
+      "counts": {
+        "success": 1127.0,
+        "timeout": 29.0,
+        "failed_buy": 380.0,
+        "option_loop": 1.0,
+        "repeated_option_actions": 29,
+        "format_invalid_actions": 67,
+        "unexecutable_actions": 269,
+        "steps": 8882
+      },
+      "by_seed": {
+        "0": {
+          "success": 0.734375,
+          "score": 0.855349258488907,
+          "timeout": 0.01953125,
+          "steps": 5.806640625,
+          "failed_buy": 0.24609375,
+          "option_loop": 0.001953125
+        },
+        "1": {
+          "success": 0.728515625,
+          "score": 0.8579101632959055,
+          "timeout": 0.017578125,
+          "steps": 5.7578125,
+          "failed_buy": 0.25390625,
+          "option_loop": 0.0
+        },
+        "2": {
+          "success": 0.73828125,
+          "score": 0.8532260805600649,
+          "timeout": 0.01953125,
+          "steps": 5.783203125,
+          "failed_buy": 0.2421875,
+          "option_loop": 0.0
+        }
+      },
+      "elapsed_seconds": 1037.6185830440372
+    },
+    "aligned_150": {
+      "means": {
+        "success": 0.650390625,
+        "score": 0.7921986748060966,
+        "timeout": 0.028645833333333332,
+        "steps": 5.421223958333333,
+        "failed_buy": 0.3209635416666667,
+        "option_loop": 0.0
+      },
+      "counts": {
+        "success": 999.0,
+        "timeout": 44.0,
+        "failed_buy": 493.0,
+        "option_loop": 0.0,
+        "repeated_option_actions": 14,
+        "format_invalid_actions": 1573,
+        "unexecutable_actions": 187,
+        "steps": 8327
+      },
+      "by_seed": {
+        "0": {
+          "success": 0.642578125,
+          "score": 0.7852779398336039,
+          "timeout": 0.02734375,
+          "steps": 5.4375,
+          "failed_buy": 0.330078125,
+          "option_loop": 0.0
+        },
+        "1": {
+          "success": 0.658203125,
+          "score": 0.8008572823660715,
+          "timeout": 0.02734375,
+          "steps": 5.404296875,
+          "failed_buy": 0.314453125,
+          "option_loop": 0.0
+        },
+        "2": {
+          "success": 0.650390625,
+          "score": 0.7904608022186147,
+          "timeout": 0.03125,
+          "steps": 5.421875,
+          "failed_buy": 0.318359375,
+          "option_loop": 0.0
+        }
+      },
+      "elapsed_seconds": 975.7409419829492
+    },
+    "gigpo_150": {
+      "means": {
+        "success": 0.7063802083333334,
+        "score": 0.8398549694301647,
+        "timeout": 0.037109375,
+        "steps": 5.482421875,
+        "failed_buy": 0.2565104166666667,
+        "option_loop": 0.0
+      },
+      "counts": {
+        "success": 1085.0,
+        "timeout": 57.0,
+        "failed_buy": 394.0,
+        "option_loop": 0.0,
+        "repeated_option_actions": 66,
+        "format_invalid_actions": 3,
+        "unexecutable_actions": 96,
+        "steps": 8421
+      },
+      "by_seed": {
+        "0": {
+          "success": 0.7109375,
+          "score": 0.8403789076591811,
+          "timeout": 0.037109375,
+          "steps": 5.484375,
+          "failed_buy": 0.251953125,
+          "option_loop": 0.0
+        },
+        "1": {
+          "success": 0.708984375,
+          "score": 0.8411113999932359,
+          "timeout": 0.041015625,
+          "steps": 5.509765625,
+          "failed_buy": 0.25,
+          "option_loop": 0.0
+        },
+        "2": {
+          "success": 0.69921875,
+          "score": 0.8380746006380771,
+          "timeout": 0.033203125,
+          "steps": 5.453125,
+          "failed_buy": 0.267578125,
+          "option_loop": 0.0
+        }
+      },
+      "elapsed_seconds": 909.0266521460144
+    }
+  },
+  "paired_contrasts": [
+    {
+      "candidate": "r2_150",
+      "reference": "aligned_150",
+      "metrics": {
+        "success": {
+          "difference": 0.08333333333333334,
+          "ci95": [
+            0.052083333333333336,
+            0.11523437500000001
+          ]
+        },
+        "score": {
+          "difference": 0.06329649264219576,
+          "ci95": [
+            0.03834982274850439,
+            0.08880124316782032
+          ]
+        },
+        "timeout": {
+          "difference": -0.009765625,
+          "ci95": [
+            -0.0234375,
+            0.0039062499999999983
+          ]
+        },
+        "steps": {
+          "difference": 0.361328125,
+          "ci95": [
+            0.229150390625,
+            0.49283854166666663
+          ]
+        }
+      }
+    },
+    {
+      "candidate": "r2_150",
+      "reference": "gigpo_150",
+      "metrics": {
+        "success": {
+          "difference": 0.02734375,
+          "ci95": [
+            0.0026041666666666618,
+            0.052734375
+          ]
+        },
+        "score": {
+          "difference": 0.0156401980181277,
+          "ci95": [
+            -0.004267508722830989,
+            0.03649752265963203
+          ]
+        },
+        "timeout": {
+          "difference": -0.018229166666666664,
+          "ci95": [
+            -0.03190104166666667,
+            -0.005859375000000001
+          ]
+        },
+        "steps": {
+          "difference": 0.3001302083333333,
+          "ci95": [
+            0.15688476562499998,
+            0.44140625
+          ]
+        }
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "format_invalid_count",
+      "observed": 67,
+      "rule": "<50",
+      "passed": false
+    },
+    {
+      "name": "format_invalid_rate",
+      "observed": 0.007543346093222247,
+      "denominator": 8882,
+      "rule": "<0.006",
+      "passed": false
+    },
+    {
+      "name": "new116_150_return_navigation",
+      "observed": 48,
+      "AF_subset": 23,
+      "rule": ">0",
+      "passed": true
+    },
+    {
+      "name": "option_loop_episodes",
+      "observed": 1.0,
+      "rule": "==0",
+      "passed": false
+    },
+    {
+      "name": "timeout_rate",
+      "observed": 0.018880208333333332,
+      "rule": "<=0.04",
+      "passed": true
+    },
+    {
+      "name": "successes",
+      "observed": 1127.0,
+      "denominator": 1536,
+      "rule": ">1085",
+      "passed": true
+    }
+  ],
+  "all_exploratory_targets_met": false,
+  "return_navigation": {
+    "original100_115": 2,
+    "original116_150": 0,
+    "intervention116_150": 48,
+    "branch100_150": 50,
+    "note": "Inherited100-115 returns are not evidence of intervention-induced recovery."
+  },
+  "code_manifest": {
+    "__init__.py": "b7c48438e7d2d85dd8fb4c0622c919944c76ebee3a166f188def5213ea48690d",
+    "core.py": "1c72ed983b41a15d864eb97a5d0f16b5fa742f7a880d0705078a2b11a92f0477",
+    "adapter.py": "f227953e5930b3bc4aa6287175b664ae97c0bee510bb2ee76a7fa9825fccaed7",
+    "r2_credit.py": "f381dfd14b422c0048035bcad3a01959a8c38efebdfe0f5b6becd985085de11f",
+    "integration.py": "f2102fd3d97ab44d34c5390fd62512fef6f283476cb787bd3487f51eb87537c9",
+    "entry.py": "51f7266eb75a4bb61a6d1afd348fa6b2d7116853e3874c876ea0877d31f8578f",
+    "persistence.py": "3c31fb742f3129262bb798fa941bdcba40628e189f720a748edf0f7af15aed35",
+    "native_retention.py": "fc636f6318c8c0b447c59e3949ed61d97ca078389016f5e11b0da8ecb3d6ff2e",
+    "actor_audit.py": "a0b43f8a4dfd6a20370b02f5b25e4c47a02192711c48625c4186ac9f5986d5a4"
+  },
+  "cost_and_final_resources": {
+    "at": "2026-11-11T12:17:54.194464+00:00",
+    "new_training_iterations": 35,
+    "training_iteration_wall_seconds": 10323.324,
+    "training_iteration_wall_hours": 2.8675900000000003,
+    "training_service_segments": [
+      {
+        "start": "2026-11-11T16:36:02.885289+08:00",
+        "last_active": "2026-11-11T16:48:11.399979+08:00",
+        "observed_stopped": "2026-11-11T16:48:41.539701+08:00"
+      },
+      {
+        "start": "2026-11-11T16:52:17.979273+08:00",
+        "last_active": "2026-11-11T19:44:52.116348+08:00",
+        "observed_stopped": "2026-11-11T19:45:22.256561+08:00"
+      }
+    ],
+    "observed_training_service_active_hours_lower_bound": 3.0785143791666667,
+    "approximate_training_two_gpu_reservation_hours": 6.157028758333333,
+    "panel_new_episodes": 1536,
+    "panel_inference_wall_seconds": 1037.6185830440372,
+    "approximate_panel_two_gpu_reservation_hours": 0.5764547683577984,
+    "GPU_reservation_scope": "Service/inference wall time multiplied by2; includes initialization and idle stages, not measured GPU kernel time. Training telemetry has about30second sampling intervals; checkpoint merge and CPU verification are separate.",
+    "minimum_available_host_GiB": 53.04055404663086,
+    "peak_GPU_memory_MiB": {
+      "0": 69214,
+      "1": 73874
+    },
+    "monitor_samples": 297,
+    "monetary_cost": null,
+    "monetary_cost_reason": "No provider billing information available."
+  },
+  "final_process_audit": {
+    "status": "PASS",
+    "no_experiment_GPU_processes": true,
+    "note": "Experiment services ended; unrelated shared-host process details omitted from publication."
+  },
+  "panel_behavior_details": {
+    "invalid_format_reasons": {
+      "missing_action_tag": 61,
+      "contains_Chinese": 6
+    },
+    "unexecutable_action_counts": [
+      [
+        "click[3x-large]",
+        18
+      ],
+      [
+        "click[b07hrfsnl4]",
+        16
+      ],
+      [
+        "click[color]",
+        14
+      ],
+      [
+        "click[black]",
+        9
+      ],
+      [
+        "click[b-white]",
+        9
+      ],
+      [
+        "click[price]",
+        8
+      ],
+      [
+        "click[4x]",
+        7
+      ],
+      [
+        "click[6]",
+        7
+      ],
+      [
+        "click[size]",
+        6
+      ],
+      [
+        "click[b09qxf3v3x]",
+        5
+      ],
+      [
+        "click[c-yellow]",
+        5
+      ],
+      [
+        "click[charcoal heather]",
+        5
+      ],
+      [
+        "click[khaki]",
+        4
+      ],
+      [
+        "click[b09m63b87v]",
+        4
+      ],
+      [
+        "click[maroon]",
+        3
+      ],
+      [
+        "click[a2-black]",
+        3
+      ],
+      [
+        "click[b-navy]",
+        3
+      ],
+      [
+        "click[high waist]",
+        3
+      ],
+      [
+        "click[small]",
+        3
+      ],
+      [
+        "click[a2-wine]",
+        3
+      ],
+      [
+        "click[b08p8lrfz4]",
+        3
+      ],
+      [
+        "click[navy]",
+        3
+      ],
+      [
+        "click[military green]",
+        3
+      ],
+      [
+        "click[search]",
+        3
+      ],
+      [
+        "click[type 7-grey]",
+        3
+      ],
+      [
+        "click[8.5]",
+        3
+      ],
+      [
+        "click[navy blue]",
+        3
+      ],
+      [
+        "click[3x]",
+        3
+      ],
+      [
+        "click[medium]",
+        3
+      ],
+      [
+        "click[buy now]",
+        3
+      ],
+      [
+        "click[a4-gray]",
+        3
+      ],
+      [
+        "click[pink]",
+        3
+      ],
+      [
+        "click[white]",
+        2
+      ],
+      [
+        "e x-large, b5-purple",
+        2
+      ],
+      [
+        "ry is not clear. the",
+        2
+      ],
+      [
+        "click[a3-army green]",
+        2
+      ],
+      [
+        "lue x-large, a1-blue",
+        2
+      ],
+      [
+        "click[b09qpx97vw]",
+        2
+      ],
+      [
+        "click[b08klhmpp9]",
+        2
+      ],
+      [
+        "click[10.5]",
+        2
+      ],
+      [
+        "click[red]",
+        2
+      ],
+      [
+        "click[r.brown1877]",
+        2
+      ],
+      [
+        "click[4t]",
+        2
+      ],
+      [
+        "s top, a01#sky blue ",
+        2
+      ],
+      [
+        "click[b09b77k9yq]",
+        2
+      ],
+      [
+        " top, b5-black large",
+        1
+      ],
+      [
+        "duct, but the user's",
+        1
+      ],
+      [
+        " d1-orange d1-orange",
+        1
+      ],
+      [
+        "t恤\n40. 面料类型：t恤\n41. �",
+        1
+      ],
+      [
+        "click[b01mqh5vgr]",
+        1
+      ],
+      [
+        "he criteria provided",
+        1
+      ],
+      [
+        "s top, a6-blue women",
+        1
+      ],
+      [
+        "uit with long sleeve",
+        1
+      ],
+      [
+        " (medium), c5-purple",
+        1
+      ],
+      [
+        "5-purple women's tee",
+        1
+      ],
+      [
+        "omen's long sleeve t",
+        1
+      ],
+      [
+        "p, c5-purple women's",
+        1
+      ],
+      [
+        "omen's short sleeve,",
+        1
+      ],
+      [
+        "men's top, c5-purple",
+        1
+      ],
+      [
+        "click[b097rk2b2q]",
+        1
+      ],
+      [
+        "s, b17-black women's",
+        1
+      ],
+      [
+        "women's blouse color",
+        1
+      ],
+      [
+        "click[b07fgqkz1]",
+        1
+      ],
+      [
+        "click[high density]",
+        1
+      ],
+      [
+        "rice lower than $40.",
+        1
+      ],
+      [
+        "click[b07q87p8dq]",
+        1
+      ],
+      [
+        "size large size top,",
+        1
+      ],
+      [
+        "click[34]",
+        1
+      ],
+      [
+        "k, c3-black c3-black",
+        1
+      ],
+      [
+        "ser's request is not",
+        1
+      ],
+      [
+        "for a specific item,",
+        1
+      ],
+      [
+        "the color, fit type,",
+        1
+      ],
+      [
+        "s query is not clear",
+        1
+      ],
+      [
+        "gray women's tees, a",
+        1
+      ],
+      [
+        "click[purple]",
+        1
+      ],
+      [
+        " is for a large size",
+        1
+      ],
+      [
+        "a specific item, but",
+        1
+      ],
+      [
+        "click[lavender]",
+        1
+      ],
+      [
+        "1-orange d1-orange d",
+        1
+      ],
+      [
+        "click[silver]",
+        1
+      ],
+      [
+        " red, b17-wine red b",
+        1
+      ],
+      [
+        "click[b17-wine red]",
+        1
+      ],
+      [
+        "it with long sleeve,",
+        1
+      ],
+      [
+        "on closure, hot pink",
+        1
+      ],
+      [
+        "ve, hot pink women's",
+        1
+      ],
+      [
+        "ot clear. the user's",
+        1
+      ],
+      [
+        "women's short sleeve",
+        1
+      ],
+      [
+        "click[tie dye blue]",
+        1
+      ],
+      [
+        "click[b095sx6366]",
+        1
+      ],
+      [
+        "-hot pink small size",
+        1
+      ],
+      [
+        "湿度为干\n48. 面料为干\n49. 洗水",
+        1
+      ],
+      [
+        "en's long sleeve tee",
+        1
+      ],
+      [
+        "click[color: charcoal heather (light)]",
+        1
+      ],
+      [
+        "r a specific product",
+        1
+      ],
+      [
+        "f the price is lower",
+        1
+      ],
+      [
+        "n, 59x79in, 59x79in,",
+        1
+      ],
+      [
+        "e x-large, d1-orange",
+        1
+      ],
+      [
+        "$50.00\n39. 价格： $50.0",
+        1
+      ],
+      [
+        "a specific color and",
+        1
+      ],
+      [
+        "quest might be for a",
+        1
+      ],
+      [
+        "click[color:white]",
+        1
+      ],
+      [
+        "is for a material of",
+        1
+      ],
+      [
+        " user's query is not",
+        1
+      ],
+      [
+        "click[b07dkgjr74]",
+        1
+      ],
+      [
+        "click[7-grey]",
+        1
+      ],
+      [
+        "zxxtc: coralpearl in",
+        1
+      ],
+      [
+        "he user's request is",
+        1
+      ],
+      [
+        "ge women's blouse, c",
+        1
+      ],
+      [
+        "click[36]",
+        1
+      ],
+      [
+        "价格：$60\n48. 价格：$60\n49",
+        1
+      ],
+      [
+        "click[gray]",
+        1
+      ],
+      [
+        "3-wine women's top -",
+        1
+      ],
+      [
+        "click[r.brown2626]",
+        1
+      ],
+      [
+        " a1-blue x-large, a1",
+        1
+      ],
+      [
+        " also for a specific",
+        1
+      ],
+      [
+        "item, but the user's",
+        1
+      ],
+      [
+        " a specific product,",
+        1
+      ]
+    ],
+    "option_loop_examples": [
+      {
+        "source": "panel/jobs/r2_150/seed_0_batch_3.jsonl",
+        "line": 97,
+        "task_uid": "26aa49fc29f842acf216548abe540bdaac35c383e12209c1ca11b486cf676a6d",
+        "panel_index": 480,
+        "replicate_seed": 0,
+        "success": true,
+        "actions": [
+          "search[e-blue, size: 4x-large, price: $50, button closure]",
+          "click[b078wsnd96]",
+          "click[4x-large]",
+          "click[e-blue]",
+          "click[4x-large]",
+          "click[4x-large]",
+          "click[e-blue]",
+          "click[4x-large]",
+          "click[4x-large]",
+          "click[e-blue]",
+          "click[4x-large]",
+          "click[4x-large]",
+          "click[e-blue]",
+          "click[4x-large]",
+          "click[buy now]"
+        ]
+      }
+    ],
+    "note": "option_loop means at least3 immediate same-option repeats accumulated in an episode under the fixed panel definition; the sole flagged episode succeeds on its15th step."
+  },
+  "limitations": [
+    "One training seed with a35round continuation from an already trained aligned115 model.",
+    "Three interventions enabled together; component causal contribution is not identified.",
+    "The fixed512task panel has been used for development; not a new held-out panel.",
+    "Task-cluster bootstrap quantifies panel sampling variation, not training-seed uncertainty."
+  ],
+  "operational_issues": [
+    {
+      "issue": "Planned116 stop produced Ray SIGABRT; monitor initially required inactive.",
+      "resolution": "Accepted validated planned-stop receipt after full file audit; no invalid update."
+    },
+    {
+      "issue": "SSH monitor stdout disconnected after117 verification.",
+      "resolution": "Training continued independently; monitor moved to a durable finite systemd service."
+    },
+    {
+      "issue": "After150, the successful main process exited0; remaining background processes exceeded the30second shutdown timeout. Monitor initially treated deactivating as a failure.",
+      "resolution": "Saved systemd exit and journal evidence, corrected transition handling, verified all final files, and continued evaluation without additional training."
+    },
+    {
+      "issue": "Panel main exited0 after all1536episodes and verification, but one remaining CPU background process exceeded shutdown timeout; monitor rejected the failed service state.",
+      "resolution": "Saved exit and failed-monitor evidence, independently recounted all4608records locally, verified no experiment GPU processes remain, then cleared failed service state. No inference or training was repeated."
+    }
+  ],
+  "publication_scope": "Source, frozen config, evidence extracts and all4608 per-episode metric rows. Full raw observations/training traces and large resumable checkpoints remain external."
+}

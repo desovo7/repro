@@ -158,5 +158,313 @@
     "Previously used development panel and overlapping native validation; not strict unseen-task evidence.",
     "This run cannot isolate the causal contribution of individual method components.",
     "Actual restart verified; bitwise equivalence to uninterrupted GPU training is not established."
-  ]
+  ],
+  "updated_date": "2026-11-11",
+  "iteration_semantics": "Original three experiments each trained150iterations; polarity continues aligned115 for35new iterations to150.",
+  "polarity_intervention": {
+    "run_id": "gradus-webshop-h800-s0-polarity-from115-20261111",
+    "parent": "aligned complete115",
+    "new_training_iterations": 35,
+    "new_training_trajectories": 4480,
+    "final_step": 150,
+    "new_panel_episodes": 1536,
+    "reused_reference_episodes": 3072,
+    "panel": {
+      "r2_150": {
+        "means": {
+          "success": 0.7337239583333334,
+          "score": 0.8554951674482925,
+          "timeout": 0.018880208333333332,
+          "steps": 5.782552083333333,
+          "failed_buy": 0.24739583333333334,
+          "option_loop": 0.0006510416666666666
+        },
+        "counts": {
+          "success": 1127.0,
+          "timeout": 29.0,
+          "failed_buy": 380.0,
+          "option_loop": 1.0,
+          "repeated_option_actions": 29,
+          "format_invalid_actions": 67,
+          "unexecutable_actions": 269,
+          "steps": 8882
+        },
+        "by_seed": {
+          "0": {
+            "success": 0.734375,
+            "score": 0.855349258488907,
+            "timeout": 0.01953125,
+            "steps": 5.806640625,
+            "failed_buy": 0.24609375,
+            "option_loop": 0.001953125
+          },
+          "1": {
+            "success": 0.728515625,
+            "score": 0.8579101632959055,
+            "timeout": 0.017578125,
+            "steps": 5.7578125,
+            "failed_buy": 0.25390625,
+            "option_loop": 0.0
+          },
+          "2": {
+            "success": 0.73828125,
+            "score": 0.8532260805600649,
+            "timeout": 0.01953125,
+            "steps": 5.783203125,
+            "failed_buy": 0.2421875,
+            "option_loop": 0.0
+          }
+        },
+        "elapsed_seconds": 1037.6185830440372
+      },
+      "aligned_150": {
+        "means": {
+          "success": 0.650390625,
+          "score": 0.7921986748060966,
+          "timeout": 0.028645833333333332,
+          "steps": 5.421223958333333,
+          "failed_buy": 0.3209635416666667,
+          "option_loop": 0.0
+        },
+        "counts": {
+          "success": 999.0,
+          "timeout": 44.0,
+          "failed_buy": 493.0,
+          "option_loop": 0.0,
+          "repeated_option_actions": 14,
+          "format_invalid_actions": 1573,
+          "unexecutable_actions": 187,
+          "steps": 8327
+        },
+        "by_seed": {
+          "0": {
+            "success": 0.642578125,
+            "score": 0.7852779398336039,
+            "timeout": 0.02734375,
+            "steps": 5.4375,
+            "failed_buy": 0.330078125,
+            "option_loop": 0.0
+          },
+          "1": {
+            "success": 0.658203125,
+            "score": 0.8008572823660715,
+            "timeout": 0.02734375,
+            "steps": 5.404296875,
+            "failed_buy": 0.314453125,
+            "option_loop": 0.0
+          },
+          "2": {
+            "success": 0.650390625,
+            "score": 0.7904608022186147,
+            "timeout": 0.03125,
+            "steps": 5.421875,
+            "failed_buy": 0.318359375,
+            "option_loop": 0.0
+          }
+        },
+        "elapsed_seconds": 975.7409419829492
+      },
+      "gigpo_150": {
+        "means": {
+          "success": 0.7063802083333334,
+          "score": 0.8398549694301647,
+          "timeout": 0.037109375,
+          "steps": 5.482421875,
+          "failed_buy": 0.2565104166666667,
+          "option_loop": 0.0
+        },
+        "counts": {
+          "success": 1085.0,
+          "timeout": 57.0,
+          "failed_buy": 394.0,
+          "option_loop": 0.0,
+          "repeated_option_actions": 66,
+          "format_invalid_actions": 3,
+          "unexecutable_actions": 96,
+          "steps": 8421
+        },
+        "by_seed": {
+          "0": {
+            "success": 0.7109375,
+            "score": 0.8403789076591811,
+            "timeout": 0.037109375,
+            "steps": 5.484375,
+            "failed_buy": 0.251953125,
+            "option_loop": 0.0
+          },
+          "1": {
+            "success": 0.708984375,
+            "score": 0.8411113999932359,
+            "timeout": 0.041015625,
+            "steps": 5.509765625,
+            "failed_buy": 0.25,
+            "option_loop": 0.0
+          },
+          "2": {
+            "success": 0.69921875,
+            "score": 0.8380746006380771,
+            "timeout": 0.033203125,
+            "steps": 5.453125,
+            "failed_buy": 0.267578125,
+            "option_loop": 0.0
+          }
+        },
+        "elapsed_seconds": 909.0266521460144
+      }
+    },
+    "paired_contrasts": [
+      {
+        "candidate": "r2_150",
+        "reference": "aligned_150",
+        "metrics": {
+          "success": {
+            "difference": 0.08333333333333334,
+            "ci95": [
+              0.052083333333333336,
+              0.11523437500000001
+            ]
+          },
+          "score": {
+            "difference": 0.06329649264219576,
+            "ci95": [
+              0.03834982274850439,
+              0.08880124316782032
+            ]
+          },
+          "timeout": {
+            "difference": -0.009765625,
+            "ci95": [
+              -0.0234375,
+              0.0039062499999999983
+            ]
+          },
+          "steps": {
+            "difference": 0.361328125,
+            "ci95": [
+              0.229150390625,
+              0.49283854166666663
+            ]
+          }
+        }
+      },
+      {
+        "candidate": "r2_150",
+        "reference": "gigpo_150",
+        "metrics": {
+          "success": {
+            "difference": 0.02734375,
+            "ci95": [
+              0.0026041666666666618,
+              0.052734375
+            ]
+          },
+          "score": {
+            "difference": 0.0156401980181277,
+            "ci95": [
+              -0.004267508722830989,
+              0.03649752265963203
+            ]
+          },
+          "timeout": {
+            "difference": -0.018229166666666664,
+            "ci95": [
+              -0.03190104166666667,
+              -0.005859375000000001
+            ]
+          },
+          "steps": {
+            "difference": 0.3001302083333333,
+            "ci95": [
+              0.15688476562499998,
+              0.44140625
+            ]
+          }
+        }
+      }
+    ],
+    "targets": [
+      {
+        "name": "format_invalid_count",
+        "observed": 67,
+        "rule": "<50",
+        "passed": false
+      },
+      {
+        "name": "format_invalid_rate",
+        "observed": 0.007543346093222247,
+        "denominator": 8882,
+        "rule": "<0.006",
+        "passed": false
+      },
+      {
+        "name": "new116_150_return_navigation",
+        "observed": 48,
+        "AF_subset": 23,
+        "rule": ">0",
+        "passed": true
+      },
+      {
+        "name": "option_loop_episodes",
+        "observed": 1.0,
+        "rule": "==0",
+        "passed": false
+      },
+      {
+        "name": "timeout_rate",
+        "observed": 0.018880208333333332,
+        "rule": "<=0.04",
+        "passed": true
+      },
+      {
+        "name": "successes",
+        "observed": 1127.0,
+        "denominator": 1536,
+        "rule": ">1085",
+        "passed": true
+      }
+    ],
+    "best": [
+      {
+        "score": 0.72265625,
+        "step": 150
+      },
+      {
+        "score": 0.71875,
+        "step": 145
+      },
+      {
+        "score": 0.671875,
+        "step": 140
+      }
+    ],
+    "latest": {
+      "score": 0.72265625,
+      "step": 150
+    },
+    "limitations": [
+      "One training seed with a35round continuation from an already trained aligned115 model.",
+      "Three interventions enabled together; component causal contribution is not identified.",
+      "The fixed512task panel has been used for development; not a new held-out panel.",
+      "Task-cluster bootstrap quantifies panel sampling variation, not training-seed uncertainty."
+    ],
+    "operational_issues": [
+      {
+        "issue": "Planned116 stop produced Ray SIGABRT; monitor initially required inactive.",
+        "resolution": "Accepted validated planned-stop receipt after full file audit; no invalid update."
+      },
+      {
+        "issue": "SSH monitor stdout disconnected after117 verification.",
+        "resolution": "Training continued independently; monitor moved to a durable finite systemd service."
+      },
+      {
+        "issue": "After150, the successful main process exited0; remaining background processes exceeded the30second shutdown timeout. Monitor initially treated deactivating as a failure.",
+        "resolution": "Saved systemd exit and journal evidence, corrected transition handling, verified all final files, and continued evaluation without additional training."
+      },
+      {
+        "issue": "Panel main exited0 after all1536episodes and verification, but one remaining CPU background process exceeded shutdown timeout; monitor rejected the failed service state.",
+        "resolution": "Saved exit and failed-monitor evidence, independently recounted all4608records locally, verified no experiment GPU processes remain, then cleared failed service state. No inference or training was repeated."
+      }
+    ],
+    "evidence": "evidence/polarity_20261111/results.json"
+  }
 }

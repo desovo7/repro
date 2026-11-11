@@ -1,0 +1,510 @@
+{
+  "old": {
+    "status": "PASS",
+    "iterations": 150,
+    "counts": {
+      "trajectories": 19200,
+      "all_actions": 134244
+    },
+    "elapsed_cpu_wall_seconds": 81.86307654099073,
+    "train_traces_sha256": "8fc49e0fc67b615cd95da8869b593413287f4473395f51d286b3c456ecd99b7d",
+    "cohorts": {
+      "baseline": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 9200,
+          "robust_positive": 9200,
+          "negative": 9493,
+          "nonzero": 18693,
+          "sum_centered": 2.0566881531181025e-14,
+          "sum_raw": 2347.679531515193,
+          "mean_centered": 3.879079881399665e-19,
+          "mean_raw": 0.0442791311111881
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 508,
+          "robust_positive": 508,
+          "negative": 1363,
+          "nonzero": 1871,
+          "sum_centered": -13.756592019189814,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": -0.002650085151067196,
+          "mean_raw": 0.005455142089125501
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 492,
+          "robust_positive": 492,
+          "negative": 707,
+          "nonzero": 1199,
+          "sum_centered": 2.2357514424227882,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": 0.0009319514140987029,
+          "mean_raw": 0.011803936050291987
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 587,
+          "robust_positive": 587,
+          "negative": 2637,
+          "nonzero": 3224,
+          "sum_centered": -63.04989218657186,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0032583923610631452,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 68,
+          "robust_positive": 68,
+          "negative": 322,
+          "nonzero": 390,
+          "sum_centered": -8.600544948467828,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0016075784950407156,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 571,
+          "robust_positive": 571,
+          "negative": 1981,
+          "nonzero": 2552,
+          "sum_centered": -47.057548724959084,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0028419826503780095,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 66,
+          "robust_positive": 66,
+          "negative": 40,
+          "nonzero": 106,
+          "sum_centered": -0.8763593923445083,
+          "sum_raw": -0.5253622277889912,
+          "mean_centered": -0.003001230795700371,
+          "mean_raw": -0.0017991857116061343
+        }
+      },
+      "disabled": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 9200,
+          "robust_positive": 9200,
+          "negative": 9493,
+          "nonzero": 18693,
+          "sum_centered": 2.0566881531181025e-14,
+          "sum_raw": 2347.679531515193,
+          "mean_centered": 3.879079881399665e-19,
+          "mean_raw": 0.0442791311111881
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 508,
+          "robust_positive": 508,
+          "negative": 1363,
+          "nonzero": 1871,
+          "sum_centered": -13.756592019189814,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": -0.002650085151067196,
+          "mean_raw": 0.005455142089125501
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 492,
+          "robust_positive": 492,
+          "negative": 707,
+          "nonzero": 1199,
+          "sum_centered": 2.2357514424227882,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": 0.0009319514140987029,
+          "mean_raw": 0.011803936050291987
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 587,
+          "robust_positive": 587,
+          "negative": 2637,
+          "nonzero": 3224,
+          "sum_centered": -63.04989218657186,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0032583923610631452,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 68,
+          "robust_positive": 68,
+          "negative": 322,
+          "nonzero": 390,
+          "sum_centered": -8.600544948467828,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0016075784950407156,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 571,
+          "robust_positive": 571,
+          "negative": 1981,
+          "nonzero": 2552,
+          "sum_centered": -47.057548724959084,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0028419826503780095,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 66,
+          "robust_positive": 66,
+          "negative": 40,
+          "nonzero": 106,
+          "sum_centered": -0.8763593923445083,
+          "sum_raw": -0.5253622277889912,
+          "mean_centered": -0.003001230795700371,
+          "mean_raw": -0.0017991857116061343
+        }
+      },
+      "combined": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 7312,
+          "robust_positive": 7311,
+          "negative": 6085,
+          "nonzero": 13397,
+          "sum_centered": 1.584843367652411e-14,
+          "sum_raw": 2311.125995314741,
+          "mean_centered": 2.9891425266925896e-19,
+          "mean_raw": 0.0435897019108778
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        }
+      }
+    },
+    "return_navigation_all_trajectories": {
+      "all150": 399,
+      "other": 399
+    }
+  },
+  "aligned": {
+    "status": "PASS",
+    "iterations": 150,
+    "counts": {
+      "trajectories": 19200,
+      "all_actions": 139084
+    },
+    "elapsed_cpu_wall_seconds": 86.84365714900196,
+    "train_traces_sha256": "c6f587d2af83f1ecee3a7de387f2696a4c2494c10d82d40921c1c95d46333bb1",
+    "cohorts": {
+      "baseline": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 11757,
+          "robust_positive": 11749,
+          "negative": 12685,
+          "nonzero": 24442,
+          "sum_centered": 1.2684298056342413e-14,
+          "sum_raw": 2320.465842775349,
+          "mean_centered": 2.3830571056686293e-19,
+          "mean_raw": 0.04359565338597608
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 4161,
+          "robust_positive": 4158,
+          "negative": 5021,
+          "nonzero": 9182,
+          "sum_centered": -6.171052973036044,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": -0.0004106096861425274,
+          "mean_raw": 0.04828090524089884
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 4019,
+          "robust_positive": 4018,
+          "negative": 3408,
+          "nonzero": 7427,
+          "sum_centered": 28.22553747233002,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": 0.0027545171730584584,
+          "mean_raw": 0.07081230846740204
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 740,
+          "robust_positive": 735,
+          "negative": 4197,
+          "nonzero": 4937,
+          "sum_centered": -86.35461828016061,
+          "sum_raw": 0.0,
+          "mean_centered": -0.004445311349745733,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 156,
+          "robust_positive": 155,
+          "negative": 499,
+          "nonzero": 655,
+          "sum_centered": -7.973934409614604,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0014714771008700136,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 598,
+          "robust_positive": 595,
+          "negative": 2584,
+          "nonzero": 3182,
+          "sum_centered": -51.958027834793924,
+          "sum_raw": 0.0,
+          "mean_centered": -0.003548076197404666,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 246,
+          "robust_positive": 246,
+          "negative": 276,
+          "nonzero": 522,
+          "sum_centered": -15.259112388787765,
+          "sum_raw": -18.42738102939521,
+          "mean_centered": -0.014814672222124044,
+          "mean_raw": -0.017890661193587582
+        }
+      },
+      "disabled": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 11757,
+          "robust_positive": 11749,
+          "negative": 12685,
+          "nonzero": 24442,
+          "sum_centered": 1.2684298056342413e-14,
+          "sum_raw": 2320.465842775349,
+          "mean_centered": 2.3830571056686293e-19,
+          "mean_raw": 0.04359565338597608
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 4161,
+          "robust_positive": 4158,
+          "negative": 5021,
+          "nonzero": 9182,
+          "sum_centered": -6.171052973036044,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": -0.0004106096861425274,
+          "mean_raw": 0.04828090524089884
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 4019,
+          "robust_positive": 4018,
+          "negative": 3408,
+          "nonzero": 7427,
+          "sum_centered": 28.22553747233002,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": 0.0027545171730584584,
+          "mean_raw": 0.07081230846740204
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 740,
+          "robust_positive": 735,
+          "negative": 4197,
+          "nonzero": 4937,
+          "sum_centered": -86.35461828016061,
+          "sum_raw": 0.0,
+          "mean_centered": -0.004445311349745733,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 156,
+          "robust_positive": 155,
+          "negative": 499,
+          "nonzero": 655,
+          "sum_centered": -7.973934409614604,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0014714771008700136,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 598,
+          "robust_positive": 595,
+          "negative": 2584,
+          "nonzero": 3182,
+          "sum_centered": -51.958027834793924,
+          "sum_raw": 0.0,
+          "mean_centered": -0.003548076197404666,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 246,
+          "robust_positive": 246,
+          "negative": 276,
+          "nonzero": 522,
+          "sum_centered": -15.259112388787765,
+          "sum_raw": -18.42738102939521,
+          "mean_centered": -0.014814672222124044,
+          "mean_raw": -0.017890661193587582
+        }
+      },
+      "combined": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 3252,
+          "robust_positive": 3251,
+          "negative": 4950,
+          "nonzero": 8202,
+          "sum_centered": 1.3933298959045715e-14,
+          "sum_raw": 1293.8231002343741,
+          "mean_centered": 2.617712619355912e-19,
+          "mean_raw": 0.024307646499603097
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        }
+      }
+    },
+    "return_navigation_all_trajectories": {
+      "all150": 1385,
+      "other": 1383,
+      "100_135": 2,
+      "101_150": 2
+    }
+  }
+}

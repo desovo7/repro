@@ -63,5 +63,23 @@
   "passed_tests": 127,
   "skipped_tests": 8,
   "skip_reason": "Eight opt-in native ALFWorld integration tests require V83_NATIVE_CPU or V83_NATIVE_COLLECTOR_CPU and supplied paths; they were not enabled for publication.",
-  "scope": "CPU checks of the packaged experiment source in the training Python environment with CUDA_VISIBLE_DEVICES empty; no training launched."
+  "scope": "CPU checks of the packaged experiment source in the training Python environment with CUDA_VISIBLE_DEVICES empty; no training launched.",
+  "polarity_update_20261111": {
+    "status": "PASS",
+    "scope": "New experiment package and evidence publication; no new training or inference",
+    "tests": {
+      "total": 42,
+      "passed": 41,
+      "skipped": 1,
+      "reason": "Local Python has no PyTorch; historical pretraining H800 run passed all42 including tensor path."
+    },
+    "metric_rows_recounted": 4608,
+    "paired_contrasts_recomputed": 2,
+    "task_repeat_ordering": "PASS",
+    "edited_document_links": "PASS",
+    "runtime_modules_match_frozen_run": 9,
+    "original_three_runtime_packages_unchanged": true,
+    "local_test_log": "evidence/polarity_20261111/publication_cpu_tests.log",
+    "historical_all42_log": "evidence/polarity_20261111/remote_cpu_tests.log"
+  }
 }

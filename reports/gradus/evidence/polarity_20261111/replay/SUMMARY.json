@@ -1,0 +1,984 @@
+{
+  "old": {
+    "status": "PASS",
+    "iterations": 150,
+    "counts": {
+      "trajectories": 19200,
+      "all_actions": 134244
+    },
+    "elapsed_cpu_wall_seconds": 140.45117079094052,
+    "train_traces_sha256": "8fc49e0fc67b615cd95da8869b593413287f4473395f51d286b3c456ecd99b7d",
+    "cohorts": {
+      "baseline": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 9200,
+          "robust_positive": 9200,
+          "negative": 9493,
+          "nonzero": 18693,
+          "sum_centered": 2.0566881531181025e-14,
+          "sum_raw": 2347.679531515193,
+          "mean_centered": 3.879079881399665e-19,
+          "mean_raw": 0.0442791311111881
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 508,
+          "robust_positive": 508,
+          "negative": 1363,
+          "nonzero": 1871,
+          "sum_centered": -13.756592019189814,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": -0.002650085151067196,
+          "mean_raw": 0.005455142089125501
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 492,
+          "robust_positive": 492,
+          "negative": 707,
+          "nonzero": 1199,
+          "sum_centered": 2.2357514424227882,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": 0.0009319514140987029,
+          "mean_raw": 0.011803936050291987
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 587,
+          "robust_positive": 587,
+          "negative": 2637,
+          "nonzero": 3224,
+          "sum_centered": -63.04989218657186,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0032583923610631452,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 68,
+          "robust_positive": 68,
+          "negative": 322,
+          "nonzero": 390,
+          "sum_centered": -8.600544948467828,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0016075784950407156,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 571,
+          "robust_positive": 571,
+          "negative": 1981,
+          "nonzero": 2552,
+          "sum_centered": -47.057548724959084,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0028419826503780095,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 66,
+          "robust_positive": 66,
+          "negative": 40,
+          "nonzero": 106,
+          "sum_centered": -0.8763593923445083,
+          "sum_raw": -0.5253622277889912,
+          "mean_centered": -0.003001230795700371,
+          "mean_raw": -0.0017991857116061343
+        }
+      },
+      "disabled": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 9200,
+          "robust_positive": 9200,
+          "negative": 9493,
+          "nonzero": 18693,
+          "sum_centered": 2.0566881531181025e-14,
+          "sum_raw": 2347.679531515193,
+          "mean_centered": 3.879079881399665e-19,
+          "mean_raw": 0.0442791311111881
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 508,
+          "robust_positive": 508,
+          "negative": 1363,
+          "nonzero": 1871,
+          "sum_centered": -13.756592019189814,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": -0.002650085151067196,
+          "mean_raw": 0.005455142089125501
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 492,
+          "robust_positive": 492,
+          "negative": 707,
+          "nonzero": 1199,
+          "sum_centered": 2.2357514424227882,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": 0.0009319514140987029,
+          "mean_raw": 0.011803936050291987
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 587,
+          "robust_positive": 587,
+          "negative": 2637,
+          "nonzero": 3224,
+          "sum_centered": -63.04989218657186,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0032583923610631452,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 68,
+          "robust_positive": 68,
+          "negative": 322,
+          "nonzero": 390,
+          "sum_centered": -8.600544948467828,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0016075784950407156,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 571,
+          "robust_positive": 571,
+          "negative": 1981,
+          "nonzero": 2552,
+          "sum_centered": -47.057548724959084,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0028419826503780095,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 66,
+          "robust_positive": 66,
+          "negative": 40,
+          "nonzero": 106,
+          "sum_centered": -0.8763593923445083,
+          "sum_raw": -0.5253622277889912,
+          "mean_centered": -0.003001230795700371,
+          "mean_raw": -0.0017991857116061343
+        }
+      },
+      "eligibility_only": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 7482,
+          "robust_positive": 7481,
+          "negative": 6400,
+          "nonzero": 13882,
+          "sum_centered": 1.3961054534661343e-14,
+          "sum_raw": 2308.7989074914017,
+          "mean_centered": 2.6331675848097593e-19,
+          "mean_raw": 0.04354581115600531
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 64,
+          "robust_positive": 64,
+          "negative": 279,
+          "nonzero": 343,
+          "sum_centered": -11.512739256107544,
+          "sum_raw": 0.0,
+          "mean_centered": -0.00215191387964627,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 7,
+          "robust_positive": 7,
+          "negative": 10,
+          "nonzero": 17,
+          "sum_centered": -1.8328777942471364,
+          "sum_raw": -2.2824245164212775,
+          "mean_centered": -0.0062769787474217,
+          "mean_raw": -0.007816522316511225
+        }
+      },
+      "return_only": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 9019,
+          "robust_positive": 9019,
+          "negative": 8647,
+          "nonzero": 17666,
+          "sum_centered": 1.96787031114809e-14,
+          "sum_raw": 2347.7471460754136,
+          "mean_centered": 3.711562261690098e-19,
+          "mean_raw": 0.04428040637637521
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 442,
+          "robust_positive": 442,
+          "negative": 920,
+          "nonzero": 1362,
+          "sum_centered": -14.659664314902678,
+          "sum_raw": 26.682666596729685,
+          "mean_centered": -0.002824054000173893,
+          "mean_raw": 0.00514017850062217
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 430,
+          "robust_positive": 430,
+          "negative": 555,
+          "nonzero": 985,
+          "sum_centered": 1.0416556240521118,
+          "sum_raw": 26.682666596729685,
+          "mean_centered": 0.00043420409506132214,
+          "mean_raw": 0.011122412087006955
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 513,
+          "robust_positive": 513,
+          "negative": 2126,
+          "nonzero": 2639,
+          "sum_centered": -63.94349618594705,
+          "sum_raw": 0.0,
+          "mean_centered": -0.003304573446302173,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 66,
+          "robust_positive": 66,
+          "negative": 277,
+          "nonzero": 343,
+          "sum_centered": -8.475091617845797,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0015841292743637003,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 501,
+          "robust_positive": 501,
+          "negative": 1761,
+          "nonzero": 2262,
+          "sum_centered": -48.24217624699215,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0029135267693557285,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        }
+      },
+      "buy_only": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 9104,
+          "robust_positive": 9104,
+          "negative": 9180,
+          "nonzero": 18284,
+          "sum_centered": 2.300937218535637e-14,
+          "sum_raw": 2347.679531515193,
+          "mean_centered": 4.339753335600975e-19,
+          "mean_raw": 0.0442791311111881
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 504,
+          "robust_positive": 504,
+          "negative": 1338,
+          "nonzero": 1842,
+          "sum_centered": -14.106357248427166,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": -0.0027174643129314517,
+          "mean_raw": 0.005455142089125501
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 488,
+          "robust_positive": 488,
+          "negative": 682,
+          "nonzero": 1170,
+          "sum_centered": 2.0700211029109687,
+          "sum_raw": 28.317642584650475,
+          "mean_centered": 0.0008628683213467982,
+          "mean_raw": 0.011803936050291987
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 587,
+          "robust_positive": 587,
+          "negative": 2637,
+          "nonzero": 3224,
+          "sum_centered": -65.49399196322038,
+          "sum_raw": 0.0,
+          "mean_centered": -0.003384702427039813,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 571,
+          "robust_positive": 571,
+          "negative": 1981,
+          "nonzero": 2552,
+          "sum_centered": -49.31761361188232,
+          "sum_raw": 0.0,
+          "mean_centered": -0.002978476483384607,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 65,
+          "robust_positive": 65,
+          "negative": 40,
+          "nonzero": 105,
+          "sum_centered": -1.0280558018939918,
+          "sum_raw": -0.5253622277889912,
+          "mean_centered": -0.0035207390475821636,
+          "mean_raw": -0.0017991857116061343
+        }
+      },
+      "combined": {
+        "all_AF": {
+          "n": 53020,
+          "positive": 7312,
+          "robust_positive": 7311,
+          "negative": 6085,
+          "nonzero": 13397,
+          "sum_centered": 1.584843367652411e-14,
+          "sum_raw": 2311.125995314741,
+          "mean_centered": 2.9891425266925896e-19,
+          "mean_raw": 0.0435897019108778
+        },
+        "format_invalid": {
+          "n": 5191,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "format_invalid_not_noop": {
+          "n": 2399,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop": {
+          "n": 19350,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5350,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 16558,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 292,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        }
+      }
+    },
+    "return_navigation_all_trajectories": {
+      "all150": 399,
+      "other": 399
+    }
+  },
+  "aligned": {
+    "status": "PASS",
+    "iterations": 150,
+    "counts": {
+      "trajectories": 19200,
+      "all_actions": 139084
+    },
+    "elapsed_cpu_wall_seconds": 148.1192458400037,
+    "train_traces_sha256": "c6f587d2af83f1ecee3a7de387f2696a4c2494c10d82d40921c1c95d46333bb1",
+    "cohorts": {
+      "baseline": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 11757,
+          "robust_positive": 11749,
+          "negative": 12685,
+          "nonzero": 24442,
+          "sum_centered": 1.2684298056342413e-14,
+          "sum_raw": 2320.465842775349,
+          "mean_centered": 2.3830571056686293e-19,
+          "mean_raw": 0.04359565338597608
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 4161,
+          "robust_positive": 4158,
+          "negative": 5021,
+          "nonzero": 9182,
+          "sum_centered": -6.171052973036044,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": -0.0004106096861425274,
+          "mean_raw": 0.04828090524089884
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 4019,
+          "robust_positive": 4018,
+          "negative": 3408,
+          "nonzero": 7427,
+          "sum_centered": 28.22553747233002,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": 0.0027545171730584584,
+          "mean_raw": 0.07081230846740204
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 740,
+          "robust_positive": 735,
+          "negative": 4197,
+          "nonzero": 4937,
+          "sum_centered": -86.35461828016061,
+          "sum_raw": 0.0,
+          "mean_centered": -0.004445311349745733,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 156,
+          "robust_positive": 155,
+          "negative": 499,
+          "nonzero": 655,
+          "sum_centered": -7.973934409614604,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0014714771008700136,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 598,
+          "robust_positive": 595,
+          "negative": 2584,
+          "nonzero": 3182,
+          "sum_centered": -51.958027834793924,
+          "sum_raw": 0.0,
+          "mean_centered": -0.003548076197404666,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 246,
+          "robust_positive": 246,
+          "negative": 276,
+          "nonzero": 522,
+          "sum_centered": -15.259112388787765,
+          "sum_raw": -18.42738102939521,
+          "mean_centered": -0.014814672222124044,
+          "mean_raw": -0.017890661193587582
+        }
+      },
+      "disabled": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 11757,
+          "robust_positive": 11749,
+          "negative": 12685,
+          "nonzero": 24442,
+          "sum_centered": 1.2684298056342413e-14,
+          "sum_raw": 2320.465842775349,
+          "mean_centered": 2.3830571056686293e-19,
+          "mean_raw": 0.04359565338597608
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 4161,
+          "robust_positive": 4158,
+          "negative": 5021,
+          "nonzero": 9182,
+          "sum_centered": -6.171052973036044,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": -0.0004106096861425274,
+          "mean_raw": 0.04828090524089884
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 4019,
+          "robust_positive": 4018,
+          "negative": 3408,
+          "nonzero": 7427,
+          "sum_centered": 28.22553747233002,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": 0.0027545171730584584,
+          "mean_raw": 0.07081230846740204
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 740,
+          "robust_positive": 735,
+          "negative": 4197,
+          "nonzero": 4937,
+          "sum_centered": -86.35461828016061,
+          "sum_raw": 0.0,
+          "mean_centered": -0.004445311349745733,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 156,
+          "robust_positive": 155,
+          "negative": 499,
+          "nonzero": 655,
+          "sum_centered": -7.973934409614604,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0014714771008700136,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 598,
+          "robust_positive": 595,
+          "negative": 2584,
+          "nonzero": 3182,
+          "sum_centered": -51.958027834793924,
+          "sum_raw": 0.0,
+          "mean_centered": -0.003548076197404666,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 246,
+          "robust_positive": 246,
+          "negative": 276,
+          "nonzero": 522,
+          "sum_centered": -15.259112388787765,
+          "sum_raw": -18.42738102939521,
+          "mean_centered": -0.014814672222124044,
+          "mean_raw": -0.017890661193587582
+        }
+      },
+      "eligibility_only": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 3622,
+          "robust_positive": 3619,
+          "negative": 5521,
+          "nonzero": 9143,
+          "sum_centered": 1.226796442210798e-14,
+          "sum_raw": 1270.6888633299939,
+          "mean_centered": 2.3048386011062016e-19,
+          "mean_raw": 0.02387301300712033
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 124,
+          "robust_positive": 124,
+          "negative": 287,
+          "nonzero": 411,
+          "sum_centered": -8.894388840633246,
+          "sum_raw": 0.0,
+          "mean_centered": -0.001641333980556052,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 56,
+          "robust_positive": 56,
+          "negative": 105,
+          "nonzero": 161,
+          "sum_centered": -11.983168819722719,
+          "sum_raw": -19.700826282253995,
+          "mean_centered": -0.011634144485167688,
+          "mean_raw": -0.019127015808013587
+        }
+      },
+      "return_only": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 10769,
+          "robust_positive": 10769,
+          "negative": 9419,
+          "nonzero": 20188,
+          "sum_centered": 1.3572476476042539e-14,
+          "sum_raw": 2342.1080840419386,
+          "mean_centered": 2.5499232487351416e-19,
+          "mean_raw": 0.044002256073833554
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 3901,
+          "robust_positive": 3901,
+          "negative": 3430,
+          "nonzero": 7331,
+          "sum_centered": -7.261103504451672,
+          "sum_raw": 727.2000581678683,
+          "mean_centered": -0.00048313949726872527,
+          "mean_raw": 0.0483864567281834
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 3834,
+          "robust_positive": 3834,
+          "negative": 2693,
+          "nonzero": 6527,
+          "sum_centered": 29.058794439683044,
+          "sum_raw": 727.2000581678683,
+          "mean_centered": 0.0028358343358722594,
+          "mean_raw": 0.07096711800213412
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 278,
+          "robust_positive": 278,
+          "negative": 2437,
+          "nonzero": 2715,
+          "sum_centered": -97.10885759948498,
+          "sum_raw": 0.0,
+          "mean_centered": -0.004998911644161689,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 39,
+          "robust_positive": 39,
+          "negative": 310,
+          "nonzero": 349,
+          "sum_centered": -10.913833520984328,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0020139940064558643,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 211,
+          "robust_positive": 211,
+          "negative": 1700,
+          "nonzero": 1911,
+          "sum_centered": -60.788959655350084,
+          "sum_raw": 0.0,
+          "mean_centered": -0.00415111715756283,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        }
+      },
+      "buy_only": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 11583,
+          "robust_positive": 11576,
+          "negative": 12195,
+          "nonzero": 23778,
+          "sum_centered": 1.6237011735142914e-14,
+          "sum_raw": 2320.465842775349,
+          "mean_centered": 3.0505216779346785e-19,
+          "mean_raw": 0.04359565338597608
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 4124,
+          "robust_positive": 4122,
+          "negative": 4919,
+          "nonzero": 9043,
+          "sum_centered": -7.1406723269219565,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": -0.00047512624438897843,
+          "mean_raw": 0.04828090524089884
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 3982,
+          "robust_positive": 3982,
+          "negative": 3306,
+          "nonzero": 7288,
+          "sum_centered": 27.304146328601572,
+          "sum_raw": 725.6137248654687,
+          "mean_centered": 0.002664599036654784,
+          "mean_raw": 0.07081230846740204
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 740,
+          "robust_positive": 735,
+          "negative": 4197,
+          "nonzero": 4937,
+          "sum_centered": -87.61536518812851,
+          "sum_raw": 0.0,
+          "mean_centered": -0.004510211324417199,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 598,
+          "robust_positive": 595,
+          "negative": 2584,
+          "nonzero": 3182,
+          "sum_centered": -53.17054653260522,
+          "sum_raw": 0.0,
+          "mean_centered": -0.0036308758899621157,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 243,
+          "robust_positive": 243,
+          "negative": 276,
+          "nonzero": 519,
+          "sum_centered": -14.828803033466423,
+          "sum_raw": -18.42738102939521,
+          "mean_centered": -0.014396896148996528,
+          "mean_raw": -0.017890661193587582
+        }
+      },
+      "combined": {
+        "all_AF": {
+          "n": 53227,
+          "positive": 3252,
+          "robust_positive": 3251,
+          "negative": 4950,
+          "nonzero": 8202,
+          "sum_centered": 1.3933298959045715e-14,
+          "sum_raw": 1293.8231002343741,
+          "mean_centered": 2.617712619355912e-19,
+          "mean_raw": 0.024307646499603097
+        },
+        "format_invalid": {
+          "n": 15029,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "format_invalid_not_noop": {
+          "n": 10247,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop": {
+          "n": 19426,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "terminal_buy": {
+          "n": 5419,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "noop_not_format_invalid": {
+          "n": 14644,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        },
+        "return_navigation": {
+          "n": 1030,
+          "positive": 0,
+          "robust_positive": 0,
+          "negative": 0,
+          "nonzero": 0,
+          "sum_centered": 0.0,
+          "sum_raw": 0.0,
+          "mean_centered": 0.0,
+          "mean_raw": 0.0
+        }
+      }
+    },
+    "return_navigation_all_trajectories": {
+      "all150": 1385,
+      "other": 1383,
+      "100_135": 2,
+      "101_150": 2
+    }
+  }
+}

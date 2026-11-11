@@ -1,0 +1,504 @@
+{
+  "invalid_format_reasons": {
+    "missing_action_tag": 61,
+    "contains_Chinese": 6
+  },
+  "unexecutable_action_counts": [
+    [
+      "click[3x-large]",
+      18
+    ],
+    [
+      "click[b07hrfsnl4]",
+      16
+    ],
+    [
+      "click[color]",
+      14
+    ],
+    [
+      "click[black]",
+      9
+    ],
+    [
+      "click[b-white]",
+      9
+    ],
+    [
+      "click[price]",
+      8
+    ],
+    [
+      "click[4x]",
+      7
+    ],
+    [
+      "click[6]",
+      7
+    ],
+    [
+      "click[size]",
+      6
+    ],
+    [
+      "click[b09qxf3v3x]",
+      5
+    ],
+    [
+      "click[c-yellow]",
+      5
+    ],
+    [
+      "click[charcoal heather]",
+      5
+    ],
+    [
+      "click[khaki]",
+      4
+    ],
+    [
+      "click[b09m63b87v]",
+      4
+    ],
+    [
+      "click[maroon]",
+      3
+    ],
+    [
+      "click[a2-black]",
+      3
+    ],
+    [
+      "click[b-navy]",
+      3
+    ],
+    [
+      "click[high waist]",
+      3
+    ],
+    [
+      "click[small]",
+      3
+    ],
+    [
+      "click[a2-wine]",
+      3
+    ],
+    [
+      "click[b08p8lrfz4]",
+      3
+    ],
+    [
+      "click[navy]",
+      3
+    ],
+    [
+      "click[military green]",
+      3
+    ],
+    [
+      "click[search]",
+      3
+    ],
+    [
+      "click[type 7-grey]",
+      3
+    ],
+    [
+      "click[8.5]",
+      3
+    ],
+    [
+      "click[navy blue]",
+      3
+    ],
+    [
+      "click[3x]",
+      3
+    ],
+    [
+      "click[medium]",
+      3
+    ],
+    [
+      "click[buy now]",
+      3
+    ],
+    [
+      "click[a4-gray]",
+      3
+    ],
+    [
+      "click[pink]",
+      3
+    ],
+    [
+      "click[white]",
+      2
+    ],
+    [
+      "e x-large, b5-purple",
+      2
+    ],
+    [
+      "ry is not clear. the",
+      2
+    ],
+    [
+      "click[a3-army green]",
+      2
+    ],
+    [
+      "lue x-large, a1-blue",
+      2
+    ],
+    [
+      "click[b09qpx97vw]",
+      2
+    ],
+    [
+      "click[b08klhmpp9]",
+      2
+    ],
+    [
+      "click[10.5]",
+      2
+    ],
+    [
+      "click[red]",
+      2
+    ],
+    [
+      "click[r.brown1877]",
+      2
+    ],
+    [
+      "click[4t]",
+      2
+    ],
+    [
+      "s top, a01#sky blue ",
+      2
+    ],
+    [
+      "click[b09b77k9yq]",
+      2
+    ],
+    [
+      " top, b5-black large",
+      1
+    ],
+    [
+      "duct, but the user's",
+      1
+    ],
+    [
+      " d1-orange d1-orange",
+      1
+    ],
+    [
+      "t恤\n40. 面料类型：t恤\n41. �",
+      1
+    ],
+    [
+      "click[b01mqh5vgr]",
+      1
+    ],
+    [
+      "he criteria provided",
+      1
+    ],
+    [
+      "s top, a6-blue women",
+      1
+    ],
+    [
+      "uit with long sleeve",
+      1
+    ],
+    [
+      " (medium), c5-purple",
+      1
+    ],
+    [
+      "5-purple women's tee",
+      1
+    ],
+    [
+      "omen's long sleeve t",
+      1
+    ],
+    [
+      "p, c5-purple women's",
+      1
+    ],
+    [
+      "omen's short sleeve,",
+      1
+    ],
+    [
+      "men's top, c5-purple",
+      1
+    ],
+    [
+      "click[b097rk2b2q]",
+      1
+    ],
+    [
+      "s, b17-black women's",
+      1
+    ],
+    [
+      "women's blouse color",
+      1
+    ],
+    [
+      "click[b07fgqkz1]",
+      1
+    ],
+    [
+      "click[high density]",
+      1
+    ],
+    [
+      "rice lower than $40.",
+      1
+    ],
+    [
+      "click[b07q87p8dq]",
+      1
+    ],
+    [
+      "size large size top,",
+      1
+    ],
+    [
+      "click[34]",
+      1
+    ],
+    [
+      "k, c3-black c3-black",
+      1
+    ],
+    [
+      "ser's request is not",
+      1
+    ],
+    [
+      "for a specific item,",
+      1
+    ],
+    [
+      "the color, fit type,",
+      1
+    ],
+    [
+      "s query is not clear",
+      1
+    ],
+    [
+      "gray women's tees, a",
+      1
+    ],
+    [
+      "click[purple]",
+      1
+    ],
+    [
+      " is for a large size",
+      1
+    ],
+    [
+      "a specific item, but",
+      1
+    ],
+    [
+      "click[lavender]",
+      1
+    ],
+    [
+      "1-orange d1-orange d",
+      1
+    ],
+    [
+      "click[silver]",
+      1
+    ],
+    [
+      " red, b17-wine red b",
+      1
+    ],
+    [
+      "click[b17-wine red]",
+      1
+    ],
+    [
+      "it with long sleeve,",
+      1
+    ],
+    [
+      "on closure, hot pink",
+      1
+    ],
+    [
+      "ve, hot pink women's",
+      1
+    ],
+    [
+      "ot clear. the user's",
+      1
+    ],
+    [
+      "women's short sleeve",
+      1
+    ],
+    [
+      "click[tie dye blue]",
+      1
+    ],
+    [
+      "click[b095sx6366]",
+      1
+    ],
+    [
+      "-hot pink small size",
+      1
+    ],
+    [
+      "湿度为干\n48. 面料为干\n49. 洗水",
+      1
+    ],
+    [
+      "en's long sleeve tee",
+      1
+    ],
+    [
+      "click[color: charcoal heather (light)]",
+      1
+    ],
+    [
+      "r a specific product",
+      1
+    ],
+    [
+      "f the price is lower",
+      1
+    ],
+    [
+      "n, 59x79in, 59x79in,",
+      1
+    ],
+    [
+      "e x-large, d1-orange",
+      1
+    ],
+    [
+      "$50.00\n39. 价格： $50.0",
+      1
+    ],
+    [
+      "a specific color and",
+      1
+    ],
+    [
+      "quest might be for a",
+      1
+    ],
+    [
+      "click[color:white]",
+      1
+    ],
+    [
+      "is for a material of",
+      1
+    ],
+    [
+      " user's query is not",
+      1
+    ],
+    [
+      "click[b07dkgjr74]",
+      1
+    ],
+    [
+      "click[7-grey]",
+      1
+    ],
+    [
+      "zxxtc: coralpearl in",
+      1
+    ],
+    [
+      "he user's request is",
+      1
+    ],
+    [
+      "ge women's blouse, c",
+      1
+    ],
+    [
+      "click[36]",
+      1
+    ],
+    [
+      "价格：$60\n48. 价格：$60\n49",
+      1
+    ],
+    [
+      "click[gray]",
+      1
+    ],
+    [
+      "3-wine women's top -",
+      1
+    ],
+    [
+      "click[r.brown2626]",
+      1
+    ],
+    [
+      " a1-blue x-large, a1",
+      1
+    ],
+    [
+      " also for a specific",
+      1
+    ],
+    [
+      "item, but the user's",
+      1
+    ],
+    [
+      " a specific product,",
+      1
+    ]
+  ],
+  "option_loop_examples": [
+    {
+      "source": "panel/jobs/r2_150/seed_0_batch_3.jsonl",
+      "line": 97,
+      "task_uid": "26aa49fc29f842acf216548abe540bdaac35c383e12209c1ca11b486cf676a6d",
+      "panel_index": 480,
+      "replicate_seed": 0,
+      "success": true,
+      "actions": [
+        "search[e-blue, size: 4x-large, price: $50, button closure]",
+        "click[b078wsnd96]",
+        "click[4x-large]",
+        "click[e-blue]",
+        "click[4x-large]",
+        "click[4x-large]",
+        "click[e-blue]",
+        "click[4x-large]",
+        "click[4x-large]",
+        "click[e-blue]",
+        "click[4x-large]",
+        "click[4x-large]",
+        "click[e-blue]",
+        "click[4x-large]",
+        "click[buy now]"
+      ]
+    }
+  ],
+  "note": "option_loop means at least3 immediate same-option repeats accumulated in an episode under the fixed panel definition; the sole flagged episode succeeds on its15th step."
+}

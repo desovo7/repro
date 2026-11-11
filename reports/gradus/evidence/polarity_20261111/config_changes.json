@@ -1,0 +1,103 @@
+[
+  {
+    "path": "data.train_files",
+    "before": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/data/train.parquet",
+    "after": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/data/train.parquet"
+  },
+  {
+    "path": "data.val_files",
+    "before": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/data/test.parquet",
+    "after": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/data/test.parquet"
+  },
+  {
+    "path": "gradus_webshop.gate_invalid_noop",
+    "before": null,
+    "after": true
+  },
+  {
+    "path": "gradus_webshop.neutral_terminal_buy",
+    "before": null,
+    "after": true
+  },
+  {
+    "path": "gradus_webshop.return_credit_mode",
+    "before": null,
+    "after": "neutral"
+  },
+  {
+    "path": "native_persistence.diagnostic_steps",
+    "before": [
+      115,
+      135
+    ],
+    "after": [
+      115,
+      116
+    ]
+  },
+  {
+    "path": "native_persistence.identity.config_hash",
+    "before": "e228986968dc42900167e3e1871787e54b9e58f52ad2f98a4cf60b5ce89c19e1",
+    "after": "95daf6b37badc6b29d1428279ce25195be61d147a24179a75668ad87c482adf1"
+  },
+  {
+    "path": "native_persistence.identity.run_id",
+    "before": "gradus-webshop-h800-s0-r2aligned-20261109",
+    "after": "gradus-webshop-h800-s0-polarity-from115-20261111"
+  },
+  {
+    "path": "ray_init._temp_dir",
+    "before": "/tmp/ws-gradus-h800-r2aligned-20261109",
+    "after": "/tmp/ws-polarity-h800-20261111"
+  },
+  {
+    "path": "ray_init.runtime_env.env_vars.PYTHONPATH",
+    "before": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/source:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/deps-direct:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/deps",
+    "after": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/source:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/deps-direct:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/deps"
+  },
+  {
+    "path": "trainer.default_local_dir",
+    "before": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/checkpoints",
+    "after": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints"
+  },
+  {
+    "path": "trainer.experiment_name",
+    "before": "gradus-webshop-h800-s0-r2aligned-20261109",
+    "after": "gradus-webshop-h800-s0-polarity-from115-20261111"
+  },
+  {
+    "path": "trainer.val_before_train",
+    "before": true,
+    "after": false
+  },
+  {
+    "path": "trainer.validation_data_dir",
+    "before": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/validation_generations",
+    "after": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/validation_generations"
+  },
+  {
+    "path": "webshop_release.files.adapter.py",
+    "before": "82454e0ac56dfa2f32494f184f45c21c062f132833748d382802646a88b2a35c",
+    "after": "f227953e5930b3bc4aa6287175b664ae97c0bee510bb2ee76a7fa9825fccaed7"
+  },
+  {
+    "path": "webshop_release.files.core.py",
+    "before": "ff48834d56e10e327d2ad99b31e7c9e3477c8466c376a4647d19bbc0d522e804",
+    "after": "1c72ed983b41a15d864eb97a5d0f16b5fa742f7a880d0705078a2b11a92f0477"
+  },
+  {
+    "path": "webshop_release.files.integration.py",
+    "before": "c4fb32ff57bd5a2c0270de5874e3c3ccc0df254982fcc7c9b41c16ffc76c222b",
+    "after": "f2102fd3d97ab44d34c5390fd62512fef6f283476cb787bd3487f51eb87537c9"
+  },
+  {
+    "path": "webshop_release.files.persistence.py",
+    "before": "669e132fcb545fe7aea5d8393cb8e8b4b2ca388ff94e8edf2c11a79b01e24c57",
+    "after": "3c31fb742f3129262bb798fa941bdcba40628e189f720a748edf0f7af15aed35"
+  },
+  {
+    "path": "webshop_release.files.r2_credit.py",
+    "before": "5e8fba962e62d9d8c4a116c480c7c2cb260a62d8aa52d0ec719c47942f068039",
+    "after": "f381dfd14b422c0048035bcad3a01959a8c38efebdfe0f5b6becd985085de11f"
+  }
+]

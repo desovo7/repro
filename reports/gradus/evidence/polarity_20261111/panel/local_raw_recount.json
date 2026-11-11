@@ -1,0 +1,65 @@
+{
+  "r2_150": {
+    "episodes": 1536,
+    "wins": 1127.0,
+    "timeouts": 29.0,
+    "means": {
+      "success": 0.7337239583333334,
+      "score": 0.8554951674482925,
+      "timeout": 0.018880208333333332,
+      "steps": 5.782552083333333
+    },
+    "action_counts": {
+      "format_invalid_actions": 67,
+      "unexecutable_actions": 269,
+      "repeated_option_actions": 29,
+      "option_loop": 1,
+      "failed_buy": 380,
+      "steps": 8882
+    },
+    "raw_terminal_recount": "passed",
+    "native_projection_and_action_recount": "passed"
+  },
+  "aligned_150": {
+    "episodes": 1536,
+    "wins": 999.0,
+    "timeouts": 44.0,
+    "means": {
+      "success": 0.650390625,
+      "score": 0.7921986748060966,
+      "timeout": 0.028645833333333332,
+      "steps": 5.421223958333333
+    },
+    "action_counts": {
+      "format_invalid_actions": 1573,
+      "unexecutable_actions": 187,
+      "repeated_option_actions": 14,
+      "option_loop": 0,
+      "failed_buy": 493,
+      "steps": 8327
+    },
+    "raw_terminal_recount": "passed",
+    "native_projection_and_action_recount": "passed"
+  },
+  "gigpo_150": {
+    "episodes": 1536,
+    "wins": 1085.0,
+    "timeouts": 57.0,
+    "means": {
+      "success": 0.7063802083333334,
+      "score": 0.8398549694301647,
+      "timeout": 0.037109375,
+      "steps": 5.482421875
+    },
+    "action_counts": {
+      "format_invalid_actions": 3,
+      "unexecutable_actions": 96,
+      "repeated_option_actions": 66,
+      "option_loop": 0,
+      "failed_buy": 394,
+      "steps": 8421
+    },
+    "raw_terminal_recount": "passed",
+    "native_projection_and_action_recount": "passed"
+  }
+}

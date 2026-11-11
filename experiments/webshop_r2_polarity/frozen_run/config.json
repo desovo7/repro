@@ -1,0 +1,430 @@
+{
+  "actor_rollout_ref": {
+    "actor": {
+      "checkpoint": {
+        "contents": [
+          "model",
+          "optimizer",
+          "extra"
+        ]
+      },
+      "clip_ratio": 0.2,
+      "clip_ratio_c": 3.0,
+      "clip_ratio_high": 0.2,
+      "clip_ratio_low": 0.2,
+      "entropy_coeff": 0.001,
+      "fsdp_config": {
+        "fsdp_size": -1,
+        "offload_policy": false,
+        "optimizer_offload": false,
+        "param_offload": false,
+        "reshard_after_forward": true,
+        "wrap_policy": {
+          "min_num_params": 0
+        }
+      },
+      "grad_clip": 1.0,
+      "invalid_action_penalty_coef": 0.1,
+      "kl_loss_coef": 0.01,
+      "kl_loss_type": "low_var_kl",
+      "loss_agg_mode": "token-mean",
+      "optim": {
+        "lr": 1e-06,
+        "lr_warmup_steps": -1,
+        "lr_warmup_steps_ratio": 0.0,
+        "min_lr_ratio": 0.0,
+        "num_cycles": 0.5,
+        "total_training_steps": -1,
+        "warmup_style": "constant",
+        "weight_decay": 0.01
+      },
+      "policy_loss": {
+        "loss_mode": "vanilla"
+      },
+      "ppo_epochs": 1,
+      "ppo_max_token_len_per_gpu": 16384,
+      "ppo_micro_batch_size": null,
+      "ppo_micro_batch_size_per_gpu": 8,
+      "ppo_mini_batch_size": 64,
+      "shuffle": false,
+      "strategy": "fsdp",
+      "ulysses_sequence_parallel_size": 1,
+      "use_dynamic_bsz": false,
+      "use_invalid_action_penalty": true,
+      "use_kl_loss": true,
+      "use_torch_compile": true
+    },
+    "hybrid_engine": true,
+    "model": {
+      "enable_activation_offload": false,
+      "enable_gradient_checkpointing": true,
+      "external_lib": null,
+      "lora_alpha": 16,
+      "lora_rank": 0,
+      "override_config": {},
+      "path": "/data_b/qzluo/workspace/wlx/models/Qwen2.5-1.5B-Instruct",
+      "target_modules": "all-linear",
+      "trust_remote_code": false,
+      "use_fused_kernels": false,
+      "use_liger": false,
+      "use_remove_padding": true,
+      "use_shm": false
+    },
+    "ref": {
+      "fsdp_config": {
+        "param_offload": true,
+        "reshard_after_forward": true,
+        "wrap_policy": {
+          "min_num_params": 0
+        }
+      },
+      "log_prob_max_token_len_per_gpu": "${actor_rollout_ref.actor.ppo_max_token_len_per_gpu}",
+      "log_prob_micro_batch_size": null,
+      "log_prob_micro_batch_size_per_gpu": 16,
+      "log_prob_use_dynamic_bsz": "${actor_rollout_ref.actor.use_dynamic_bsz}",
+      "strategy": "fsdp",
+      "ulysses_sequence_parallel_size": "${actor_rollout_ref.actor.ulysses_sequence_parallel_size}",
+      "use_torch_compile": "${actor_rollout_ref.actor.use_torch_compile}"
+    },
+    "rollout": {
+      "chat_scheduler": null,
+      "disable_log_stats": true,
+      "do_sample": true,
+      "dtype": "bfloat16",
+      "enable_chunked_prefill": false,
+      "enforce_eager": false,
+      "engine_kwargs": {
+        "sglang": {
+          "attention_backend": null
+        },
+        "vllm": {
+          "swap_space": null
+        }
+      },
+      "free_cache_engine": false,
+      "gpu_memory_utilization": 0.6,
+      "ignore_eos": false,
+      "layered_summon": false,
+      "load_format": "dummy_dtensor",
+      "log_prob_max_token_len_per_gpu": "${actor_rollout_ref.actor.ppo_max_token_len_per_gpu}",
+      "log_prob_micro_batch_size": null,
+      "log_prob_micro_batch_size_per_gpu": 16,
+      "log_prob_use_dynamic_bsz": "${actor_rollout_ref.actor.use_dynamic_bsz}",
+      "max_model_len": null,
+      "max_num_batched_tokens": 8192,
+      "max_num_seqs": 1024,
+      "mode": "sync",
+      "multi_turn": {
+        "enable": false,
+        "format": "chatml",
+        "max_turns": null,
+        "tool_config_path": null
+      },
+      "n": 1,
+      "name": "vllm",
+      "prompt_length": "${data.max_prompt_length}",
+      "response_length": "${data.max_response_length}",
+      "temperature": 1.0,
+      "tensor_model_parallel_size": 2,
+      "top_k": -1,
+      "top_p": 1,
+      "use_fire_sampling": false,
+      "val_kwargs": {
+        "do_sample": true,
+        "n": 1,
+        "temperature": 0.4,
+        "top_k": -1,
+        "top_p": 1.0
+      }
+    }
+  },
+  "algorithm": {
+    "adv_estimator": "gigpo",
+    "filter_groups": {
+      "enable": false,
+      "max_num_gen_batches": 10
+    },
+    "gamma": 0.95,
+    "gigpo": {
+      "enable_similarity": false,
+      "mode": "mean_norm",
+      "similarity_thresh": 0.95,
+      "step_advantage_w": 1.0
+    },
+    "kl_ctrl": {
+      "horizon": 10000,
+      "kl_coef": 0.001,
+      "target_kl": 0.1,
+      "type": "fixed"
+    },
+    "kl_penalty": "kl",
+    "lam": 1.0,
+    "norm_adv_by_std_in_grpo": true,
+    "pf_ppo": {
+      "reweight_method": "pow",
+      "weight_pow": 2.0
+    },
+    "use_kl_in_reward": false,
+    "use_pf_ppo": false
+  },
+  "critic": {
+    "checkpoint": {
+      "contents": [
+        "model",
+        "optimizer",
+        "extra"
+      ]
+    },
+    "cliprange_value": 0.5,
+    "forward_max_token_len_per_gpu": "${critic.ppo_max_token_len_per_gpu}",
+    "forward_micro_batch_size": "${critic.ppo_micro_batch_size}",
+    "forward_micro_batch_size_per_gpu": "${critic.ppo_micro_batch_size_per_gpu}",
+    "grad_clip": 1.0,
+    "loss_agg_mode": "${actor_rollout_ref.actor.loss_agg_mode}",
+    "model": {
+      "enable_activation_offload": false,
+      "enable_gradient_checkpointing": true,
+      "external_lib": "${actor_rollout_ref.model.external_lib}",
+      "fsdp_config": {
+        "fsdp_size": -1,
+        "offload_policy": false,
+        "optimizer_offload": false,
+        "param_offload": false,
+        "reshard_after_forward": true,
+        "wrap_policy": {
+          "min_num_params": 0
+        }
+      },
+      "lora_alpha": 16,
+      "lora_rank": 0,
+      "override_config": {},
+      "path": "~/models/deepseek-llm-7b-chat",
+      "target_modules": "all-linear",
+      "tokenizer_path": "${actor_rollout_ref.model.path}",
+      "trust_remote_code": "${actor_rollout_ref.model.trust_remote_code}",
+      "use_remove_padding": false,
+      "use_shm": false
+    },
+    "optim": {
+      "lr": 1e-05,
+      "lr_warmup_steps_ratio": 0.0,
+      "min_lr_ratio": null,
+      "total_training_steps": -1,
+      "warmup_style": "constant",
+      "weight_decay": 0.01
+    },
+    "ppo_epochs": "${actor_rollout_ref.actor.ppo_epochs}",
+    "ppo_max_token_len_per_gpu": 32768,
+    "ppo_micro_batch_size": null,
+    "ppo_micro_batch_size_per_gpu": null,
+    "ppo_mini_batch_size": "${actor_rollout_ref.actor.ppo_mini_batch_size}",
+    "rollout_n": "${actor_rollout_ref.rollout.n}",
+    "shuffle": "${actor_rollout_ref.actor.shuffle}",
+    "strategy": "fsdp",
+    "ulysses_sequence_parallel_size": 1,
+    "use_dynamic_bsz": "${actor_rollout_ref.actor.use_dynamic_bsz}"
+  },
+  "custom_reward_function": {
+    "name": "compute_score",
+    "path": null
+  },
+  "data": {
+    "apply_chat_template_kwargs": {},
+    "custom_cls": {
+      "name": null,
+      "path": null
+    },
+    "filter_overlong_prompts": true,
+    "filter_overlong_prompts_workers": 1,
+    "image_key": "images",
+    "max_prompt_length": 4096,
+    "max_response_length": 512,
+    "prompt_key": "prompt",
+    "return_full_prompt": false,
+    "return_raw_chat": true,
+    "return_raw_input_ids": false,
+    "reward_fn_key": "data_source",
+    "shuffle": true,
+    "tokenizer": null,
+    "train_batch_size": 16,
+    "train_files": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/data/train.parquet",
+    "truncation": "error",
+    "trust_remote_code": false,
+    "use_shm": false,
+    "val_batch_size": 128,
+    "val_files": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/data/test.parquet",
+    "video_key": "videos"
+  },
+  "env": {
+    "alfworld": {
+      "eval_dataset": "eval_in_distribution"
+    },
+    "env_name": "Webshop",
+    "history_length": 2,
+    "max_steps": 15,
+    "resources_per_worker": {
+      "num_cpus": 0.1,
+      "num_gpus": 0
+    },
+    "rollout": {
+      "n": 8
+    },
+    "search": {
+      "log_requests": false,
+      "search_url": "http://127.0.0.1:8000/retrieve",
+      "timeout": 60,
+      "topk": 3
+    },
+    "seed": 0,
+    "sokoban": {
+      "dim_room": [
+        6,
+        6
+      ],
+      "mode": "tiny_rgb_array",
+      "num_boxes": 1,
+      "search_depth": 30
+    },
+    "webshop": {
+      "human_goals": false,
+      "use_small": true
+    }
+  },
+  "gradus_webshop": {
+    "beta": 0.5,
+    "control": "none",
+    "control_seed": 0,
+    "difference_gamma": 1.0,
+    "enabled": true,
+    "epsilon": 1e-06,
+    "gamma": 0.98,
+    "gate_invalid_noop": true,
+    "group_size": 8,
+    "horizon": 15,
+    "lambda_aux": 0.5,
+    "landmark_fraction": 0.5,
+    "max_abs_injection": 5.0,
+    "min_reveals": 5,
+    "min_success_support": 3,
+    "neutral_terminal_buy": true,
+    "off_path_support": 10,
+    "return_credit_mode": "neutral",
+    "search_epsilon": 0.5,
+    "unranked_search_weight": 0.5,
+    "window": 4
+  },
+  "native_persistence": {
+    "diagnostic_steps": [
+      115,
+      116
+    ],
+    "identity": {
+      "config_hash": "95daf6b37badc6b29d1428279ce25195be61d147a24179a75668ad87c482adf1",
+      "model_contract_hash": "bb8cc6766e2b87d8efe73fb19f38945b3fe87fc9c03fd92e65eba94d035c6eb8",
+      "run_id": "gradus-webshop-h800-s0-polarity-from115-20261111"
+    }
+  },
+  "ray_init": {
+    "_temp_dir": "/tmp/ws-polarity-h800-20261111",
+    "num_cpus": null,
+    "runtime_env": {
+      "env_vars": {
+        "HF_HUB_OFFLINE": "1",
+        "JAVA_HOME": "/data_b/qzluo/miniconda3/envs/verl-webshop",
+        "JAVA_TOOL_OPTIONS": "-Xmx128m -Xms16m -XX:+UseSerialGC",
+        "LD_LIBRARY_PATH": "/data_b/qzluo/miniconda3/envs/verl-webshop/lib:",
+        "PYTHONPATH": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/source:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/deps-direct:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/deps",
+        "TOKENIZERS_PARALLELISM": "false",
+        "TRANSFORMERS_OFFLINE": "1",
+        "VLLM_ATTENTION_BACKEND": "FLASH_ATTN"
+      }
+    }
+  },
+  "reward_model": {
+    "enable": false,
+    "forward_max_token_len_per_gpu": "${critic.forward_max_token_len_per_gpu}",
+    "launch_reward_fn_async": false,
+    "max_length": null,
+    "micro_batch_size": null,
+    "micro_batch_size_per_gpu": null,
+    "model": {
+      "external_lib": "${actor_rollout_ref.model.external_lib}",
+      "fsdp_config": {
+        "fsdp_size": -1,
+        "param_offload": false,
+        "reshard_after_forward": true,
+        "wrap_policy": {
+          "min_num_params": 0
+        }
+      },
+      "input_tokenizer": "${actor_rollout_ref.model.path}",
+      "path": "~/models/FsfairX-LLaMA3-RM-v0.1",
+      "trust_remote_code": false,
+      "use_fused_kernels": "${actor_rollout_ref.model.use_fused_kernels}",
+      "use_remove_padding": false,
+      "use_shm": false
+    },
+    "reward_manager": "episode",
+    "sandbox_fusion": {
+      "max_concurrent": 64,
+      "url": null
+    },
+    "strategy": "fsdp",
+    "ulysses_sequence_parallel_size": 1,
+    "use_dynamic_bsz": "${critic.use_dynamic_bsz}"
+  },
+  "trainer": {
+    "balance_batch": true,
+    "critic_warmup": 0,
+    "default_hdfs_dir": null,
+    "default_local_dir": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/checkpoints",
+    "del_local_ckpt_after_load": false,
+    "device": "cuda",
+    "experiment_name": "gradus-webshop-h800-s0-polarity-from115-20261111",
+    "log_val_generations": 0,
+    "logger": [
+      "console"
+    ],
+    "max_actor_ckpt_to_keep": 2,
+    "max_critic_ckpt_to_keep": null,
+    "n_gpus_per_node": 2,
+    "nnodes": 1,
+    "project_name": "gradus_webshop",
+    "ray_wait_register_center_timeout": 300,
+    "resume_from_path": null,
+    "resume_mode": "auto",
+    "rollout_data_dir": null,
+    "save_freq": 1,
+    "test_freq": 5,
+    "total_epochs": 150,
+    "total_training_steps": 150,
+    "val_before_train": false,
+    "val_only": false,
+    "validation_data_dir": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-polarity-from115-20261111/validation_generations"
+  },
+  "webshop_release": {
+    "data": {
+      "test.parquet": "ac0ad3f792706f3b0fa7b4cae9661de87995063aaf824a77d6dafc794f102163",
+      "train.parquet": "99b1be4662cf37e14e78a9d330279048e730e5efdfd46b6409196264eba0f441"
+    },
+    "files": {
+      "__init__.py": "b7c48438e7d2d85dd8fb4c0622c919944c76ebee3a166f188def5213ea48690d",
+      "actor_audit.py": "a0b43f8a4dfd6a20370b02f5b25e4c47a02192711c48625c4186ac9f5986d5a4",
+      "adapter.py": "f227953e5930b3bc4aa6287175b664ae97c0bee510bb2ee76a7fa9825fccaed7",
+      "core.py": "1c72ed983b41a15d864eb97a5d0f16b5fa742f7a880d0705078a2b11a92f0477",
+      "entry.py": "51f7266eb75a4bb61a6d1afd348fa6b2d7116853e3874c876ea0877d31f8578f",
+      "integration.py": "f2102fd3d97ab44d34c5390fd62512fef6f283476cb787bd3487f51eb87537c9",
+      "native_retention.py": "fc636f6318c8c0b447c59e3949ed61d97ca078389016f5e11b0da8ecb3d6ff2e",
+      "persistence.py": "3c31fb742f3129262bb798fa941bdcba40628e189f720a748edf0f7af15aed35",
+      "r2_credit.py": "f381dfd14b422c0048035bcad3a01959a8c38efebdfe0f5b6becd985085de11f"
+    },
+    "source": {
+      "agent_system/environments/env_manager.py": "6294aef97cf12775222b8c189273f990065ecca13d1308650311ebe0ab1c64f5",
+      "agent_system/environments/env_package/webshop/envs.py": "da23ccb695c050aa02d6e8803283253858c42d3dcd9bb5dcb630363d95d616a5",
+      "agent_system/environments/env_package/webshop/webshop/web_agent_site/envs/web_agent_text_env.py": "a2a2cfe3e7ef493857ba68c28fd6d12ec012e0f8cb31a050112f6466084e3f55",
+      "agent_system/multi_turn_rollout/rollout_loop.py": "5488502c788a841266bb1e5e04b5c6c9d4e01e871962e83aa86cd4a1cf1858f0",
+      "verl/trainer/main_ppo.py": "cb5547674b8af03da4555af63887ce13a93054e5d1026a0138b79c46f77e012b",
+      "verl/trainer/ppo/ray_trainer.py": "52e240dd12838be2585497074b9f764f1e36a09def8b6c2e1282a7b55baf8493"
+    }
+  }
+}

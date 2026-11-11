@@ -20,7 +20,7 @@ def main():
             failures.append(f'missing: {relative}')
         elif hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
             failures.append(f'changed: {relative}')
-    for name in ('webshop_r2', 'webshop_r2_aligned'):
+    for name in ('webshop_r2', 'webshop_r2_aligned', 'webshop_r2_polarity'):
         folder = root / 'experiments' / name
         config = json.loads((folder / 'frozen_run/config.json').read_text())
         for relative, expected in config['webshop_release']['files'].items():
@@ -40,7 +40,7 @@ def main():
                 failures.append('submodule working tree is not clean')
     if failures:
         raise SystemExit('\n'.join(failures))
-    print(f"PASS: {len(manifest['files'])} published files and both WebShop runtime contracts")
+    print(f"PASS: {len(manifest['files'])} published files and all three WebShop runtime contracts")
     if args.with_submodule:
         print('PASS: pinned upstream submodule')
 

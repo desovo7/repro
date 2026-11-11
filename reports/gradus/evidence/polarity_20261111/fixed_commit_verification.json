@@ -1,0 +1,22 @@
+{
+  "commit": "a865ba3965f6da15462f159f6f7404124c3e0f13",
+  "repository": "desovo7/repro",
+  "status": "PASS",
+  "modules": {
+    "adapter.py": {
+      "git_blob_sha1": "6e2dc69567dad5ce99dd31e1248c7e5027ebd63c",
+      "sha256": "82454e0ac56dfa2f32494f184f45c21c062f132833748d382802646a88b2a35c",
+      "bytes": 12087
+    },
+    "r2_credit.py": {
+      "git_blob_sha1": "12289dca18e766cedafc7d0e3ca36621ddc5b950",
+      "sha256": "5e8fba962e62d9d8c4a116c480c7c2cb260a62d8aa52d0ec719c47942f068039",
+      "bytes": 12898
+    },
+    "core.py": {
+      "git_blob_sha1": "501877f24fe51023f9319df8e348be1014466180",
+      "sha256": "ff48834d56e10e327d2ad99b31e7c9e3477c8466c376a4647d19bbc0d522e804",
+      "bytes": 9992
+    }
+  }
+}
