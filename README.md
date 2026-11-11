@@ -4,6 +4,10 @@ This branch archives three completed GRADUS experiments with
 **Qwen/Qwen2.5-1.5B-Instruct**, training seed **0**, and **150 iterations**.
 Each experiment has its own import root.
 
+**[当前实验情况与问题（中文，2026-11-10）](reports/gradus/EXPERIMENT_STATUS.md)**
+summarizes ALFWorld and both WebShop results, evaluation protocols, known
+problems, completed checks, checkpoint status, and proposed next validations.
+
 | Snapshot | Run | Main implementation |
 | --- | --- | --- |
 | [ALFWorld R2](experiments/alfworld_r2/README.md) | `gradus-qwen25-h800-s0-r2` | `repro_v83/gradus.py` |

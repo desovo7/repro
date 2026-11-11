@@ -1,0 +1,807 @@
+{
+  "run_id": "gradus-qwen25-h800-s0-r2",
+  "training_seed": 0,
+  "training_iterations": 150,
+  "native_validation": {
+    "run_id": "gradus-qwen25-h800-s0-r2",
+    "method": "Recount archived terminal won and success flags with unique trajectory IDs; no new model inference.",
+    "points": [
+      {
+        "step": 0,
+        "episodes": 128,
+        "wins": 12,
+        "success_rate": 0.09375,
+        "source_sha256": {
+          "iteration_0.32972be12c9c4768826a64ecc27a6c84.jsonl": "c216251772d006e7af6fabdb17be7ee67b4989e6cd169d715dca812bb91fef3b",
+          "iteration_0.4ca2e6547f3f46e68f95189a597d9965.jsonl": "635e225f677ecdb7bbfecede78fe6fb745cbe69eec99bedf0acb22a1679b1ee7",
+          "iteration_0.53d18e550a024b4f822685b0db9e6ad3.jsonl": "effa2657e3b4e0a423df711d611ed42fb2a331d6acd544437dc79ba6c22ee560",
+          "iteration_0.9cc6d84feb8143f4af8ba885fe95c2c1.jsonl": "73b1a33be71fd3f0fe1f54ed3b7815a577432bc5bbd64d116d3dc6441124efc9"
+        }
+      },
+      {
+        "step": 145,
+        "episodes": 128,
+        "wins": 124,
+        "success_rate": 0.96875,
+        "source_sha256": {
+          "iteration_145.0dffc53d124545b99d85f395f76ae0d4.jsonl": "63a95c4db3b2dcfd94eba1ea721aac689da5d3921d4f1d7f7b7676104611c6b7",
+          "iteration_145.1cb32724938442028a9d95ce0fda2131.jsonl": "85cfe5d8126fc24aedc3355634d22978e6bef7eaef8889e81f2a98977bfac9f7",
+          "iteration_145.2f1d5647ba6f4e95818839a52c0128cd.jsonl": "d0a5c8e8b11af16cb986455a43d708f826cf6a655a398a643798b250cf0738a5",
+          "iteration_145.7b30a194243049838dcccecb216ea08b.jsonl": "c32c40a3540db217aca38793c87a453f8994bc4bbe366398edd82f19d5850969"
+        }
+      },
+      {
+        "step": 150,
+        "episodes": 128,
+        "wins": 124,
+        "success_rate": 0.96875,
+        "source_sha256": {
+          "iteration_150.6d96912b2c084709b30db6528aec044a.jsonl": "2dabdd2b58db6050d0cb1c45e52c42d94693725a49b22f5de44643249b0d1fd1",
+          "iteration_150.d4c13b736839439db056b5569bd2cf84.jsonl": "2fa58a189a130f04590f8082d76a1f1bad260b22c2214f8eee947adcaede1032",
+          "iteration_150.dd173c25974940fe9c81f163bcf26a44.jsonl": "ad91ff9befdae9663786e1274bd32b7d3acb557b8a6836c03f4a36243a05d087",
+          "iteration_150.fbfb2362108940ce9316da9d626bb5f3.jsonl": "c620d72d2e1ecc0ad91d53f1595912afe0dc9e2ce7a0c2c6565a5a85906ca714"
+        }
+      }
+    ]
+  },
+  "evaluation_suites": {
+    "h800-r2-s1-20261107": {
+      "card_excerpt": {
+        "created_at": "2026-11-07T02:45:09.962137+00:00",
+        "training_run_id": "gradus-qwen25-h800-s0-r2",
+        "selection": "Step 150 is the final checkpoint and the primary result. Step 145 full catalog only, because it is the one iteration with same-TP results for Old, 1A+1B and Tier 2. Steps 145 and 150 tie for the highest sampled validation (0.969).",
+        "hypothesis": "Measure the potential version on Unseen under the existing protocols",
+        "alternative": "Training-time validation does not extend to the full catalog or to Unseen",
+        "interpretation": "One training seed. Evaluation-seed spread does not cover training variance. Not a causal comparison between training algorithms.",
+        "data_visibility": "Sampled Seen validation was visible before this card; r2 Unseen was never evaluated."
+      },
+      "jobs": {
+        "jobs/step145_full_catalog_seed0/results.json": {
+          "sha256": "190b9d7fde21d8fa08ab3c1f89376bb8336340112dfd81a30693f0aa35c58b27",
+          "data": {
+            "step": 145,
+            "job_id": "step145_full_catalog_seed0",
+            "protocol": "full_catalog",
+            "environment_seed": 0,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "seen": {
+                "n": 140,
+                "successes": 133,
+                "unique_games": 140,
+                "batch_seconds": 60.90596845804248,
+                "success_rate": 0.95,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 13,
+                    "successes": 10,
+                    "success_rate": 0.7692307692307693
+                  },
+                  "pick_and_place_simple": {
+                    "n": 35,
+                    "successes": 35,
+                    "success_rate": 1.0
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 27,
+                    "successes": 27,
+                    "success_rate": 1.0
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 25,
+                    "successes": 23,
+                    "success_rate": 0.92
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 16,
+                    "successes": 16,
+                    "success_rate": 1.0
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 24,
+                    "successes": 22,
+                    "success_rate": 0.9166666666666666
+                  }
+                }
+              },
+              "unseen": {
+                "n": 134,
+                "successes": 123,
+                "unique_games": 134,
+                "batch_seconds": 10.521029713971075,
+                "success_rate": 0.917910447761194,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 18,
+                    "successes": 18,
+                    "success_rate": 1.0
+                  },
+                  "pick_and_place_simple": {
+                    "n": 24,
+                    "successes": 20,
+                    "success_rate": 0.8333333333333334
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 31,
+                    "successes": 28,
+                    "success_rate": 0.9032258064516129
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 21,
+                    "successes": 20,
+                    "success_rate": 0.9523809523809523
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 23,
+                    "successes": 21,
+                    "success_rate": 0.9130434782608695
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 17,
+                    "successes": 16,
+                    "success_rate": 0.9411764705882353
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 771.2883582370123
+          }
+        },
+        "jobs/step150_covgpo_5seed_seed0/results.json": {
+          "sha256": "28b410e37fddea257877706e61099b60ab54250d19a1c55e5c6122693710c10f",
+          "data": {
+            "step": 150,
+            "job_id": "step150_covgpo_5seed_seed0",
+            "protocol": "covgpo_5seed",
+            "environment_seed": 0,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "unseen": {
+                "n": 512,
+                "successes": 471,
+                "unique_games": 130,
+                "batch_seconds": 382.1586362020462,
+                "success_rate": 0.919921875,
+                "by_family": {
+                  "pick_clean_then_place_in_recep": {
+                    "n": 124,
+                    "successes": 112,
+                    "success_rate": 0.9032258064516129
+                  },
+                  "pick_and_place_simple": {
+                    "n": 92,
+                    "successes": 78,
+                    "success_rate": 0.8478260869565217
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 71,
+                    "successes": 71,
+                    "success_rate": 1.0
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 81,
+                    "successes": 76,
+                    "success_rate": 0.9382716049382716
+                  },
+                  "look_at_obj_in_light": {
+                    "n": 69,
+                    "successes": 68,
+                    "success_rate": 0.9855072463768116
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 75,
+                    "successes": 66,
+                    "success_rate": 0.88
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 1616.2517930450267
+          }
+        },
+        "jobs/step150_covgpo_5seed_seed123/results.json": {
+          "sha256": "5e8a6785c7eb887e8d9981ea45c47b3b0a74262a5e5bd5505b43bdbf6e582e86",
+          "data": {
+            "step": 150,
+            "job_id": "step150_covgpo_5seed_seed123",
+            "protocol": "covgpo_5seed",
+            "environment_seed": 123,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "unseen": {
+                "n": 512,
+                "successes": 476,
+                "unique_games": 129,
+                "batch_seconds": 387.16144790296676,
+                "success_rate": 0.9296875,
+                "by_family": {
+                  "pick_cool_then_place_in_recep": {
+                    "n": 73,
+                    "successes": 70,
+                    "success_rate": 0.958904109589041
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 75,
+                    "successes": 72,
+                    "success_rate": 0.96
+                  },
+                  "pick_and_place_simple": {
+                    "n": 100,
+                    "successes": 84,
+                    "success_rate": 0.84
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 71,
+                    "successes": 67,
+                    "success_rate": 0.9436619718309859
+                  },
+                  "look_at_obj_in_light": {
+                    "n": 76,
+                    "successes": 75,
+                    "success_rate": 0.9868421052631579
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 117,
+                    "successes": 108,
+                    "success_rate": 0.9230769230769231
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 1664.0934427579632
+          }
+        },
+        "jobs/step150_covgpo_5seed_seed42/results.json": {
+          "sha256": "72886fc0eaf4de5d23e686ba6356c155daa7af4bbfa486c29a02d85cfc2ad8e6",
+          "data": {
+            "step": 150,
+            "job_id": "step150_covgpo_5seed_seed42",
+            "protocol": "covgpo_5seed",
+            "environment_seed": 42,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "unseen": {
+                "n": 512,
+                "successes": 483,
+                "unique_games": 132,
+                "batch_seconds": 374.50210327102104,
+                "success_rate": 0.943359375,
+                "by_family": {
+                  "pick_heat_then_place_in_recep": {
+                    "n": 80,
+                    "successes": 76,
+                    "success_rate": 0.95
+                  },
+                  "pick_and_place_simple": {
+                    "n": 94,
+                    "successes": 82,
+                    "success_rate": 0.8723404255319149
+                  },
+                  "look_at_obj_in_light": {
+                    "n": 73,
+                    "successes": 71,
+                    "success_rate": 0.9726027397260274
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 61,
+                    "successes": 61,
+                    "success_rate": 1.0
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 126,
+                    "successes": 117,
+                    "success_rate": 0.9285714285714286
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 78,
+                    "successes": 76,
+                    "success_rate": 0.9743589743589743
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 1592.2009611700196
+          }
+        },
+        "jobs/step150_covgpo_5seed_seed456/results.json": {
+          "sha256": "3486de0cc5bcb6c995f3c2bd1c683c35bec03f9273c1d8882355eb87d02e1ff9",
+          "data": {
+            "step": 150,
+            "job_id": "step150_covgpo_5seed_seed456",
+            "protocol": "covgpo_5seed",
+            "environment_seed": 456,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "unseen": {
+                "n": 512,
+                "successes": 469,
+                "unique_games": 132,
+                "batch_seconds": 394.85421834501904,
+                "success_rate": 0.916015625,
+                "by_family": {
+                  "pick_cool_then_place_in_recep": {
+                    "n": 89,
+                    "successes": 87,
+                    "success_rate": 0.9775280898876404
+                  },
+                  "pick_and_place_simple": {
+                    "n": 73,
+                    "successes": 62,
+                    "success_rate": 0.8493150684931506
+                  },
+                  "look_at_obj_in_light": {
+                    "n": 63,
+                    "successes": 57,
+                    "success_rate": 0.9047619047619048
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 129,
+                    "successes": 114,
+                    "success_rate": 0.8837209302325582
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 83,
+                    "successes": 80,
+                    "success_rate": 0.963855421686747
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 75,
+                    "successes": 69,
+                    "success_rate": 0.92
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 1588.0131993570249
+          }
+        },
+        "jobs/step150_covgpo_5seed_seed789/results.json": {
+          "sha256": "790b2eb30669c52dee16b4b54d867c2a911e1d38b8d8d406d4786e804454f1ec",
+          "data": {
+            "step": 150,
+            "job_id": "step150_covgpo_5seed_seed789",
+            "protocol": "covgpo_5seed",
+            "environment_seed": 789,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "unseen": {
+                "n": 512,
+                "successes": 477,
+                "unique_games": 131,
+                "batch_seconds": 392.0866567539633,
+                "success_rate": 0.931640625,
+                "by_family": {
+                  "pick_cool_then_place_in_recep": {
+                    "n": 70,
+                    "successes": 68,
+                    "success_rate": 0.9714285714285714
+                  },
+                  "look_at_obj_in_light": {
+                    "n": 78,
+                    "successes": 78,
+                    "success_rate": 1.0
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 107,
+                    "successes": 100,
+                    "success_rate": 0.9345794392523364
+                  },
+                  "pick_and_place_simple": {
+                    "n": 86,
+                    "successes": 77,
+                    "success_rate": 0.8953488372093024
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 102,
+                    "successes": 91,
+                    "success_rate": 0.8921568627450981
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 69,
+                    "successes": 63,
+                    "success_rate": 0.9130434782608695
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 1696.6914210679824
+          }
+        },
+        "jobs/step150_full_catalog_seed0/results.json": {
+          "sha256": "4e3c3ad0d88d6163c091cd98b2b11476746c8dda08e1a8e6b8557c022c02fcf9",
+          "data": {
+            "step": 150,
+            "job_id": "step150_full_catalog_seed0",
+            "protocol": "full_catalog",
+            "environment_seed": 0,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "seen": {
+                "n": 140,
+                "successes": 130,
+                "unique_games": 140,
+                "batch_seconds": 51.98767277697334,
+                "success_rate": 0.9285714285714286,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 13,
+                    "successes": 13,
+                    "success_rate": 1.0
+                  },
+                  "pick_and_place_simple": {
+                    "n": 35,
+                    "successes": 34,
+                    "success_rate": 0.9714285714285714
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 27,
+                    "successes": 27,
+                    "success_rate": 1.0
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 25,
+                    "successes": 21,
+                    "success_rate": 0.84
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 16,
+                    "successes": 16,
+                    "success_rate": 1.0
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 24,
+                    "successes": 19,
+                    "success_rate": 0.7916666666666666
+                  }
+                }
+              },
+              "unseen": {
+                "n": 134,
+                "successes": 126,
+                "unique_games": 134,
+                "batch_seconds": 14.46648812101921,
+                "success_rate": 0.9402985074626866,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 18,
+                    "successes": 18,
+                    "success_rate": 1.0
+                  },
+                  "pick_and_place_simple": {
+                    "n": 24,
+                    "successes": 21,
+                    "success_rate": 0.875
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 31,
+                    "successes": 28,
+                    "success_rate": 0.9032258064516129
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 21,
+                    "successes": 21,
+                    "success_rate": 1.0
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 23,
+                    "successes": 21,
+                    "success_rate": 0.9130434782608695
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 17,
+                    "successes": 17,
+                    "success_rate": 1.0
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 728.6893217570032
+          }
+        }
+      }
+    },
+    "h800-r2-window-20261107": {
+      "card_excerpt": {
+        "created_at": "2026-11-07T08:26:44.028368+00:00",
+        "training_run_id": "gradus-qwen25-h800-s0-r2",
+        "hypothesis": "The revisit edge follows the prompt window: largest jump at g = h + 2",
+        "alternative": "The edge stays at g = 4 whatever the evaluation window",
+        "interpretation": "One training seed, one checkpoint, one protocol. Behaviour under a changed prompt, not a causal statement about failures or about what credit can fix.",
+        "data_visibility": "h = 2 results were seen before this card; h = 1, 3, 4 had not been run."
+      },
+      "jobs": {
+        "jobs/step150_full_catalog_seed0_h1/results.json": {
+          "sha256": "77e86ddef6b3d84463f231dea1c5383245158dd72089f47a048e76836db8d08d",
+          "data": {
+            "step": 150,
+            "job_id": "step150_full_catalog_seed0_h1",
+            "protocol": "full_catalog",
+            "environment_seed": 0,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "seen": {
+                "n": 140,
+                "successes": 130,
+                "unique_games": 140,
+                "batch_seconds": 50.395097854023334,
+                "success_rate": 0.9285714285714286,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 13,
+                    "successes": 11,
+                    "success_rate": 0.8461538461538461
+                  },
+                  "pick_and_place_simple": {
+                    "n": 35,
+                    "successes": 34,
+                    "success_rate": 0.9714285714285714
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 27,
+                    "successes": 26,
+                    "success_rate": 0.9629629629629629
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 25,
+                    "successes": 22,
+                    "success_rate": 0.88
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 16,
+                    "successes": 16,
+                    "success_rate": 1.0
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 24,
+                    "successes": 21,
+                    "success_rate": 0.875
+                  }
+                }
+              },
+              "unseen": {
+                "n": 134,
+                "successes": 119,
+                "unique_games": 134,
+                "batch_seconds": 15.79419115796918,
+                "success_rate": 0.8880597014925373,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 18,
+                    "successes": 17,
+                    "success_rate": 0.9444444444444444
+                  },
+                  "pick_and_place_simple": {
+                    "n": 24,
+                    "successes": 20,
+                    "success_rate": 0.8333333333333334
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 31,
+                    "successes": 27,
+                    "success_rate": 0.8709677419354839
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 21,
+                    "successes": 19,
+                    "success_rate": 0.9047619047619048
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 23,
+                    "successes": 22,
+                    "success_rate": 0.9565217391304348
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 17,
+                    "successes": 14,
+                    "success_rate": 0.8235294117647058
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 695.7135462210281
+          }
+        },
+        "jobs/step150_full_catalog_seed0_h3/results.json": {
+          "sha256": "a39865993a6fc71d887a1a37bfccd4a083a966cd13e52000f7d0ae4d62ffc1af",
+          "data": {
+            "step": 150,
+            "job_id": "step150_full_catalog_seed0_h3",
+            "protocol": "full_catalog",
+            "environment_seed": 0,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "seen": {
+                "n": 140,
+                "successes": 137,
+                "unique_games": 140,
+                "batch_seconds": 51.74998455302557,
+                "success_rate": 0.9785714285714285,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 13,
+                    "successes": 13,
+                    "success_rate": 1.0
+                  },
+                  "pick_and_place_simple": {
+                    "n": 35,
+                    "successes": 35,
+                    "success_rate": 1.0
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 27,
+                    "successes": 27,
+                    "success_rate": 1.0
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 25,
+                    "successes": 24,
+                    "success_rate": 0.96
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 16,
+                    "successes": 16,
+                    "success_rate": 1.0
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 24,
+                    "successes": 22,
+                    "success_rate": 0.9166666666666666
+                  }
+                }
+              },
+              "unseen": {
+                "n": 134,
+                "successes": 125,
+                "unique_games": 134,
+                "batch_seconds": 21.79840550402878,
+                "success_rate": 0.9328358208955224,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 18,
+                    "successes": 18,
+                    "success_rate": 1.0
+                  },
+                  "pick_and_place_simple": {
+                    "n": 24,
+                    "successes": 21,
+                    "success_rate": 0.875
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 31,
+                    "successes": 29,
+                    "success_rate": 0.9354838709677419
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 21,
+                    "successes": 20,
+                    "success_rate": 0.9523809523809523
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 23,
+                    "successes": 21,
+                    "success_rate": 0.9130434782608695
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 17,
+                    "successes": 16,
+                    "success_rate": 0.9411764705882353
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 699.8180854420061
+          }
+        },
+        "jobs/step150_full_catalog_seed0_h4/results.json": {
+          "sha256": "8042cd4dcecae5e8ccd5c7132cc63fd3f86aec1c7109fb5ab6e3a349340f8510",
+          "data": {
+            "step": 150,
+            "job_id": "step150_full_catalog_seed0_h4",
+            "protocol": "full_catalog",
+            "environment_seed": 0,
+            "model_seed": 0,
+            "status": "complete",
+            "splits": {
+              "seen": {
+                "n": 140,
+                "successes": 138,
+                "unique_games": 140,
+                "batch_seconds": 54.705969993025064,
+                "success_rate": 0.9857142857142858,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 13,
+                    "successes": 13,
+                    "success_rate": 1.0
+                  },
+                  "pick_and_place_simple": {
+                    "n": 35,
+                    "successes": 35,
+                    "success_rate": 1.0
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 27,
+                    "successes": 27,
+                    "success_rate": 1.0
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 25,
+                    "successes": 24,
+                    "success_rate": 0.96
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 16,
+                    "successes": 16,
+                    "success_rate": 1.0
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 24,
+                    "successes": 23,
+                    "success_rate": 0.9583333333333334
+                  }
+                }
+              },
+              "unseen": {
+                "n": 134,
+                "successes": 126,
+                "unique_games": 134,
+                "batch_seconds": 28.44467865698971,
+                "success_rate": 0.9402985074626866,
+                "by_family": {
+                  "look_at_obj_in_light": {
+                    "n": 18,
+                    "successes": 18,
+                    "success_rate": 1.0
+                  },
+                  "pick_and_place_simple": {
+                    "n": 24,
+                    "successes": 21,
+                    "success_rate": 0.875
+                  },
+                  "pick_clean_then_place_in_recep": {
+                    "n": 31,
+                    "successes": 29,
+                    "success_rate": 0.9354838709677419
+                  },
+                  "pick_cool_then_place_in_recep": {
+                    "n": 21,
+                    "successes": 20,
+                    "success_rate": 0.9523809523809523
+                  },
+                  "pick_heat_then_place_in_recep": {
+                    "n": 23,
+                    "successes": 21,
+                    "success_rate": 0.9130434782608695
+                  },
+                  "pick_two_obj_and_place": {
+                    "n": 17,
+                    "successes": 17,
+                    "success_rate": 1.0
+                  }
+                }
+              }
+            },
+            "elapsed_seconds": 648.8587725419784
+          }
+        }
+      }
+    }
+  },
+  "unseen_five_evaluation_seeds": {
+    "mean": 0.928125,
+    "sample_sd": 0.01073330598752663,
+    "n_evaluation_seeds": 5,
+    "episodes_per_seed": 512,
+    "n_training_seeds": 1,
+    "interpretation": "Evaluation task/sampling seeds on one trained checkpoint; not five training seeds or 2560 independent unique tasks."
+  }
+}

@@ -1,0 +1,1272 @@
+{
+  "protocol": {
+    "panel_tasks": 512,
+    "replicate_seeds": [
+      0,
+      1,
+      2
+    ],
+    "batch_size": 128,
+    "max_steps": 15,
+    "temperature": 0.4,
+    "top_p": 1.0,
+    "top_k": -1,
+    "history_length": 2,
+    "max_prompt_length": 4096,
+    "max_response_length": 512,
+    "tensor_parallel_size": 2,
+    "seed_protocol": "SHA256(webshop-fixed-panel-v1,task_uid,replicate_seed,turn) mod(2^63-1) per generation request. Identical task/turn seed across all models; native sampling/padding/EOS code retained.",
+    "analysis": "Mean over3generation repeats per task; paired bootstrap512task clusters,10000resamples,seed20261109,95percentile CI. Othercheckpoint contrasts descriptive; no training-seed uncertainty inferred."
+  },
+  "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+  "same_task_manifest_and_protocol_verified": true,
+  "old_webshop_r2": {
+    "raw_recount": {
+      "verified_at": "2026-11-09T22:11:42.487103+00:00",
+      "valid_episodes": 7680,
+      "raw_recount": {
+        "r2_115": {
+          "episodes": 1536,
+          "wins": 1102.0,
+          "timeouts": 6.0,
+          "means": {
+            "success": 0.7174479166666666,
+            "score": 0.8412602212602213,
+            "timeout": 0.00390625,
+            "steps": 5.313151041666667
+          },
+          "raw_terminal_recount": "passed"
+        },
+        "r2_120": {
+          "episodes": 1536,
+          "wins": 1075.0,
+          "timeouts": 11.0,
+          "means": {
+            "success": 0.6998697916666666,
+            "score": 0.8281201054443242,
+            "timeout": 0.007161458333333333,
+            "steps": 5.223958333333333
+          },
+          "raw_terminal_recount": "passed"
+        },
+        "r2_135": {
+          "episodes": 1536,
+          "wins": 1104.0,
+          "timeouts": 16.0,
+          "means": {
+            "success": 0.71875,
+            "score": 0.8422961408166486,
+            "timeout": 0.010416666666666666,
+            "steps": 5.341145833333333
+          },
+          "raw_terminal_recount": "passed"
+        },
+        "r2_150": {
+          "episodes": 1536,
+          "wins": 1005.0,
+          "timeouts": 201.0,
+          "means": {
+            "success": 0.654296875,
+            "score": 0.7576009302474146,
+            "timeout": 0.130859375,
+            "steps": 6.917317708333333
+          },
+          "raw_terminal_recount": "passed"
+        },
+        "gigpo_150": {
+          "episodes": 1536,
+          "wins": 1085.0,
+          "timeouts": 57.0,
+          "means": {
+            "success": 0.7063802083333334,
+            "score": 0.8398549694301647,
+            "timeout": 0.037109375,
+            "steps": 5.482421875
+          },
+          "raw_terminal_recount": "passed"
+        }
+      },
+      "paired_contrasts": [
+        {
+          "candidate": "r2_150",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.052083333333333336,
+              "ci95": [
+                -0.08333333333333334,
+                -0.021484375
+              ]
+            },
+            "score": {
+              "difference": -0.08225403918275012,
+              "ci95": [
+                -0.11250175889287217,
+                -0.05331331227547048
+              ]
+            },
+            "timeout": {
+              "difference": 0.09375,
+              "ci95": [
+                0.06575520833333333,
+                0.12369791666666666
+              ]
+            },
+            "steps": {
+              "difference": 1.4348958333333335,
+              "ci95": [
+                1.1327962239583333,
+                1.7513020833333333
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": -0.06315104166666667,
+              "ci95": [
+                -0.08919270833333334,
+                -0.037760416666666664
+              ]
+            },
+            "score": {
+              "difference": -0.08365929101280664,
+              "ci95": [
+                -0.11019665386425641,
+                -0.05789117581366118
+              ]
+            },
+            "timeout": {
+              "difference": 0.126953125,
+              "ci95": [
+                0.1015625,
+                0.154296875
+              ]
+            },
+            "steps": {
+              "difference": 1.6041666666666665,
+              "ci95": [
+                1.3430826822916666,
+                1.8808756510416664
+              ]
+            }
+          }
+        }
+      ],
+      "method": "Parse terminal observations from copied raw JSONL; average three repeats per task; paired task-cluster bootstrap with10000 resamples, seed20261109. Matches remote independent verifier."
+    },
+    "paired_comparison": {
+      "at": "2026-11-09T22:10:15.977014+00:00",
+      "protocol_sha256": "6a1fab348eae8394756767d5437c17f991b1db74d25ec9acbd9c75da0b72fea8",
+      "checkpoints": {
+        "r2_115": {
+          "status": "verified",
+          "tag": "r2_115",
+          "at": "2026-11-09T15:20:41.228344+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.7174479166666666,
+            "score": 0.8412602212602213,
+            "timeout": 0.00390625,
+            "steps": 5.313151041666667,
+            "failed_buy": 0.2786458333333333,
+            "option_loop": 0.0032552083333333335
+          },
+          "counts": {
+            "success": 1102.0,
+            "timeout": 6.0,
+            "failed_buy": 428.0,
+            "option_loop": 5.0,
+            "repeated_option_actions": 61,
+            "format_invalid_actions": 41,
+            "unexecutable_actions": 204,
+            "steps": 8161
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.7109375,
+              "score": 0.8401259526064213,
+              "timeout": 0.005859375,
+              "steps": 5.365234375,
+              "failed_buy": 0.283203125,
+              "option_loop": 0.005859375
+            },
+            "1": {
+              "success": 0.7265625,
+              "score": 0.8469476855609668,
+              "timeout": 0.00390625,
+              "steps": 5.28125,
+              "failed_buy": 0.26953125,
+              "option_loop": 0.001953125
+            },
+            "2": {
+              "success": 0.71484375,
+              "score": 0.8367070256132756,
+              "timeout": 0.001953125,
+              "steps": 5.29296875,
+              "failed_buy": 0.283203125,
+              "option_loop": 0.001953125
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 722.2060310239904
+        },
+        "r2_120": {
+          "status": "verified",
+          "tag": "r2_120",
+          "at": "2026-11-09T15:34:28.070296+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.6998697916666666,
+            "score": 0.8281201054443242,
+            "timeout": 0.007161458333333333,
+            "steps": 5.223958333333333,
+            "failed_buy": 0.29296875,
+            "option_loop": 0.0032552083333333335
+          },
+          "counts": {
+            "success": 1075.0,
+            "timeout": 11.0,
+            "failed_buy": 450.0,
+            "option_loop": 5.0,
+            "repeated_option_actions": 88,
+            "format_invalid_actions": 24,
+            "unexecutable_actions": 220,
+            "steps": 8024
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.70703125,
+              "score": 0.8343782552083333,
+              "timeout": 0.005859375,
+              "steps": 5.18359375,
+              "failed_buy": 0.287109375,
+              "option_loop": 0.001953125
+            },
+            "1": {
+              "success": 0.697265625,
+              "score": 0.8230704153702201,
+              "timeout": 0.01171875,
+              "steps": 5.265625,
+              "failed_buy": 0.291015625,
+              "option_loop": 0.005859375
+            },
+            "2": {
+              "success": 0.6953125,
+              "score": 0.8269116457544192,
+              "timeout": 0.00390625,
+              "steps": 5.22265625,
+              "failed_buy": 0.30078125,
+              "option_loop": 0.001953125
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 706.6678751299623
+        },
+        "r2_135": {
+          "status": "verified",
+          "tag": "r2_135",
+          "at": "2026-11-09T15:48:54.600946+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.71875,
+            "score": 0.8422961408166486,
+            "timeout": 0.010416666666666666,
+            "steps": 5.341145833333333,
+            "failed_buy": 0.2708333333333333,
+            "option_loop": 0.007161458333333333
+          },
+          "counts": {
+            "success": 1104.0,
+            "timeout": 16.0,
+            "failed_buy": 416.0,
+            "option_loop": 11.0,
+            "repeated_option_actions": 108,
+            "format_invalid_actions": 45,
+            "unexecutable_actions": 180,
+            "steps": 8204
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.716796875,
+              "score": 0.8419614955357143,
+              "timeout": 0.01171875,
+              "steps": 5.345703125,
+              "failed_buy": 0.271484375,
+              "option_loop": 0.0078125
+            },
+            "1": {
+              "success": 0.720703125,
+              "score": 0.8411019373421718,
+              "timeout": 0.009765625,
+              "steps": 5.349609375,
+              "failed_buy": 0.26953125,
+              "option_loop": 0.0078125
+            },
+            "2": {
+              "success": 0.71875,
+              "score": 0.8438249895720599,
+              "timeout": 0.009765625,
+              "steps": 5.328125,
+              "failed_buy": 0.271484375,
+              "option_loop": 0.005859375
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 745.3094869840425
+        },
+        "r2_150": {
+          "status": "verified",
+          "tag": "r2_150",
+          "at": "2026-11-09T16:03:22.128310+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.654296875,
+            "score": 0.7576009302474146,
+            "timeout": 0.130859375,
+            "steps": 6.917317708333333,
+            "failed_buy": 0.21484375,
+            "option_loop": 0.053385416666666664
+          },
+          "counts": {
+            "success": 1005.0,
+            "timeout": 201.0,
+            "failed_buy": 330.0,
+            "option_loop": 82.0,
+            "repeated_option_actions": 603,
+            "format_invalid_actions": 2,
+            "unexecutable_actions": 902,
+            "steps": 10625
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.65234375,
+              "score": 0.756796029491342,
+              "timeout": 0.1328125,
+              "steps": 6.927734375,
+              "failed_buy": 0.21484375,
+              "option_loop": 0.0546875
+            },
+            "1": {
+              "success": 0.65625,
+              "score": 0.7638050144300145,
+              "timeout": 0.12109375,
+              "steps": 6.880859375,
+              "failed_buy": 0.22265625,
+              "option_loop": 0.052734375
+            },
+            "2": {
+              "success": 0.654296875,
+              "score": 0.7522017468208875,
+              "timeout": 0.138671875,
+              "steps": 6.943359375,
+              "failed_buy": 0.20703125,
+              "option_loop": 0.052734375
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 748.3388500619913
+        },
+        "gigpo_150": {
+          "status": "verified",
+          "tag": "gigpo_150",
+          "at": "2026-11-09T22:10:15.327344+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.7063802083333334,
+            "score": 0.8398549694301647,
+            "timeout": 0.037109375,
+            "steps": 5.482421875,
+            "failed_buy": 0.2565104166666667,
+            "option_loop": 0.0
+          },
+          "counts": {
+            "success": 1085.0,
+            "timeout": 57.0,
+            "failed_buy": 394.0,
+            "option_loop": 0.0,
+            "repeated_option_actions": 66,
+            "format_invalid_actions": 3,
+            "unexecutable_actions": 96,
+            "steps": 8421
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.7109375,
+              "score": 0.8403789076591811,
+              "timeout": 0.037109375,
+              "steps": 5.484375,
+              "failed_buy": 0.251953125,
+              "option_loop": 0.0
+            },
+            "1": {
+              "success": 0.708984375,
+              "score": 0.8411113999932359,
+              "timeout": 0.041015625,
+              "steps": 5.509765625,
+              "failed_buy": 0.25,
+              "option_loop": 0.0
+            },
+            "2": {
+              "success": 0.69921875,
+              "score": 0.8380746006380771,
+              "timeout": 0.033203125,
+              "steps": 5.453125,
+              "failed_buy": 0.267578125,
+              "option_loop": 0.0
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 909.0266521460144
+        }
+      },
+      "paired_contrasts": [
+        {
+          "candidate": "r2_120",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": -0.017578125,
+              "ci95": [
+                -0.03515625,
+                -0.0006510416666666654
+              ]
+            },
+            "score": {
+              "difference": -0.013140115815897064,
+              "ci95": [
+                -0.027691879676132604,
+                0.0006262301563815247
+              ]
+            },
+            "timeout": {
+              "difference": 0.003255208333333333,
+              "ci95": [
+                -0.0013020833333333335,
+                0.008463541666666668
+              ]
+            },
+            "steps": {
+              "difference": -0.08919270833333334,
+              "ci95": [
+                -0.16927083333333331,
+                -0.009114583333333339
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_135",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": 0.0013020833333333348,
+              "ci95": [
+                -0.017578125,
+                0.020833333333333332
+              ]
+            },
+            "score": {
+              "difference": 0.00103591955642737,
+              "ci95": [
+                -0.014959018312778079,
+                0.017323328734705674
+              ]
+            },
+            "timeout": {
+              "difference": 0.006510416666666667,
+              "ci95": [
+                -0.0013020833333333335,
+                0.014973958333333334
+              ]
+            },
+            "steps": {
+              "difference": 0.027994791666666657,
+              "ci95": [
+                -0.06902669270833332,
+                0.130859375
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": -0.06315104166666667,
+              "ci95": [
+                -0.08919270833333334,
+                -0.037760416666666664
+              ]
+            },
+            "score": {
+              "difference": -0.08365929101280664,
+              "ci95": [
+                -0.11019665386425641,
+                -0.05789117581366118
+              ]
+            },
+            "timeout": {
+              "difference": 0.126953125,
+              "ci95": [
+                0.1015625,
+                0.154296875
+              ]
+            },
+            "steps": {
+              "difference": 1.6041666666666665,
+              "ci95": [
+                1.3430826822916666,
+                1.8808756510416664
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.052083333333333336,
+              "ci95": [
+                -0.08333333333333334,
+                -0.021484375
+              ]
+            },
+            "score": {
+              "difference": -0.08225403918275012,
+              "ci95": [
+                -0.11250175889287217,
+                -0.05331331227547048
+              ]
+            },
+            "timeout": {
+              "difference": 0.09375,
+              "ci95": [
+                0.06575520833333333,
+                0.12369791666666666
+              ]
+            },
+            "steps": {
+              "difference": 1.4348958333333335,
+              "ci95": [
+                1.1327962239583333,
+                1.7513020833333333
+              ]
+            }
+          }
+        }
+      ],
+      "interpretation": "Paired bootstrap of512task clusters after averaging3generation repeats. Single training seed; development panel;115selected post hoc. No unseen-goal or training-seed confidence claim."
+    }
+  },
+  "aligned_webshop_r2": {
+    "raw_recount": {
+      "verified_at": "2026-11-10T18:26:27.036391+00:00",
+      "valid_episodes": 6144,
+      "raw_recount": {
+        "r2_115": {
+          "episodes": 1536,
+          "wins": 953.0,
+          "timeouts": 55.0,
+          "means": {
+            "success": 0.6204427083333334,
+            "score": 0.800747988628848,
+            "timeout": 0.035807291666666664,
+            "steps": 6.280598958333333
+          },
+          "raw_terminal_recount": "passed"
+        },
+        "r2_135": {
+          "episodes": 1536,
+          "wins": 1016.0,
+          "timeouts": 51.0,
+          "means": {
+            "success": 0.6614583333333334,
+            "score": 0.7937388322398088,
+            "timeout": 0.033203125,
+            "steps": 5.529947916666667
+          },
+          "raw_terminal_recount": "passed"
+        },
+        "r2_150": {
+          "episodes": 1536,
+          "wins": 999.0,
+          "timeouts": 44.0,
+          "means": {
+            "success": 0.650390625,
+            "score": 0.7921986748060966,
+            "timeout": 0.028645833333333332,
+            "steps": 5.421223958333333
+          },
+          "raw_terminal_recount": "passed"
+        },
+        "gigpo_150": {
+          "episodes": 1536,
+          "wins": 1085.0,
+          "timeouts": 57.0,
+          "means": {
+            "success": 0.7063802083333334,
+            "score": 0.8398549694301647,
+            "timeout": 0.037109375,
+            "steps": 5.482421875
+          },
+          "raw_terminal_recount": "passed"
+        }
+      },
+      "paired_contrasts": [
+        {
+          "candidate": "r2_135",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": 0.04101562500000001,
+              "ci95": [
+                0.016276041666666668,
+                0.06575520833333333
+              ]
+            },
+            "score": {
+              "difference": -0.007009156389039202,
+              "ci95": [
+                -0.026914110236009647,
+                0.012382879670965598
+              ]
+            },
+            "timeout": {
+              "difference": -0.002604166666666666,
+              "ci95": [
+                -0.013020833333333332,
+                0.008463541666666668
+              ]
+            },
+            "steps": {
+              "difference": -0.7506510416666667,
+              "ci95": [
+                -0.8932291666666666,
+                -0.6100260416666666
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": 0.029947916666666668,
+              "ci95": [
+                -0.0013020833333333304,
+                0.06119791666666667
+              ]
+            },
+            "score": {
+              "difference": -0.008549313822751325,
+              "ci95": [
+                -0.029993805474762512,
+                0.01238994025541876
+              ]
+            },
+            "timeout": {
+              "difference": -0.007161458333333332,
+              "ci95": [
+                -0.018229166666666664,
+                0.004557291666666668
+              ]
+            },
+            "steps": {
+              "difference": -0.859375,
+              "ci95": [
+                -1.0058756510416667,
+                -0.7161458333333334
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "r2_135",
+          "metrics": {
+            "success": {
+              "difference": -0.011067708333333329,
+              "ci95": [
+                -0.03971354166666667,
+                0.016927083333333332
+              ]
+            },
+            "score": {
+              "difference": -0.001540157433712122,
+              "ci95": [
+                -0.021651536993822145,
+                0.017949602693132956
+              ]
+            },
+            "timeout": {
+              "difference": -0.004557291666666666,
+              "ci95": [
+                -0.01171875,
+                0.001953125
+              ]
+            },
+            "steps": {
+              "difference": -0.10872395833333333,
+              "ci95": [
+                -0.19401041666666669,
+                -0.02537434895833356
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_115",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.0859375,
+              "ci95": [
+                -0.11393229166666669,
+                -0.05794270833333334
+              ]
+            },
+            "score": {
+              "difference": -0.039106980801316735,
+              "ci95": [
+                -0.060473769561782256,
+                -0.01757626394149832
+              ]
+            },
+            "timeout": {
+              "difference": -0.001302083333333334,
+              "ci95": [
+                -0.014322916666666668,
+                0.01106770833333333
+              ]
+            },
+            "steps": {
+              "difference": 0.7981770833333333,
+              "ci95": [
+                0.6380208333333334,
+                0.9544270833333333
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_135",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.044921875,
+              "ci95": [
+                -0.07161458333333334,
+                -0.01822916666666667
+              ]
+            },
+            "score": {
+              "difference": -0.04611613719035594,
+              "ci95": [
+                -0.06817044609036797,
+                -0.02417484690421703
+              ]
+            },
+            "timeout": {
+              "difference": -0.00390625,
+              "ci95": [
+                -0.01171875,
+                0.0032552083333333335
+              ]
+            },
+            "steps": {
+              "difference": 0.04752604166666666,
+              "ci95": [
+                -0.04493815104166668,
+                0.1328125
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.055989583333333336,
+              "ci95": [
+                -0.08723958333333334,
+                -0.02604166666666667
+              ]
+            },
+            "score": {
+              "difference": -0.04765629462406806,
+              "ci95": [
+                -0.06954800956693047,
+                -0.026626041560978083
+              ]
+            },
+            "timeout": {
+              "difference": -0.008463541666666668,
+              "ci95": [
+                -0.018880208333333332,
+                0.001302083333333333
+              ]
+            },
+            "steps": {
+              "difference": -0.06119791666666667,
+              "ci95": [
+                -0.181640625,
+                0.053385416666666644
+              ]
+            }
+          }
+        }
+      ],
+      "method": "Parse terminal observations from copied raw JSONL; average three repeats per task; paired task-cluster bootstrap with10000 resamples, seed20261109. Matches remote independent verifier."
+    },
+    "paired_comparison": {
+      "at": "2026-11-10T18:24:49.122821+00:00",
+      "protocol_sha256": "ceca3d1f3e8268243af9806fc86acfff439aad05ae7066780e72a5fe1654af35",
+      "checkpoints": {
+        "r2_115": {
+          "status": "verified",
+          "tag": "r2_115",
+          "at": "2026-11-10T17:47:02.889726+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.6204427083333334,
+            "score": 0.800747988628848,
+            "timeout": 0.035807291666666664,
+            "steps": 6.280598958333333,
+            "failed_buy": 0.34375,
+            "option_loop": 0.0026041666666666665
+          },
+          "counts": {
+            "success": 953.0,
+            "timeout": 55.0,
+            "failed_buy": 528.0,
+            "option_loop": 4.0,
+            "repeated_option_actions": 136,
+            "format_invalid_actions": 2262,
+            "unexecutable_actions": 1091,
+            "steps": 9647
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.62109375,
+              "score": 0.800843444207702,
+              "timeout": 0.037109375,
+              "steps": 6.302734375,
+              "failed_buy": 0.341796875,
+              "option_loop": 0.001953125
+            },
+            "1": {
+              "success": 0.623046875,
+              "score": 0.7953877714082792,
+              "timeout": 0.044921875,
+              "steps": 6.3515625,
+              "failed_buy": 0.33203125,
+              "option_loop": 0.001953125
+            },
+            "2": {
+              "success": 0.6171875,
+              "score": 0.8060127502705627,
+              "timeout": 0.025390625,
+              "steps": 6.1875,
+              "failed_buy": 0.357421875,
+              "option_loop": 0.00390625
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 1198.5257778879022
+        },
+        "r2_135": {
+          "status": "verified",
+          "tag": "r2_135",
+          "at": "2026-11-10T18:06:31.124263+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.6614583333333334,
+            "score": 0.7937388322398088,
+            "timeout": 0.033203125,
+            "steps": 5.529947916666667,
+            "failed_buy": 0.3053385416666667,
+            "option_loop": 0.0
+          },
+          "counts": {
+            "success": 1016.0,
+            "timeout": 51.0,
+            "failed_buy": 469.0,
+            "option_loop": 0.0,
+            "repeated_option_actions": 6,
+            "format_invalid_actions": 1579,
+            "unexecutable_actions": 341,
+            "steps": 8494
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.65625,
+              "score": 0.793873937477453,
+              "timeout": 0.033203125,
+              "steps": 5.521484375,
+              "failed_buy": 0.310546875,
+              "option_loop": 0.0
+            },
+            "1": {
+              "success": 0.66015625,
+              "score": 0.7982085080717893,
+              "timeout": 0.033203125,
+              "steps": 5.552734375,
+              "failed_buy": 0.306640625,
+              "option_loop": 0.0
+            },
+            "2": {
+              "success": 0.66796875,
+              "score": 0.789134051170184,
+              "timeout": 0.033203125,
+              "steps": 5.515625,
+              "failed_buy": 0.298828125,
+              "option_loop": 0.0
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 1047.6900925009977
+        },
+        "r2_150": {
+          "status": "verified",
+          "tag": "r2_150",
+          "at": "2026-11-10T18:24:48.217989+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.650390625,
+            "score": 0.7921986748060966,
+            "timeout": 0.028645833333333332,
+            "steps": 5.421223958333333,
+            "failed_buy": 0.3209635416666667,
+            "option_loop": 0.0
+          },
+          "counts": {
+            "success": 999.0,
+            "timeout": 44.0,
+            "failed_buy": 493.0,
+            "option_loop": 0.0,
+            "repeated_option_actions": 14,
+            "format_invalid_actions": 1573,
+            "unexecutable_actions": 187,
+            "steps": 8327
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.642578125,
+              "score": 0.7852779398336039,
+              "timeout": 0.02734375,
+              "steps": 5.4375,
+              "failed_buy": 0.330078125,
+              "option_loop": 0.0
+            },
+            "1": {
+              "success": 0.658203125,
+              "score": 0.8008572823660715,
+              "timeout": 0.02734375,
+              "steps": 5.404296875,
+              "failed_buy": 0.314453125,
+              "option_loop": 0.0
+            },
+            "2": {
+              "success": 0.650390625,
+              "score": 0.7904608022186147,
+              "timeout": 0.03125,
+              "steps": 5.421875,
+              "failed_buy": 0.318359375,
+              "option_loop": 0.0
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 975.7409419829492
+        },
+        "gigpo_150": {
+          "status": "verified",
+          "tag": "gigpo_150",
+          "at": "2026-11-10T17:24:21.226080+00:00",
+          "episodes": 1536,
+          "unique_tasks": 512,
+          "means": {
+            "success": 0.7063802083333334,
+            "score": 0.8398549694301647,
+            "timeout": 0.037109375,
+            "steps": 5.482421875,
+            "failed_buy": 0.2565104166666667,
+            "option_loop": 0.0
+          },
+          "counts": {
+            "success": 1085.0,
+            "timeout": 57.0,
+            "failed_buy": 394.0,
+            "option_loop": 0.0,
+            "repeated_option_actions": 66,
+            "format_invalid_actions": 3,
+            "unexecutable_actions": 96,
+            "steps": 8421
+          },
+          "by_seed": {
+            "0": {
+              "success": 0.7109375,
+              "score": 0.8403789076591811,
+              "timeout": 0.037109375,
+              "steps": 5.484375,
+              "failed_buy": 0.251953125,
+              "option_loop": 0.0
+            },
+            "1": {
+              "success": 0.708984375,
+              "score": 0.8411113999932359,
+              "timeout": 0.041015625,
+              "steps": 5.509765625,
+              "failed_buy": 0.25,
+              "option_loop": 0.0
+            },
+            "2": {
+              "success": 0.69921875,
+              "score": 0.8380746006380771,
+              "timeout": 0.033203125,
+              "steps": 5.453125,
+              "failed_buy": 0.267578125,
+              "option_loop": 0.0
+            }
+          },
+          "task_manifest_sha256": "7dcf719173437f29b7355d443870ad01f3188a88780dae52dfc3ceb2c10f7f83",
+          "elapsed_seconds": 909.0266521460144
+        }
+      },
+      "paired_contrasts": [
+        {
+          "candidate": "r2_135",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": 0.04101562500000001,
+              "ci95": [
+                0.016276041666666668,
+                0.06575520833333333
+              ]
+            },
+            "score": {
+              "difference": -0.007009156389039202,
+              "ci95": [
+                -0.026914110236009647,
+                0.012382879670965598
+              ]
+            },
+            "timeout": {
+              "difference": -0.002604166666666666,
+              "ci95": [
+                -0.013020833333333332,
+                0.008463541666666668
+              ]
+            },
+            "steps": {
+              "difference": -0.7506510416666667,
+              "ci95": [
+                -0.8932291666666666,
+                -0.6100260416666666
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "r2_115",
+          "metrics": {
+            "success": {
+              "difference": 0.029947916666666668,
+              "ci95": [
+                -0.0013020833333333304,
+                0.06119791666666667
+              ]
+            },
+            "score": {
+              "difference": -0.008549313822751325,
+              "ci95": [
+                -0.029993805474762512,
+                0.01238994025541876
+              ]
+            },
+            "timeout": {
+              "difference": -0.007161458333333332,
+              "ci95": [
+                -0.018229166666666664,
+                0.004557291666666668
+              ]
+            },
+            "steps": {
+              "difference": -0.859375,
+              "ci95": [
+                -1.0058756510416667,
+                -0.7161458333333334
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "r2_135",
+          "metrics": {
+            "success": {
+              "difference": -0.011067708333333329,
+              "ci95": [
+                -0.03971354166666667,
+                0.016927083333333332
+              ]
+            },
+            "score": {
+              "difference": -0.001540157433712122,
+              "ci95": [
+                -0.021651536993822145,
+                0.017949602693132956
+              ]
+            },
+            "timeout": {
+              "difference": -0.004557291666666666,
+              "ci95": [
+                -0.01171875,
+                0.001953125
+              ]
+            },
+            "steps": {
+              "difference": -0.10872395833333333,
+              "ci95": [
+                -0.19401041666666669,
+                -0.02537434895833356
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_115",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.0859375,
+              "ci95": [
+                -0.11393229166666669,
+                -0.05794270833333334
+              ]
+            },
+            "score": {
+              "difference": -0.039106980801316735,
+              "ci95": [
+                -0.060473769561782256,
+                -0.01757626394149832
+              ]
+            },
+            "timeout": {
+              "difference": -0.001302083333333334,
+              "ci95": [
+                -0.014322916666666668,
+                0.01106770833333333
+              ]
+            },
+            "steps": {
+              "difference": 0.7981770833333333,
+              "ci95": [
+                0.6380208333333334,
+                0.9544270833333333
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_135",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.044921875,
+              "ci95": [
+                -0.07161458333333334,
+                -0.01822916666666667
+              ]
+            },
+            "score": {
+              "difference": -0.04611613719035594,
+              "ci95": [
+                -0.06817044609036797,
+                -0.02417484690421703
+              ]
+            },
+            "timeout": {
+              "difference": -0.00390625,
+              "ci95": [
+                -0.01171875,
+                0.0032552083333333335
+              ]
+            },
+            "steps": {
+              "difference": 0.04752604166666666,
+              "ci95": [
+                -0.04493815104166668,
+                0.1328125
+              ]
+            }
+          }
+        },
+        {
+          "candidate": "r2_150",
+          "reference": "gigpo_150",
+          "metrics": {
+            "success": {
+              "difference": -0.055989583333333336,
+              "ci95": [
+                -0.08723958333333334,
+                -0.02604166666666667
+              ]
+            },
+            "score": {
+              "difference": -0.04765629462406806,
+              "ci95": [
+                -0.06954800956693047,
+                -0.026626041560978083
+              ]
+            },
+            "timeout": {
+              "difference": -0.008463541666666668,
+              "ci95": [
+                -0.018880208333333332,
+                0.001302083333333333
+              ]
+            },
+            "steps": {
+              "difference": -0.06119791666666667,
+              "ci95": [
+                -0.181640625,
+                0.053385416666666644
+              ]
+            }
+          }
+        }
+      ],
+      "interpretation": "Paired bootstrap of512task clusters after averaging3generation repeats. Single training seed; development panel;115/135 are preregistered diagnostics for this aligned run;150 is the fixed primary endpoint. No unseen-goal or training-seed confidence claim."
+    }
+  },
+  "aligned_minus_old_final150_descriptive": {
+    "success": -0.00390625,
+    "score": 0.03459774455868203,
+    "timeout": -0.10221354166666667
+  },
+  "limitations": [
+    "One training seed; no training-seed uncertainty estimate.",
+    "Previously used development panel and overlapping native validation; not strict unseen-task evidence.",
+    "This run cannot isolate the causal contribution of individual method components.",
+    "Actual restart verified; bitwise equivalence to uninterrupted GPU training is not established."
+  ],
+  "provenance_note": "Selected archived aggregate and independent raw-recount outputs. Full episode JSONL is not included in this branch. Baseline 1536 episodes are shared by both panels and must not be counted twice."
+}

@@ -31,8 +31,8 @@
       "bytes": 109
     },
     "README.md": {
-      "sha256": "b01555f8dd4863de38aa1899e38f060eb3d846fd10e53375401a6a1bfe4695ca",
-      "bytes": 3421
+      "sha256": "589e79484d43d17fad421b9af17e5f5ac5d1373a5e14af16dba7e41598760f3f",
+      "bytes": 3670
     },
     "experiments/alfworld_r2/README.md": {
       "sha256": "28470b1bebcfba4cc59731164485fea7d72adfb63edc1cc1e09a76e336da75b2",
@@ -346,6 +346,26 @@
       "sha256": "dfe1624546e666cfe0437444ec77fdeaa9572cc9f8bcd1dfd83e50c0c73db081",
       "bytes": 18722
     },
+    "reports/gradus/EXPERIMENT_STATUS.md": {
+      "sha256": "1130332c03e079d780b5ef1eda29aa3179c8ad03287e960eef006f8ab3c16e07",
+      "bytes": 15981
+    },
+    "reports/gradus/evidence/alfworld_r2_results.json": {
+      "sha256": "38dcee58b74acdabd8b3647f0ce1f9e7f778004c76719d5beed702e5a5aff31a",
+      "bytes": 30235
+    },
+    "reports/gradus/evidence/source_index.json": {
+      "sha256": "e37a67212cda72bbbe4ca51e4bafe90df5582ae8e3afcf16834f21c447d9233d",
+      "bytes": 5901
+    },
+    "reports/gradus/evidence/verification_and_diagnostics.json": {
+      "sha256": "662931097847fa8698e553126d095ed400883034c91e450e4c0ed9e15b73b6b4",
+      "bytes": 21358
+    },
+    "reports/gradus/evidence/webshop_panels.json": {
+      "sha256": "5c644a0b519e8a2e28005c2f5ed236e0b712f54080afbc92c84a852d36f3991a",
+      "bytes": 39071
+    },
     "reports/gradus/publication_checks.json": {
       "sha256": "84f5af10bc80c7a53d3fd2ba465e2eb23ddf78481f41ef159552c78a62b2642f",
       "bytes": 1912
@@ -366,5 +386,6 @@
       "sha256": "a762aa52f2edaa71315da6857a5e7eb79392b0ae57e55ce494b9d7c427db1854",
       "bytes": 2245
     }
-  }
+  },
+  "documentation_updated_date": "2026-11-10"
 }

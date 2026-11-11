@@ -1,0 +1,608 @@
+{
+  "aligned_completed_verification": {
+    "deepseek_review": "complete; known findings resolved",
+    "tests": 37,
+    "tests_skipped": 0,
+    "alf_replay_trajectories": 19200,
+    "alf_replay_actions": 517033,
+    "exact_tensor_comparisons": 300,
+    "actual_GPU_reload_and_next_update": "PASS",
+    "training_iterations": 150,
+    "training_trajectories": 19200,
+    "native_validation_trajectories": 7936,
+    "protected_checkpoints_full_hashes": "PASS",
+    "panel_raw_episodes_independently_recounted": 6144
+  },
+  "aligned_final_checkpoints": {
+    "status": "PASS",
+    "config_and_release_unchanged": true,
+    "checkpoints": {
+      "115": {
+        "files": 18,
+        "all_sizes_and_sha256_verified": true,
+        "method_last_iteration": 115
+      },
+      "120": {
+        "files": 18,
+        "all_sizes_and_sha256_verified": true,
+        "method_last_iteration": 120
+      },
+      "135": {
+        "files": 18,
+        "all_sizes_and_sha256_verified": true,
+        "method_last_iteration": 135
+      },
+      "145": {
+        "files": 18,
+        "all_sizes_and_sha256_verified": true,
+        "method_last_iteration": 145
+      },
+      "150": {
+        "files": 18,
+        "all_sizes_and_sha256_verified": true,
+        "method_last_iteration": 150
+      }
+    },
+    "best": [
+      {
+        "score": 0.68359375,
+        "step": 150
+      },
+      {
+        "score": 0.66796875,
+        "step": 145
+      },
+      {
+        "score": 0.64453125,
+        "step": 120
+      }
+    ],
+    "latest": {
+      "score": 0.68359375,
+      "step": 150
+    },
+    "pinned_steps": [
+      115,
+      135
+    ],
+    "driver_rng_and_cursors_and_dataloader_verified": true,
+    "method_history_continuation_verified": false,
+    "limitation": "Reload and continuation verified; this does not establish bitwise identity to an uninterrupted GPU run."
+  },
+  "aligned_actual_resume": {
+    "status": "PASS",
+    "verified_step": 2,
+    "completed_iterations": [
+      1,
+      2
+    ],
+    "resume_decision": {
+      "created_at": "2026-11-10T03:37:52.691138+00:00",
+      "identity": {
+        "config_hash": "e228986968dc42900167e3e1871787e54b9e58f52ad2f98a4cf60b5ce89c19e1",
+        "model_contract_hash": "bb8cc6766e2b87d8efe73fb19f38945b3fe87fc9c03fd92e65eba94d035c6eb8",
+        "run_id": "gradus-webshop-h800-s0-r2aligned-20261109"
+      },
+      "interrupted_artifacts": [],
+      "native_candidates": [
+        {
+          "completion_sha256": "7b91448cd6040c37cf8cb8f5cf55910122dea59f70b7ec113a04bfd666f8a901",
+          "file_count": 20,
+          "kind": "native",
+          "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/checkpoints/global_step_1",
+          "status": "complete",
+          "step": 1
+        }
+      ],
+      "record_path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/checkpoints/best_checkpoints/resume_decisions/e84e50b004974d00ace2b752d2df5ff2.json",
+      "replay_after_step": 1,
+      "requested_mode": "auto",
+      "requested_path": null,
+      "selected": {
+        "completion_sha256": "7b91448cd6040c37cf8cb8f5cf55910122dea59f70b7ec113a04bfd666f8a901",
+        "file_count": 20,
+        "kind": "native",
+        "path": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/checkpoints/global_step_1",
+        "status": "complete",
+        "step": 1
+      },
+      "selection_rule": "highest complete iteration; matching native preferred over protected copy",
+      "status": "loaded",
+      "trace_tail_handling": "Recorded here; training trace/log segmentation remains the recovery workflow responsibility",
+      "tracker_action": "unchanged",
+      "tracker_before": {
+        "content": "1",
+        "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "status": "valid_integer",
+        "step": 1
+      }
+    },
+    "driver_rng_and_cursors_and_dataloader_verified": true,
+    "method_history_continuation_verified": true,
+    "limitation": "Reload and continuation verified; this does not establish bitwise identity to an uninterrupted GPU run."
+  },
+  "old_r2_checkpoint_selection": {
+    "best": [
+      {
+        "score": 0.734375,
+        "step": 115
+      },
+      {
+        "score": 0.7265625,
+        "step": 135
+      },
+      {
+        "score": 0.7265625,
+        "step": 120
+      }
+    ],
+    "latest": {
+      "score": 0.69921875,
+      "step": 150
+    }
+  },
+  "gigpo_checkpoint_selection": {
+    "best": [
+      {
+        "score": 0.7421875,
+        "step": 105
+      },
+      {
+        "score": 0.71484375,
+        "step": 145
+      },
+      {
+        "score": 0.70703125,
+        "step": 150
+      }
+    ],
+    "latest": {
+      "score": 0.70703125,
+      "step": 150
+    }
+  },
+  "native_validation": {
+    "old_r2_final150": {
+      "trajectories": 256,
+      "unique_instructions": 252,
+      "wins": 179,
+      "success_rate": 0.69921875,
+      "task_score": 0.7856424879374098,
+      "mean_steps": 6.97265625,
+      "timeouts": 37,
+      "failed_buys": 40,
+      "option_loop_episodes": 14,
+      "option_loop_timeouts": 14,
+      "repeated_option_actions": 86,
+      "repeated_actions": 194,
+      "action_count": 1785,
+      "noop_fraction": 0.0761904761904762,
+      "format_invalid_fraction": 0.0,
+      "mean_searches": 1,
+      "mean_unique_products": 1,
+      "failure_mean_steps": 10.311688311688311,
+      "failed_buy_mean_score": 0.5531119227994228
+    },
+    "aligned": [
+      {
+        "step": 0,
+        "val/success_rate": 0.03125,
+        "val/text/test_score": 0.16821868428957645,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.17403651470057718
+      },
+      {
+        "step": 5,
+        "val/success_rate": 0.05859375,
+        "val/text/test_score": 0.5382215288611545,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.3565639373647186
+      },
+      {
+        "step": 10,
+        "val/success_rate": 0.11328125,
+        "val/text/test_score": 1.0688729874776386,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.4903938943001443
+      },
+      {
+        "step": 15,
+        "val/success_rate": 0.10546875,
+        "val/text/test_score": 0.8391038696537678,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.39537609219824293
+      },
+      {
+        "step": 20,
+        "val/success_rate": 0.16015625,
+        "val/text/test_score": 1.5381282495667243,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.5143260732323233
+      },
+      {
+        "step": 25,
+        "val/success_rate": 0.22265625,
+        "val/text/test_score": 2.363919129082426,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.6264099984217172
+      },
+      {
+        "step": 30,
+        "val/success_rate": 0.296875,
+        "val/text/test_score": 3.1748633879781423,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.6500605243281026
+      },
+      {
+        "step": 35,
+        "val/success_rate": 0.35546875,
+        "val/text/test_score": 3.959691760521636,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7395581653589466
+      },
+      {
+        "step": 40,
+        "val/success_rate": 0.3671875,
+        "val/text/test_score": 3.8053097345132745,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7071761842757937
+      },
+      {
+        "step": 45,
+        "val/success_rate": 0.25390625,
+        "val/text/test_score": 2.875894988066826,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.741602524887796
+      },
+      {
+        "step": 50,
+        "val/success_rate": 0.32421875,
+        "val/text/test_score": 3.229916897506925,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.679690924310065
+      },
+      {
+        "step": 55,
+        "val/success_rate": 0.375,
+        "val/text/test_score": 3.5908838243468595,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7144385822510824
+      },
+      {
+        "step": 60,
+        "val/success_rate": 0.49609375,
+        "val/text/test_score": 5.042589437819421,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7577805115891054
+      },
+      {
+        "step": 65,
+        "val/success_rate": 0.45703125,
+        "val/text/test_score": 4.651810584958217,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7445663386093074
+      },
+      {
+        "step": 70,
+        "val/success_rate": 0.4921875,
+        "val/text/test_score": 4.751184834123222,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.8065184489989177
+      },
+      {
+        "step": 75,
+        "val/success_rate": 0.5,
+        "val/text/test_score": 4.483193277310924,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.6522755174512987
+      },
+      {
+        "step": 80,
+        "val/success_rate": 0.47265625,
+        "val/text/test_score": 4.064516129032258,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.6389594465863997
+      },
+      {
+        "step": 85,
+        "val/success_rate": 0.56640625,
+        "val/text/test_score": 4.955882352941177,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7148088164006132
+      },
+      {
+        "step": 90,
+        "val/success_rate": 0.5390625,
+        "val/text/test_score": 4.779806659505907,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7531360761634199
+      },
+      {
+        "step": 95,
+        "val/success_rate": 0.57421875,
+        "val/text/test_score": 4.901365705614568,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7176990891053391
+      },
+      {
+        "step": 100,
+        "val/success_rate": 0.546875,
+        "val/text/test_score": 4.797814207650274,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7148127198322511
+      },
+      {
+        "step": 105,
+        "val/success_rate": 0.6015625,
+        "val/text/test_score": 5.989750160153748,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.8110851158645276
+      },
+      {
+        "step": 110,
+        "val/success_rate": 0.57421875,
+        "val/text/test_score": 5.463078848560701,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7975494804929548
+      },
+      {
+        "step": 115,
+        "val/success_rate": 0.63671875,
+        "val/text/test_score": 6.00970285021225,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.797311479752886
+      },
+      {
+        "step": 120,
+        "val/success_rate": 0.64453125,
+        "val/text/test_score": 6.212438853948288,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.8265201963834776
+      },
+      {
+        "step": 125,
+        "val/success_rate": 0.61328125,
+        "val/text/test_score": 5.901162790697675,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.8180144497429654
+      },
+      {
+        "step": 130,
+        "val/success_rate": 0.6328125,
+        "val/text/test_score": 5.871496924128503,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.787440123895202
+      },
+      {
+        "step": 135,
+        "val/success_rate": 0.63671875,
+        "val/text/test_score": 5.924104005621926,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7615467453553391
+      },
+      {
+        "step": 140,
+        "val/success_rate": 0.640625,
+        "val/text/test_score": 6.1344537815126055,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7928036503427129
+      },
+      {
+        "step": 145,
+        "val/success_rate": 0.66796875,
+        "val/text/test_score": 6.338028169014085,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.7872860763623633
+      },
+      {
+        "step": 150,
+        "val/success_rate": 0.68359375,
+        "val/text/test_score": 6.480169971671388,
+        "val/text/tool_call_count/mean": 0.0,
+        "val/webshop_task_score (not success_rate)": 0.8055158589240621
+      }
+    ]
+  },
+  "late_credit_diagnostics": {
+    "range_inclusive": [
+      116,
+      150
+    ],
+    "old_r2": {
+      "zero_injection_iterations": [
+        116,
+        117,
+        118,
+        121,
+        122,
+        123,
+        124,
+        125,
+        132,
+        137,
+        140,
+        143,
+        147,
+        149,
+        150
+      ],
+      "AF_present_but_zero_injection_iterations": [
+        116,
+        117,
+        118,
+        121,
+        123,
+        124,
+        125,
+        132,
+        137,
+        140,
+        143,
+        147,
+        149,
+        150
+      ],
+      "no_AF_iterations": [
+        122
+      ],
+      "final150": {
+        "actor_rows": 928,
+        "af_clipped_token_fraction": 0.0,
+        "af_clipped_tokens": 0,
+        "af_groups": 4,
+        "af_nonzero_tokens": 0,
+        "af_response_tokens": 27947,
+        "af_weighted_mean": 0.0,
+        "af_weighted_rms": 0.0,
+        "af_weighted_std": 0.0,
+        "clipped_rows": 0,
+        "donor_successes": 365,
+        "groups": 16,
+        "history_iterations": 4,
+        "nonzero_centered_actions": 0,
+        "rank_coverage_fraction": 0.17066666666666666,
+        "rank_labels_changed": 0,
+        "rank_levels": 2,
+        "rank_shuffle_active": 0,
+        "ranked_states": 2,
+        "scale": 0.0,
+        "token_std_before_scale": 0.0,
+        "unique_actor_actions": 908,
+        "unknown_state_fraction": 0.8293333333333334,
+        "weighted_rms": 0.0
+      }
+    },
+    "aligned": {
+      "no_AF_iterations": [
+        122
+      ],
+      "AF_present_but_zero_injection_iterations": [
+        137
+      ],
+      "last35_AF_present_but_zero_injection_iterations": [
+        137
+      ],
+      "last35_mean_rank_coverage": 0.559278969378671,
+      "last_iteration": {
+        "actions": 669,
+        "actor_rows": 672,
+        "adapter_candidate_pool_size": 1280,
+        "adapter_conflicting_instruction_roles": 0,
+        "adapter_first_reveals": 128,
+        "adapter_positive_sightings": 158,
+        "adapter_repeated_accepted_option": 10,
+        "adapter_requested_roles": 288,
+        "adapter_unknown_price_item_states": 6,
+        "adapter_unknown_price_straddling_interval": 6,
+        "adapter_unknown_slot_ambiguous_selection": 0,
+        "adapter_unknown_slot_category_unavailable": 981,
+        "adapter_unknown_slot_requested_value_unavailable": 13,
+        "adapter_unparsed_instruction_roles": 0,
+        "af_actions": 126,
+        "af_clipped_token_fraction": 0.0,
+        "af_clipped_tokens": 0,
+        "af_groups": 3,
+        "af_nonzero_tokens": 8765,
+        "af_response_tokens": 14656,
+        "af_weighted_mean": 0.014055989699005596,
+        "af_weighted_rms": 0.5001893160413423,
+        "af_weighted_std": 0.4999917809679673,
+        "anchor_buckets": 18,
+        "centered_actions_negative": 31,
+        "centered_actions_positive": 46,
+        "clipped_rows": 0,
+        "current_mixed_successes": 83,
+        "donor_iterations": 4,
+        "donor_successes": 404,
+        "fallback_buckets": 1,
+        "groups": 16,
+        "history_iterations": 4,
+        "nonzero_centered_actions": 77,
+        "nonzero_raw_aux": 79,
+        "off_path_states": 4,
+        "rank_coverage_fraction": 0.8733333333333333,
+        "rank_labels_changed": 0,
+        "rank_levels": 94,
+        "rank_shuffle_active": 0,
+        "ranked_states": 94,
+        "scale": 8.213534777038053,
+        "search_object_classes": 4,
+        "singleton_anchor_ratio": 0.05263157894736842,
+        "skeletons": 24,
+        "token_std_before_scale": 0.0608741303272997,
+        "unique_actor_actions": 669,
+        "unknown_state_fraction": 0.12666666666666668,
+        "unknown_state_ratio": 0.12666666666666668,
+        "weighted_rms": 0.22082910937453146,
+        "zero_variance_buckets": 10
+      }
+    },
+    "interpretation": "Different trained policies and visited states. Signal availability is descriptive, not a causal estimate of policy benefit."
+  },
+  "old_price_parser_probe": {
+    "affected": 57,
+    "interval_relation_counts": {
+      "uncertain": 2,
+      "within": 55
+    },
+    "scope": "Archived probe of selected old-run traces, not an estimated full-run defect rate."
+  },
+  "aligned_pretraining_review": {
+    "status": "PASS_KNOWN_REVIEW_FINDINGS_RESOLVED",
+    "at": "2026-11-10T03:08:01.077396+00:00",
+    "findings": [
+      {
+        "id": 1,
+        "decision": "not_adopted_for_frozen_protocol",
+        "claim": "Detail unreachable if global BuyNow/Search remains",
+        "evidence": "Actual frozen detail templates have Back to Search and < Prev only;470 valid detail transitions have neither exact BuyNow nor Search; real CPU detail/return retains selected role.",
+        "action": "No change to page classification; new template protocol would require renewed audit."
+      },
+      {
+        "id": 2,
+        "decision": "partially_adopted",
+        "claim": "Price formats/constant candidate offset",
+        "evidence": "92489 item-price fields all parse; no hyphen-range source evidence. ONE of200019 candidate occurrences lacks a title; fixedoffset missed its $18.0 price.",
+        "action": "Bound price parsing to candidate block; support missing title, reject ambiguous/missing price; cannot borrow next candidate price. New test passes; exactlyone C3class changes in19200trace regression, at iteration93 withnoAFgroups."
+      },
+      {
+        "id": 3,
+        "decision": "not_adopted",
+        "claim": "click[search] must execute / after==before detects no-op",
+        "evidence": "Exact upstream step excludes action_arg==search. Real CPU click[search] keeps home. First/changed valid option also leave text identical, disproving proposed text-only no-op rule.",
+        "action": "Retain upstream execution grammar and current-option semantic no-op."
+      },
+      {
+        "id": 4,
+        "decision": "adopted",
+        "claim": "Budget boundary contaminates last role value",
+        "evidence": "Synthetic missingcomma and budget-before-role counterexamples reproduce. Frozen goalgen emits comma+andprice; all19200 prior state keys/noops/skeletons unaffected by fix.",
+        "action": "Truncate only following budget clause before nextrole; strip trailing conjunction only then; three order/punctuation regressions pass."
+      }
+    ],
+    "followup": {
+      "status": "completed",
+      "model": "deepseek-flash",
+      "completed_at": "2026-11-10T03:05:26.484769+00:00",
+      "result": "All four original findings closed for frozen protocol; no remaining blocker.",
+      "artifact": "deepseek_followup_review.json"
+    }
+  },
+  "review_scope_limit": "Completed external method review covered adapter, potential/credit and CreditEngine. Full runtime review requests timed out. GPU execution and persistence were independently checked after the review; preparation-time unperformed fields are superseded by completed verification.",
+  "excluded_evaluation_attempt": {
+    "at": "2026-11-09T15:04:09.976829+00:00",
+    "cause": "RecordedManager.step called in-place webshop_projection before super().step, causing native manager to project a second time and truncate tag-free actions to last20characters. Captured generated_text aliased mutated list.",
+    "impact": "InitialR2-115evaluation invalid; all its episodes excluded from model comparison. No training or checkpoint was modified.",
+    "repair": "Capture raw outputs before native step; record actually executed actions in backend; never project in recorder."
+  },
+  "cost_aligned_only": {
+    "training_service_wall_hours": 13.921205146378941,
+    "training_two_gpu_allocation_hours": 27.842410292757883,
+    "panel_service_wall_hours": 1.0016064086225298,
+    "panel_two_gpu_allocation_hours": 2.0032128172450596,
+    "total_new_two_gpu_allocation_hours": 29.845623110002943,
+    "monetary_cost": null,
+    "basis": "Journal service intervals, including I/O and initialization; allocation hours are not measured GPU compute hours. Existing baseline cost is not newly incurred."
+  },
+  "cost_scope": "The recorded 29.85 GPU allocation hours cover the aligned training and new panel only. Earlier ALFWorld, baseline, old R2, development, failed attempts and review costs are not a complete total here."
+}

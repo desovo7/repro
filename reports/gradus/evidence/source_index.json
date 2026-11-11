@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-10",
+  "format": "Source paths are artifact-relative provenance identifiers, not links to files promised in this branch.",
+  "sources": {
+    "publication_collection/alf_results_archive.json": {
+      "sha256": "49e27eccb885a3b796abef867dc5ff6293f5aba7faf8b316c248056637aaa6d5",
+      "bytes": 257418
+    },
+    "publication_collection/alf_native_recount.json": {
+      "sha256": "09cffba3009bc1ceace8be68be8ceab8f9c34ff2eb15ec96547ddcd8cec7b212",
+      "bytes": 2160
+    },
+    "evaluations/h800-r2-s1-20261107/jobs/step145_full_catalog_seed0/results.json": {
+      "sha256": "190b9d7fde21d8fa08ab3c1f89376bb8336340112dfd81a30693f0aa35c58b27",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-s1-20261107/jobs/step150_covgpo_5seed_seed0/results.json": {
+      "sha256": "28b410e37fddea257877706e61099b60ab54250d19a1c55e5c6122693710c10f",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-s1-20261107/jobs/step150_covgpo_5seed_seed123/results.json": {
+      "sha256": "5e8a6785c7eb887e8d9981ea45c47b3b0a74262a5e5bd5505b43bdbf6e582e86",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-s1-20261107/jobs/step150_covgpo_5seed_seed42/results.json": {
+      "sha256": "72886fc0eaf4de5d23e686ba6356c155daa7af4bbfa486c29a02d85cfc2ad8e6",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-s1-20261107/jobs/step150_covgpo_5seed_seed456/results.json": {
+      "sha256": "3486de0cc5bcb6c995f3c2bd1c683c35bec03f9273c1d8882355eb87d02e1ff9",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-s1-20261107/jobs/step150_covgpo_5seed_seed789/results.json": {
+      "sha256": "790b2eb30669c52dee16b4b54d867c2a911e1d38b8d8d406d4786e804454f1ec",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-s1-20261107/jobs/step150_full_catalog_seed0/results.json": {
+      "sha256": "4e3c3ad0d88d6163c091cd98b2b11476746c8dda08e1a8e6b8557c022c02fcf9",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-window-20261107/jobs/step150_full_catalog_seed0_h1/results.json": {
+      "sha256": "77e86ddef6b3d84463f231dea1c5383245158dd72089f47a048e76836db8d08d",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-window-20261107/jobs/step150_full_catalog_seed0_h3/results.json": {
+      "sha256": "a39865993a6fc71d887a1a37bfccd4a083a966cd13e52000f7d0ae4d62ffc1af",
+      "origin": "H800 archived evaluation result"
+    },
+    "evaluations/h800-r2-window-20261107/jobs/step150_full_catalog_seed0_h4/results.json": {
+      "sha256": "8042cd4dcecae5e8ccd5c7132cc63fd3f86aec1c7109fb5ab6e3a349340f8510",
+      "origin": "H800 archived evaluation result"
+    },
+    "gradus/webshop/evidence/checkpoint_panel_20261109/local_paired_recount.json": {
+      "sha256": "83997460f2e7e2887ac28a33b1379a252bda8de2a6dcbb96fdf538c5519767ca",
+      "bytes": 3377
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/panel/local_paired_recount.json": {
+      "sha256": "9ab408e17dccfe98b28196fdbc1fd9af125e77107fd1c1cf02625f60c87a8aaa",
+      "bytes": 6279
+    },
+    "gradus/webshop/evidence/checkpoint_panel_20261109/comparison.json": {
+      "sha256": "e734d915b41d2e1d5c83e76f6e200ae68ee627348e3305d0fd1522938ebf2f2f",
+      "bytes": 11326
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/panel/comparison.json": {
+      "sha256": "e20331f30b5616c7da4d590b6eaf390a774e221ead252c95c6f8eb936a3c9488",
+      "bytes": 11375
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/RESULTS.json": {
+      "sha256": "a1cb05087b9630faf77c6c3a088b184ee22c7713f4e25c1769811d1ed0f166ef",
+      "bytes": 13918
+    },
+    "gradus/webshop/evidence/checkpoint_panel_20261109/experiment_card.json": {
+      "sha256": "6a1fab348eae8394756767d5437c17f991b1db74d25ec9acbd9c75da0b72fea8",
+      "bytes": 63060
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/panel/experiment_card.json": {
+      "sha256": "ceca3d1f3e8268243af9806fc86acfff439aad05ae7066780e72a5fe1654af35",
+      "bytes": 63318
+    },
+    "gradus/webshop/evidence/result_review/completed_review_snapshot.json": {
+      "sha256": "d8f4b090385a2639d0e2e1ac86b03600da8b51bdcbfdee23a200dd8b335f74bf",
+      "bytes": 205537
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/training_summary.json": {
+      "sha256": "9772b053ea0600a89e10432fe6f58f54fb39b37cfd722757d870080926c91597",
+      "bytes": 11065
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/review_assessment.json": {
+      "sha256": "722e85bc37eee4b3eaaa2b6d22bbddc990ba3a0182fb7311605c5fa4994c2922",
+      "bytes": 3648
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/final_training_verification.json": {
+      "sha256": "f649dd2bdeef36f567655c0d017d80b2c2de11490d31856b705953e6be868cf5",
+      "bytes": 19707
+    },
+    "gradus/webshop/evidence/r2_aligned_20261109/actual_resume_verification.json": {
+      "sha256": "9e569d6107962f55fa7670953a7fe0f6d2faf96169bb2ae4c29c4969296c5d2f",
+      "bytes": 3219
+    },
+    "gradus/webshop/evidence/result_review/r2_completed_checkpoint_status.json": {
+      "sha256": "2f33903e31ba107f98ac2398de7b329becc3052c9a8800d0dd14d4d8494ab68a",
+      "bytes": 1587
+    },
+    "gradus/webshop/evidence/checkpoint_panel_20261109/gigpo_final_checkpoint_verification.json": {
+      "sha256": "775d9800eff5621085f8800952ec83617ca798d3e6697d593da1900d1a54f3e3",
+      "bytes": 31672
+    },
+    "gradus/webshop/evidence/result_review/price_parser_probe.json": {
+      "sha256": "92cc361f427e8d19dd986e3c37a2fead7736a93ac45b387c1f8f19266c3f5acb",
+      "bytes": 31442
+    },
+    "gradus/webshop/evidence/checkpoint_panel_20261109/failed_attempts/recording_mutation/failure_analysis.json": {
+      "sha256": "d3ff188aefd38ee9b1cb290e108b77d21ed37f9bdef2d8776af901b2a474c4ca",
+      "bytes": 547
+    }
+  }
+}
