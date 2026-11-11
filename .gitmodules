@@ -1,0 +1,3 @@
+[submodule "vendor/verl_agent"]
+	path = vendor/verl_agent
+	url = https://github.com/langfengQ/verl-agent.git

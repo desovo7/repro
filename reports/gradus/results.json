@@ -1,0 +1,162 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "training_seed": 0,
+  "iterations": 150,
+  "aligned_validation": {
+    "success_rate": 0.68359375,
+    "task_score": 0.8055158589240621
+  },
+  "fixed_panel": {
+    "task_instances": 512,
+    "generation_repeats": 3,
+    "old_webshop_r2": {
+      "r2_115": {
+        "success": 0.7174479166666666,
+        "score": 0.8412602212602213,
+        "timeout": 0.00390625,
+        "steps": 5.313151041666667,
+        "failed_buy": 0.2786458333333333,
+        "option_loop": 0.0032552083333333335
+      },
+      "r2_135": {
+        "success": 0.71875,
+        "score": 0.8422961408166486,
+        "timeout": 0.010416666666666666,
+        "steps": 5.341145833333333,
+        "failed_buy": 0.2708333333333333,
+        "option_loop": 0.007161458333333333
+      },
+      "r2_150": {
+        "success": 0.654296875,
+        "score": 0.7576009302474146,
+        "timeout": 0.130859375,
+        "steps": 6.917317708333333,
+        "failed_buy": 0.21484375,
+        "option_loop": 0.053385416666666664
+      }
+    },
+    "aligned": {
+      "r2_115": {
+        "success": 0.6204427083333334,
+        "score": 0.800747988628848,
+        "timeout": 0.035807291666666664,
+        "steps": 6.280598958333333,
+        "failed_buy": 0.34375,
+        "option_loop": 0.0026041666666666665
+      },
+      "r2_135": {
+        "success": 0.6614583333333334,
+        "score": 0.7937388322398088,
+        "timeout": 0.033203125,
+        "steps": 5.529947916666667,
+        "failed_buy": 0.3053385416666667,
+        "option_loop": 0.0
+      },
+      "r2_150": {
+        "success": 0.650390625,
+        "score": 0.7921986748060966,
+        "timeout": 0.028645833333333332,
+        "steps": 5.421223958333333,
+        "failed_buy": 0.3209635416666667,
+        "option_loop": 0.0
+      },
+      "gigpo_150": {
+        "success": 0.7063802083333334,
+        "score": 0.8398549694301647,
+        "timeout": 0.037109375,
+        "steps": 5.482421875,
+        "failed_buy": 0.2565104166666667,
+        "option_loop": 0.0
+      }
+    },
+    "primary_contrast": {
+      "candidate": "r2_150",
+      "reference": "gigpo_150",
+      "metrics": {
+        "success": {
+          "difference": -0.055989583333333336,
+          "ci95": [
+            -0.08723958333333334,
+            -0.02604166666666667
+          ]
+        },
+        "score": {
+          "difference": -0.04765629462406806,
+          "ci95": [
+            -0.06954800956693047,
+            -0.026626041560978083
+          ]
+        },
+        "timeout": {
+          "difference": -0.008463541666666668,
+          "ci95": [
+            -0.018880208333333332,
+            0.001302083333333333
+          ]
+        },
+        "steps": {
+          "difference": -0.06119791666666667,
+          "ci95": [
+            -0.181640625,
+            0.053385416666666644
+          ]
+        }
+      }
+    },
+    "late_contrast": {
+      "candidate": "r2_150",
+      "reference": "r2_135",
+      "metrics": {
+        "success": {
+          "difference": -0.011067708333333329,
+          "ci95": [
+            -0.03971354166666667,
+            0.016927083333333332
+          ]
+        },
+        "score": {
+          "difference": -0.001540157433712122,
+          "ci95": [
+            -0.021651536993822145,
+            0.017949602693132956
+          ]
+        },
+        "timeout": {
+          "difference": -0.004557291666666666,
+          "ci95": [
+            -0.01171875,
+            0.001953125
+          ]
+        },
+        "steps": {
+          "difference": -0.10872395833333333,
+          "ci95": [
+            -0.19401041666666669,
+            -0.02537434895833356
+          ]
+        }
+      }
+    }
+  },
+  "checks": {
+    "cpu_tests": 37,
+    "cpu_tests_skipped": 0,
+    "alf_credit_regression": {
+      "status": "PASS",
+      "rounds": 150,
+      "trajectories": 19200,
+      "actions": 517033,
+      "tensor_comparisons": 300,
+      "source_core_sha256": "e1b3f5b5752577a54ef1d562768745aa36e82a229e6ed2183275d9acf8c62f6d"
+    },
+    "actual_resume_and_next_update": "PASS",
+    "full_aligned_training_and_checkpoint_integrity": "PASS",
+    "independent_raw_panel_recount_episodes": 6144
+  },
+  "limitations": [
+    "One training seed; no training-seed uncertainty estimate.",
+    "Previously used development panel and overlapping native validation; not strict unseen-task evidence.",
+    "This run cannot isolate the causal contribution of individual method components.",
+    "Actual restart verified; bitwise equivalence to uninterrupted GPU training is not established."
+  ]
+}

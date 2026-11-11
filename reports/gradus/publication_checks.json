@@ -1,0 +1,67 @@
+{
+  "kind": "packaged_snapshot_cpu_checks",
+  "gpu_visibility": "disabled",
+  "results": [
+    {
+      "variant": "webshop_r2",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "webshop.test_webshop",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "----------------------------------------------------------------------\nRan 25 tests in 2.368s\n\nOK\n"
+    },
+    {
+      "variant": "webshop_r2_aligned",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "webshop.test_webshop",
+        "webshop.test_r2_aligned",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "----------------------------------------------------------------------\nRan 37 tests in 3.019s\n\nOK\n"
+    },
+    {
+      "variant": "alfworld_r2",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests_v83",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "----------------------------------------------------------------------\nRan 44 tests in 0.696s\n\nOK (skipped=8)\n"
+    },
+    {
+      "variant": "alfworld_r2",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_repro*.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "----------------------------------------------------------------------\nRan 29 tests in 2.013s\n\nOK\n"
+    }
+  ],
+  "status": "PASS_WITH_DECLARED_SKIPS",
+  "total_tests": 135,
+  "passed_tests": 127,
+  "skipped_tests": 8,
+  "skip_reason": "Eight opt-in native ALFWorld integration tests require V83_NATIVE_CPU or V83_NATIVE_COLLECTOR_CPU and supplied paths; they were not enabled for publication.",
+  "scope": "CPU checks of the packaged experiment source in the training Python environment with CUDA_VISIBLE_DEVICES empty; no training launched."
+}

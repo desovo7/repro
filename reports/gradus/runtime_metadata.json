@@ -1,0 +1,22 @@
+{
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:20:58) [GCC 14.3.0]",
+  "packages": {
+    "torch": "2.8.0",
+    "ray": "2.50.0",
+    "vllm": "0.11.0",
+    "transformers": "4.57.3",
+    "tokenizers": "0.22.2",
+    "tensordict": "0.10.0",
+    "numpy": "1.26.4",
+    "datasets": "4.8.5",
+    "omegaconf": "2.3.0",
+    "textworld": "1.6.2",
+    "alfworld": "0.4.2",
+    "gym": "0.26.2",
+    "gymnasium": "0.29.1",
+    "pyserini": "0.17.0",
+    "accelerate": "1.13.0",
+    "flash_attn": "2.8.3"
+  },
+  "scope": "Installed versions observed at publication time in the environment used by these runs; not a complete dependency lockfile."
+}

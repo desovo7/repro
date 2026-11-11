@@ -1,0 +1,427 @@
+{
+  "data": {
+    "tokenizer": null,
+    "use_shm": false,
+    "train_files": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/data/train.parquet",
+    "val_files": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/data/test.parquet",
+    "prompt_key": "prompt",
+    "reward_fn_key": "data_source",
+    "max_prompt_length": 4096,
+    "max_response_length": 512,
+    "train_batch_size": 16,
+    "val_batch_size": 128,
+    "return_raw_input_ids": false,
+    "return_raw_chat": true,
+    "return_full_prompt": false,
+    "shuffle": true,
+    "filter_overlong_prompts": true,
+    "filter_overlong_prompts_workers": 1,
+    "truncation": "error",
+    "image_key": "images",
+    "video_key": "videos",
+    "trust_remote_code": false,
+    "apply_chat_template_kwargs": {},
+    "custom_cls": {
+      "path": null,
+      "name": null
+    }
+  },
+  "actor_rollout_ref": {
+    "hybrid_engine": true,
+    "model": {
+      "path": "/data_b/qzluo/workspace/wlx/models/Qwen2.5-1.5B-Instruct",
+      "use_shm": false,
+      "external_lib": null,
+      "override_config": {},
+      "enable_gradient_checkpointing": true,
+      "enable_activation_offload": false,
+      "use_remove_padding": true,
+      "lora_rank": 0,
+      "lora_alpha": 16,
+      "target_modules": "all-linear",
+      "use_liger": false,
+      "use_fused_kernels": false,
+      "trust_remote_code": false
+    },
+    "actor": {
+      "strategy": "fsdp",
+      "ppo_mini_batch_size": 64,
+      "ppo_micro_batch_size": null,
+      "ppo_micro_batch_size_per_gpu": 8,
+      "use_dynamic_bsz": false,
+      "ppo_max_token_len_per_gpu": 16384,
+      "grad_clip": 1.0,
+      "clip_ratio": 0.2,
+      "clip_ratio_low": 0.2,
+      "clip_ratio_high": 0.2,
+      "clip_ratio_c": 3.0,
+      "loss_agg_mode": "token-mean",
+      "entropy_coeff": 0.001,
+      "use_invalid_action_penalty": true,
+      "invalid_action_penalty_coef": 0.1,
+      "use_kl_loss": true,
+      "use_torch_compile": true,
+      "kl_loss_coef": 0.01,
+      "kl_loss_type": "low_var_kl",
+      "ppo_epochs": 1,
+      "shuffle": false,
+      "ulysses_sequence_parallel_size": 1,
+      "policy_loss": {
+        "loss_mode": "vanilla"
+      },
+      "checkpoint": {
+        "contents": [
+          "model",
+          "optimizer",
+          "extra"
+        ]
+      },
+      "optim": {
+        "lr": 1e-06,
+        "lr_warmup_steps": -1,
+        "lr_warmup_steps_ratio": 0.0,
+        "min_lr_ratio": 0.0,
+        "num_cycles": 0.5,
+        "warmup_style": "constant",
+        "total_training_steps": -1,
+        "weight_decay": 0.01
+      },
+      "fsdp_config": {
+        "wrap_policy": {
+          "min_num_params": 0
+        },
+        "param_offload": false,
+        "optimizer_offload": false,
+        "offload_policy": false,
+        "reshard_after_forward": true,
+        "fsdp_size": -1
+      }
+    },
+    "ref": {
+      "strategy": "fsdp",
+      "fsdp_config": {
+        "param_offload": true,
+        "reshard_after_forward": true,
+        "wrap_policy": {
+          "min_num_params": 0
+        }
+      },
+      "use_torch_compile": "${actor_rollout_ref.actor.use_torch_compile}",
+      "log_prob_micro_batch_size": null,
+      "log_prob_micro_batch_size_per_gpu": 16,
+      "log_prob_use_dynamic_bsz": "${actor_rollout_ref.actor.use_dynamic_bsz}",
+      "log_prob_max_token_len_per_gpu": "${actor_rollout_ref.actor.ppo_max_token_len_per_gpu}",
+      "ulysses_sequence_parallel_size": "${actor_rollout_ref.actor.ulysses_sequence_parallel_size}"
+    },
+    "rollout": {
+      "name": "vllm",
+      "mode": "sync",
+      "chat_scheduler": null,
+      "temperature": 1.0,
+      "top_k": -1,
+      "top_p": 1,
+      "use_fire_sampling": false,
+      "prompt_length": "${data.max_prompt_length}",
+      "response_length": "${data.max_response_length}",
+      "dtype": "bfloat16",
+      "gpu_memory_utilization": 0.6,
+      "ignore_eos": false,
+      "enforce_eager": false,
+      "free_cache_engine": false,
+      "load_format": "dummy_dtensor",
+      "layered_summon": false,
+      "tensor_model_parallel_size": 2,
+      "max_num_batched_tokens": 8192,
+      "max_model_len": null,
+      "max_num_seqs": 1024,
+      "log_prob_micro_batch_size": null,
+      "log_prob_micro_batch_size_per_gpu": 16,
+      "log_prob_use_dynamic_bsz": "${actor_rollout_ref.actor.use_dynamic_bsz}",
+      "log_prob_max_token_len_per_gpu": "${actor_rollout_ref.actor.ppo_max_token_len_per_gpu}",
+      "disable_log_stats": true,
+      "enable_chunked_prefill": false,
+      "do_sample": true,
+      "n": 1,
+      "engine_kwargs": {
+        "vllm": {
+          "swap_space": null
+        },
+        "sglang": {
+          "attention_backend": null
+        }
+      },
+      "val_kwargs": {
+        "top_k": -1,
+        "top_p": 1.0,
+        "temperature": 0.4,
+        "n": 1,
+        "do_sample": true
+      },
+      "multi_turn": {
+        "enable": false,
+        "max_turns": null,
+        "tool_config_path": null,
+        "format": "chatml"
+      }
+    }
+  },
+  "critic": {
+    "rollout_n": "${actor_rollout_ref.rollout.n}",
+    "strategy": "fsdp",
+    "optim": {
+      "lr": 1e-05,
+      "lr_warmup_steps_ratio": 0.0,
+      "min_lr_ratio": null,
+      "warmup_style": "constant",
+      "total_training_steps": -1,
+      "weight_decay": 0.01
+    },
+    "model": {
+      "path": "~/models/deepseek-llm-7b-chat",
+      "use_shm": false,
+      "tokenizer_path": "${actor_rollout_ref.model.path}",
+      "override_config": {},
+      "external_lib": "${actor_rollout_ref.model.external_lib}",
+      "enable_gradient_checkpointing": true,
+      "enable_activation_offload": false,
+      "use_remove_padding": false,
+      "trust_remote_code": "${actor_rollout_ref.model.trust_remote_code}",
+      "fsdp_config": {
+        "param_offload": false,
+        "optimizer_offload": false,
+        "offload_policy": false,
+        "reshard_after_forward": true,
+        "wrap_policy": {
+          "min_num_params": 0
+        },
+        "fsdp_size": -1
+      },
+      "lora_rank": 0,
+      "lora_alpha": 16,
+      "target_modules": "all-linear"
+    },
+    "ppo_mini_batch_size": "${actor_rollout_ref.actor.ppo_mini_batch_size}",
+    "ppo_micro_batch_size": null,
+    "ppo_micro_batch_size_per_gpu": null,
+    "forward_micro_batch_size": "${critic.ppo_micro_batch_size}",
+    "forward_micro_batch_size_per_gpu": "${critic.ppo_micro_batch_size_per_gpu}",
+    "use_dynamic_bsz": "${actor_rollout_ref.actor.use_dynamic_bsz}",
+    "ppo_max_token_len_per_gpu": 32768,
+    "forward_max_token_len_per_gpu": "${critic.ppo_max_token_len_per_gpu}",
+    "ulysses_sequence_parallel_size": 1,
+    "ppo_epochs": "${actor_rollout_ref.actor.ppo_epochs}",
+    "shuffle": "${actor_rollout_ref.actor.shuffle}",
+    "grad_clip": 1.0,
+    "cliprange_value": 0.5,
+    "loss_agg_mode": "${actor_rollout_ref.actor.loss_agg_mode}",
+    "checkpoint": {
+      "contents": [
+        "model",
+        "optimizer",
+        "extra"
+      ]
+    }
+  },
+  "reward_model": {
+    "enable": false,
+    "strategy": "fsdp",
+    "model": {
+      "input_tokenizer": "${actor_rollout_ref.model.path}",
+      "path": "~/models/FsfairX-LLaMA3-RM-v0.1",
+      "use_shm": false,
+      "external_lib": "${actor_rollout_ref.model.external_lib}",
+      "use_remove_padding": false,
+      "use_fused_kernels": "${actor_rollout_ref.model.use_fused_kernels}",
+      "trust_remote_code": false,
+      "fsdp_config": {
+        "wrap_policy": {
+          "min_num_params": 0
+        },
+        "param_offload": false,
+        "reshard_after_forward": true,
+        "fsdp_size": -1
+      }
+    },
+    "micro_batch_size": null,
+    "micro_batch_size_per_gpu": null,
+    "max_length": null,
+    "ulysses_sequence_parallel_size": 1,
+    "use_dynamic_bsz": "${critic.use_dynamic_bsz}",
+    "forward_max_token_len_per_gpu": "${critic.forward_max_token_len_per_gpu}",
+    "reward_manager": "episode",
+    "launch_reward_fn_async": false,
+    "sandbox_fusion": {
+      "url": null,
+      "max_concurrent": 64
+    }
+  },
+  "custom_reward_function": {
+    "path": null,
+    "name": "compute_score"
+  },
+  "algorithm": {
+    "gamma": 0.95,
+    "lam": 1.0,
+    "adv_estimator": "gigpo",
+    "norm_adv_by_std_in_grpo": true,
+    "use_kl_in_reward": false,
+    "kl_penalty": "kl",
+    "kl_ctrl": {
+      "type": "fixed",
+      "kl_coef": 0.001,
+      "horizon": 10000,
+      "target_kl": 0.1
+    },
+    "use_pf_ppo": false,
+    "pf_ppo": {
+      "reweight_method": "pow",
+      "weight_pow": 2.0
+    },
+    "gigpo": {
+      "step_advantage_w": 1.0,
+      "mode": "mean_norm",
+      "enable_similarity": false,
+      "similarity_thresh": 0.95
+    },
+    "filter_groups": {
+      "enable": false,
+      "max_num_gen_batches": 10
+    }
+  },
+  "trainer": {
+    "balance_batch": true,
+    "total_epochs": 150,
+    "total_training_steps": 150,
+    "project_name": "gradus_webshop",
+    "experiment_name": "gradus-webshop-h800-s0-r2aligned-20261109",
+    "logger": [
+      "console"
+    ],
+    "log_val_generations": 0,
+    "rollout_data_dir": null,
+    "validation_data_dir": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/validation_generations",
+    "nnodes": 1,
+    "n_gpus_per_node": 2,
+    "save_freq": 1,
+    "resume_mode": "auto",
+    "resume_from_path": null,
+    "val_before_train": true,
+    "val_only": false,
+    "test_freq": 5,
+    "critic_warmup": 0,
+    "default_hdfs_dir": null,
+    "del_local_ckpt_after_load": false,
+    "default_local_dir": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/checkpoints",
+    "max_actor_ckpt_to_keep": 2,
+    "max_critic_ckpt_to_keep": null,
+    "ray_wait_register_center_timeout": 300,
+    "device": "cuda"
+  },
+  "ray_init": {
+    "num_cpus": null,
+    "_temp_dir": "/tmp/ws-gradus-h800-r2aligned-20261109",
+    "runtime_env": {
+      "env_vars": {
+        "JAVA_HOME": "/data_b/qzluo/miniconda3/envs/verl-webshop",
+        "LD_LIBRARY_PATH": "/data_b/qzluo/miniconda3/envs/verl-webshop/lib:",
+        "PYTHONPATH": "/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/source:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/deps-direct:/data_b/qzluo/workspace/wlx/Repro-verl-agent/runs/gradus-webshop-h800-s0-r2aligned-20261109/deps",
+        "VLLM_ATTENTION_BACKEND": "FLASH_ATTN",
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1",
+        "TOKENIZERS_PARALLELISM": "false",
+        "JAVA_TOOL_OPTIONS": "-Xmx128m -Xms16m -XX:+UseSerialGC"
+      }
+    }
+  },
+  "env": {
+    "env_name": "Webshop",
+    "seed": 0,
+    "max_steps": 15,
+    "history_length": 2,
+    "resources_per_worker": {
+      "num_cpus": 0.1,
+      "num_gpus": 0
+    },
+    "rollout": {
+      "n": 8
+    },
+    "alfworld": {
+      "eval_dataset": "eval_in_distribution"
+    },
+    "search": {
+      "log_requests": false,
+      "search_url": "http://127.0.0.1:8000/retrieve",
+      "topk": 3,
+      "timeout": 60
+    },
+    "sokoban": {
+      "dim_room": [
+        6,
+        6
+      ],
+      "num_boxes": 1,
+      "search_depth": 30,
+      "mode": "tiny_rgb_array"
+    },
+    "webshop": {
+      "use_small": true,
+      "human_goals": false
+    }
+  },
+  "native_persistence": {
+    "identity": {
+      "run_id": "gradus-webshop-h800-s0-r2aligned-20261109",
+      "config_hash": "e228986968dc42900167e3e1871787e54b9e58f52ad2f98a4cf60b5ce89c19e1",
+      "model_contract_hash": "bb8cc6766e2b87d8efe73fb19f38945b3fe87fc9c03fd92e65eba94d035c6eb8"
+    },
+    "diagnostic_steps": [
+      115,
+      135
+    ]
+  },
+  "gradus_webshop": {
+    "enabled": true,
+    "horizon": 15,
+    "group_size": 8,
+    "window": 4,
+    "min_success_support": 3,
+    "landmark_fraction": 0.5,
+    "off_path_support": 10,
+    "min_reveals": 5,
+    "unranked_search_weight": 0.5,
+    "difference_gamma": 1.0,
+    "search_epsilon": 0.5,
+    "gamma": 0.98,
+    "lambda_aux": 0.5,
+    "beta": 0.5,
+    "epsilon": 1e-06,
+    "max_abs_injection": 5.0,
+    "control": "none",
+    "control_seed": 0
+  },
+  "webshop_release": {
+    "files": {
+      "__init__.py": "b7c48438e7d2d85dd8fb4c0622c919944c76ebee3a166f188def5213ea48690d",
+      "core.py": "ff48834d56e10e327d2ad99b31e7c9e3477c8466c376a4647d19bbc0d522e804",
+      "adapter.py": "82454e0ac56dfa2f32494f184f45c21c062f132833748d382802646a88b2a35c",
+      "r2_credit.py": "5e8fba962e62d9d8c4a116c480c7c2cb260a62d8aa52d0ec719c47942f068039",
+      "integration.py": "c4fb32ff57bd5a2c0270de5874e3c3ccc0df254982fcc7c9b41c16ffc76c222b",
+      "entry.py": "51f7266eb75a4bb61a6d1afd348fa6b2d7116853e3874c876ea0877d31f8578f",
+      "persistence.py": "669e132fcb545fe7aea5d8393cb8e8b4b2ca388ff94e8edf2c11a79b01e24c57",
+      "native_retention.py": "fc636f6318c8c0b447c59e3949ed61d97ca078389016f5e11b0da8ecb3d6ff2e",
+      "actor_audit.py": "a0b43f8a4dfd6a20370b02f5b25e4c47a02192711c48625c4186ac9f5986d5a4"
+    },
+    "source": {
+      "verl/trainer/main_ppo.py": "cb5547674b8af03da4555af63887ce13a93054e5d1026a0138b79c46f77e012b",
+      "verl/trainer/ppo/ray_trainer.py": "52e240dd12838be2585497074b9f764f1e36a09def8b6c2e1282a7b55baf8493",
+      "agent_system/environments/env_package/webshop/envs.py": "da23ccb695c050aa02d6e8803283253858c42d3dcd9bb5dcb630363d95d616a5",
+      "agent_system/environments/env_manager.py": "6294aef97cf12775222b8c189273f990065ecca13d1308650311ebe0ab1c64f5",
+      "agent_system/multi_turn_rollout/rollout_loop.py": "5488502c788a841266bb1e5e04b5c6c9d4e01e871962e83aa86cd4a1cf1858f0",
+      "agent_system/environments/env_package/webshop/webshop/web_agent_site/envs/web_agent_text_env.py": "a2a2cfe3e7ef493857ba68c28fd6d12ec012e0f8cb31a050112f6466084e3f55"
+    },
+    "data": {
+      "train.parquet": "99b1be4662cf37e14e78a9d330279048e730e5efdfd46b6409196264eba0f441",
+      "test.parquet": "ac0ad3f792706f3b0fa7b4cae9661de87995063aaf824a77d6dafc794f102163"
+    }
+  }
+}

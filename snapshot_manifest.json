@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "published_date": "2026-11-10",
+  "upstream": {
+    "repository": "https://github.com/langfengQ/verl-agent",
+    "path": "vendor/verl_agent",
+    "commit": "20bd331bdbc9026a5668e11362178e10ab7400c8"
+  },
+  "runs": {
+    "alfworld_r2": {
+      "run_id": "gradus-qwen25-h800-s0-r2",
+      "source_release": "gradus-20261106a",
+      "core_sha256": "e1b3f5b5752577a54ef1d562768745aa36e82a229e6ed2183275d9acf8c62f6d"
+    },
+    "webshop_r2": {
+      "run_id": "gradus-webshop-h800-s0-r2-jvmcap-20261108",
+      "runtime_contract": "experiments/webshop_r2/frozen_run/config.json"
+    },
+    "webshop_r2_aligned": {
+      "run_id": "gradus-webshop-h800-s0-r2aligned-20261109",
+      "runtime_contract": "experiments/webshop_r2_aligned/frozen_run/config.json"
+    }
+  },
+  "files": {
+    ".gitignore": {
+      "sha256": "be6673f8d383b1b11d6a31719b6db44c8a82913515f343d9f01d28c2dcd0c7f9",
+      "bytes": 468
+    },
+    ".gitmodules": {
+      "sha256": "9897d4368e8e711da7cf7563e471e5073e397ba1245c135a7b803a8230573923",
+      "bytes": 109
+    },
+    "README.md": {
+      "sha256": "b01555f8dd4863de38aa1899e38f060eb3d846fd10e53375401a6a1bfe4695ca",
+      "bytes": 3421
+    },
+    "experiments/alfworld_r2/README.md": {
+      "sha256": "28470b1bebcfba4cc59731164485fea7d72adfb63edc1cc1e09a76e336da75b2",
+      "bytes": 1460
+    },
+    "experiments/alfworld_r2/config.frozen.yaml": {
+      "sha256": "94b007ea3e2e1f950d33323eca916addffb13ec1172675065d4faeddba325ca6",
+      "bytes": 9125
+    },
+    "experiments/alfworld_r2/reports/v83_20261030/replayed_traces.jsonl": {
+      "sha256": "734779e2d140e382e47f4a3bd5a28bc1eee091ae1b1cf8ba124438362ad5eae7",
+      "bytes": 1243011
+    },
+    "experiments/alfworld_r2/repro_core/__init__.py": {
+      "sha256": "9032b89571a892999470e925af33093133a03935bc07efccf8069b68323557b4",
+      "bytes": 936
+    },
+    "experiments/alfworld_r2/repro_core/advantages.py": {
+      "sha256": "dce91656841047a0064d9c1a748616a1cfad6e96a946c36dfe9db8ff6def6f20",
+      "bytes": 6189
+    },
+    "experiments/alfworld_r2/repro_core/core.py": {
+      "sha256": "56daf034b66f925fa8b72a048ce2caa1087a9b55b24a232e1726974ea9ee094f",
+      "bytes": 13961
+    },
+    "experiments/alfworld_r2/repro_core/graphs.py": {
+      "sha256": "94885046420e8f338ae95acc7e7dc264eddde76ad13e5cbd7cb82d27dd350293",
+      "bytes": 5787
+    },
+    "experiments/alfworld_r2/repro_external/__init__.py": {
+      "sha256": "b99e8603c080a2df12e701ce3392605e19e3d3cf6b3605ee7dac4814b68dac88",
+      "bytes": 75
+    },
+    "experiments/alfworld_r2/repro_external/actors.py": {
+      "sha256": "1f859700402876faf291d5170c5277de928f3b410b4734b027f29e6c0105a014",
+      "bytes": 4363
+    },
+    "experiments/alfworld_r2/repro_external/collector.py": {
+      "sha256": "1b5e5bc126b84595aa9a4fdb18c5e495276f6a84bf9635889fe0100c6484cd68",
+      "bytes": 6733
+    },
+    "experiments/alfworld_r2/repro_external/common.py": {
+      "sha256": "abde0babd6087aafe317132ac1d09077d22b3e25ec8ad72a4bd6f6e647d6b202",
+      "bytes": 994
+    },
+    "experiments/alfworld_r2/repro_external/entrypoint.py": {
+      "sha256": "1c76c9b7733a607c2e08a74e967cbc6530f45057b9640d679e86c447de95554e",
+      "bytes": 2228
+    },
+    "experiments/alfworld_r2/repro_external/environment.py": {
+      "sha256": "2d5022daa2220adc08e2a238a9886988e3597f91d6f2f78c4a2057478aaf1b36",
+      "bytes": 4286
+    },
+    "experiments/alfworld_r2/repro_external/install.py": {
+      "sha256": "3797aab019823e5f891f858fb206c0fd485d5dc0b94994c75429230151bba76c",
+      "bytes": 2317
+    },
+    "experiments/alfworld_r2/repro_external/runtime.py": {
+      "sha256": "514227e620ee2d74db6c0b0d05345ab6cb5487cf1325f2c07ef5b1a1f9b53fe5",
+      "bytes": 10477
+    },
+    "experiments/alfworld_r2/repro_external/trainer.py": {
+      "sha256": "c6f94b2c52aba27b79c98ae1ab1cc879934a0413a9623a50b7daab0df1307c4c",
+      "bytes": 4175
+    },
+    "experiments/alfworld_r2/repro_integration/__init__.py": {
+      "sha256": "f6021d32c3fcd0e00df00f02c7ee33802ae1270df0d98a65a75e80d480c78ec2",
+      "bytes": 77
+    },
+    "experiments/alfworld_r2/repro_integration/alfworld_adapter.py": {
+      "sha256": "aaa27aced8627f011d7629b265f480618c2c3a3eee6599123b4a1262db270acc",
+      "bytes": 17065
+    },
+    "experiments/alfworld_r2/repro_integration/critic_snapshot.py": {
+      "sha256": "f9e48c9e87aa25659ca0cba1f244f6ac9cbacdaa3ee7854a8824e5d2d21a8939",
+      "bytes": 10687
+    },
+    "experiments/alfworld_r2/repro_integration/diagnostics.py": {
+      "sha256": "a71146541f45e6b6fdc90155f96701f414d82f534811c0a40ee17297a496fc90",
+      "bytes": 6961
+    },
+    "experiments/alfworld_r2/repro_integration/frontier.py": {
+      "sha256": "f83422dac3e4bdf3e400fdaa38ab93eace56f2b5fe16971ad0622aa0cc00011c",
+      "bytes": 754
+    },
+    "experiments/alfworld_r2/repro_integration/outcome_mapping.py": {
+      "sha256": "690ef7dc4527ccb25be6730f21f5a5a03e40d2652e068233f2a9a8953bbc9d6d",
+      "bytes": 2960
+    },
+    "experiments/alfworld_r2/repro_integration/trace_schema.py": {
+      "sha256": "bb446d84c67a636b4014e8127216161cf7c160455430604c09ea652a30e40c8b",
+      "bytes": 6864
+    },
+    "experiments/alfworld_r2/repro_integration/trainer_hook.py": {
+      "sha256": "da37699ff72ff4c2609ce2c04435bdc1980d9b7c6646b50f76c245e6538fe84d",
+      "bytes": 7277
+    },
+    "experiments/alfworld_r2/repro_integration/window_store.py": {
+      "sha256": "03ddd8b43cec50f94adbc97e2b20e7252ea87c8840fd237fbe03727be5aab9fd",
+      "bytes": 14377
+    },
+    "experiments/alfworld_r2/repro_v83/__init__.py": {
+      "sha256": "ac3c65ae8b679453da09b33af13b1deced488567d718f0cc0a33b0343908cb6a",
+      "bytes": 71
+    },
+    "experiments/alfworld_r2/repro_v83/anchors.py": {
+      "sha256": "c77f3d94f8c24c177871e34ccd5f5b1bdb5bbe563fefb1b3405d09bf8365d14b",
+      "bytes": 2690
+    },
+    "experiments/alfworld_r2/repro_v83/collector.py": {
+      "sha256": "7404c7ad7ff651280de66551fb115408755972c36bf13343eed2205a3df7691c",
+      "bytes": 5121
+    },
+    "experiments/alfworld_r2/repro_v83/credit.py": {
+      "sha256": "93ea3ca17d8c3fe94815a25c42b052fd8a2c53dd7b49f3f58f0b54419351b2b9",
+      "bytes": 8828
+    },
+    "experiments/alfworld_r2/repro_v83/entrypoint.py": {
+      "sha256": "4ba5817949a71958f95d1bb4c8f48984174d36fc5e4462386ed2791974154bbf",
+      "bytes": 1292
+    },
+    "experiments/alfworld_r2/repro_v83/environment.py": {
+      "sha256": "0e9e5909de572a791ca6a0b0e41ef2c2037bd5704b90f68b3f5be903359526ef",
+      "bytes": 4769
+    },
+    "experiments/alfworld_r2/repro_v83/gradus.py": {
+      "sha256": "e1b3f5b5752577a54ef1d562768745aa36e82a229e6ed2183275d9acf8c62f6d",
+      "bytes": 25840
+    },
+    "experiments/alfworld_r2/repro_v83/install.py": {
+      "sha256": "1b041e07828960fe45d628a876b8cf5bdcb631ca156909e3f2a662496163a9be",
+      "bytes": 2301
+    },
+    "experiments/alfworld_r2/repro_v83/quotient.py": {
+      "sha256": "4e6e5e6fe1d78d83caf13eceafefa6c924572a535825e71c2d1b31aec262384e",
+      "bytes": 1001
+    },
+    "experiments/alfworld_r2/repro_v83/runtime.py": {
+      "sha256": "a9e6f9eb169e487fec82131868d054c598973ee147780988e4c49a47d7159844",
+      "bytes": 17332
+    },
+    "experiments/alfworld_r2/repro_v83/traces.py": {
+      "sha256": "666865eecbc5c7bd10f37954b356677c168292291a563f3528856517fca74317",
+      "bytes": 4011
+    },
+    "experiments/alfworld_r2/repro_v83/tracker.py": {
+      "sha256": "88940b83e2b58b366e26d23037d0623c1ccfc5472b147970e7256eee5b3b7fca",
+      "bytes": 19903
+    },
+    "experiments/alfworld_r2/repro_v83/trainer.py": {
+      "sha256": "a247924368e2e643f351e9044801f114e68c172e2fe6a324743b03346b726a85",
+      "bytes": 3792
+    },
+    "experiments/alfworld_r2/repro_v83/value_table.py": {
+      "sha256": "27b9ca927dbca46c4c024d4b30c3bc6131acac30e250f21cee2cb1b36a7a1108",
+      "bytes": 16140
+    },
+    "experiments/alfworld_r2/test_repro_v831_runtime.py": {
+      "sha256": "539ab64a13e18ca3db6d661dad50a5c266404990157eb4c84a482e779ee94e75",
+      "bytes": 11353
+    },
+    "experiments/alfworld_r2/test_repro_v831_table.py": {
+      "sha256": "9cdac92ae16194e27b10b2a418412572e105f577b18cc90d345209f8900634b6",
+      "bytes": 11675
+    },
+    "experiments/alfworld_r2/test_repro_v83_rules.py": {
+      "sha256": "bb221bde4f8ccf7162d382537422feed45722cfd2c85582d32db753f865d4ce8",
+      "bytes": 4249
+    },
+    "experiments/alfworld_r2/tests_v83/test_credit.py": {
+      "sha256": "4ad524534fea3bb994e93c00a2d9d15857284bc932f4bda2aa82d15dbe179d7f",
+      "bytes": 3347
+    },
+    "experiments/alfworld_r2/tests_v83/test_environment_cursor_cpu.py": {
+      "sha256": "bf09fbe66b7c77bcc2d9815b925aa17300d74cb26229f36491003593ad292682",
+      "bytes": 7366
+    },
+    "experiments/alfworld_r2/tests_v83/test_native_collector_cpu.py": {
+      "sha256": "bb0c5cc39f27864a551bdc6dabfa2fb25e27a680444f1e224cba197b4538f216",
+      "bytes": 8814
+    },
+    "experiments/alfworld_r2/tests_v83/test_quotient.py": {
+      "sha256": "edbe9bbc8223dac17ee86bf4a70ab32d709b7d645374e8f755499d50ee5818d3",
+      "bytes": 968
+    },
+    "experiments/alfworld_r2/tests_v83/test_reveal_credit_fix.py": {
+      "sha256": "6a0c30156be5b5706950f9ab9a7e0c5d86819f6f6a81b785012271f386956dd0",
+      "bytes": 8991
+    },
+    "experiments/alfworld_r2/tests_v83/test_runtime_native_cpu.py": {
+      "sha256": "317b5fc24e6d07b3f3a495fb771683909cf3d9186ad32d497e4a30f1b3a0a114",
+      "bytes": 3861
+    },
+    "experiments/alfworld_r2/tests_v83/test_tracker_synthetic.py": {
+      "sha256": "54c6be1b6fd49d845486d0c732d7d22a1c0e29cbc68a87c3894e2656ae581f72",
+      "bytes": 13503
+    },
+    "experiments/webshop_r2/README.md": {
+      "sha256": "fbe2f69b8aca9e00d2c3154a19ad7516e2ff6241048e543cb454f67859c2f8c8",
+      "bytes": 1877
+    },
+    "experiments/webshop_r2/frozen_run/config.json": {
+      "sha256": "0b3d39c04a35dfe8ac4e9a7b01a5adb5c622a68d35ad364d7affd1a056cea9c7",
+      "bytes": 13651
+    },
+    "experiments/webshop_r2/frozen_run/environment.sh": {
+      "sha256": "9ba645be13c83dbd6da42efe237e4b1da68fa44c9ba3a9241fdf942e8d91a1c3",
+      "bytes": 1174
+    },
+    "experiments/webshop_r2/frozen_run/launch.sh": {
+      "sha256": "ae90cf3dbc9ac160ac942ae5801e3a1c76b84ed16c955fa65edc99d837c25d37",
+      "bytes": 2460
+    },
+    "experiments/webshop_r2/frozen_run/monitor.py": {
+      "sha256": "90e448a9d10839aaf60146f5ee3f0f146145f72c09da653d6facc3ab1829a602",
+      "bytes": 2313
+    },
+    "experiments/webshop_r2/webshop/__init__.py": {
+      "sha256": "b7c48438e7d2d85dd8fb4c0622c919944c76ebee3a166f188def5213ea48690d",
+      "bytes": 78
+    },
+    "experiments/webshop_r2/webshop/actor_audit.py": {
+      "sha256": "a0b43f8a4dfd6a20370b02f5b25e4c47a02192711c48625c4186ac9f5986d5a4",
+      "bytes": 4387
+    },
+    "experiments/webshop_r2/webshop/core.py": {
+      "sha256": "e61bfa30a1d345b9b5c2556b5cd6323faf80b4ffb15e4553b1f2abc3a878f505",
+      "bytes": 17801
+    },
+    "experiments/webshop_r2/webshop/entry.py": {
+      "sha256": "51f7266eb75a4bb61a6d1afd348fa6b2d7116853e3874c876ea0877d31f8578f",
+      "bytes": 4431
+    },
+    "experiments/webshop_r2/webshop/integration.py": {
+      "sha256": "f8300c51aab6eb29913d77605ed40afe530d334d667625fe36f95cb2dcbc74d8",
+      "bytes": 12357
+    },
+    "experiments/webshop_r2/webshop/native_retention.py": {
+      "sha256": "11c24a35b8fddcb560888f3ac71c24bbaf80defc8a1e67de11a791beb9d2293f",
+      "bytes": 25771
+    },
+    "experiments/webshop_r2/webshop/persistence.py": {
+      "sha256": "77c084d3c93422855dccb9f303db4124281cfffb3954351d0c77b73ed5936e28",
+      "bytes": 9711
+    },
+    "experiments/webshop_r2/webshop/test_webshop.py": {
+      "sha256": "6a5b4fc61db6d57b7bd4d4d4f9421dd89ee0a10ae03f94fbd483bcb817a91c8c",
+      "bytes": 18402
+    },
+    "experiments/webshop_r2_aligned/README.md": {
+      "sha256": "7a045a1b0c4f80f410b9682df58acdc40469b75d054c3040747ecc6e177d20e9",
+      "bytes": 2327
+    },
+    "experiments/webshop_r2_aligned/frozen_run/config.json": {
+      "sha256": "19ba13a0a893b47c324d5254a3c53ac0bd9ffddbec78ee27cc7be5af3f1f2329",
+      "bytes": 14004
+    },
+    "experiments/webshop_r2_aligned/frozen_run/environment.sh": {
+      "sha256": "d031d289ac6cc0e47a2073142cf4d37d2ab899fa6ec68e56f9954f7fe27c1c47",
+      "bytes": 1181
+    },
+    "experiments/webshop_r2_aligned/frozen_run/launch.sh": {
+      "sha256": "ae90cf3dbc9ac160ac942ae5801e3a1c76b84ed16c955fa65edc99d837c25d37",
+      "bytes": 2460
+    },
+    "experiments/webshop_r2_aligned/frozen_run/monitor.py": {
+      "sha256": "90e448a9d10839aaf60146f5ee3f0f146145f72c09da653d6facc3ab1829a602",
+      "bytes": 2313
+    },
+    "experiments/webshop_r2_aligned/webshop/__init__.py": {
+      "sha256": "b7c48438e7d2d85dd8fb4c0622c919944c76ebee3a166f188def5213ea48690d",
+      "bytes": 78
+    },
+    "experiments/webshop_r2_aligned/webshop/actor_audit.py": {
+      "sha256": "a0b43f8a4dfd6a20370b02f5b25e4c47a02192711c48625c4186ac9f5986d5a4",
+      "bytes": 4387
+    },
+    "experiments/webshop_r2_aligned/webshop/adapter.py": {
+      "sha256": "82454e0ac56dfa2f32494f184f45c21c062f132833748d382802646a88b2a35c",
+      "bytes": 12087
+    },
+    "experiments/webshop_r2_aligned/webshop/core.py": {
+      "sha256": "ff48834d56e10e327d2ad99b31e7c9e3477c8466c376a4647d19bbc0d522e804",
+      "bytes": 9992
+    },
+    "experiments/webshop_r2_aligned/webshop/entry.py": {
+      "sha256": "51f7266eb75a4bb61a6d1afd348fa6b2d7116853e3874c876ea0877d31f8578f",
+      "bytes": 4431
+    },
+    "experiments/webshop_r2_aligned/webshop/integration.py": {
+      "sha256": "c4fb32ff57bd5a2c0270de5874e3c3ccc0df254982fcc7c9b41c16ffc76c222b",
+      "bytes": 13876
+    },
+    "experiments/webshop_r2_aligned/webshop/native_retention.py": {
+      "sha256": "fc636f6318c8c0b447c59e3949ed61d97ca078389016f5e11b0da8ecb3d6ff2e",
+      "bytes": 26227
+    },
+    "experiments/webshop_r2_aligned/webshop/persistence.py": {
+      "sha256": "669e132fcb545fe7aea5d8393cb8e8b4b2ca388ff94e8edf2c11a79b01e24c57",
+      "bytes": 9818
+    },
+    "experiments/webshop_r2_aligned/webshop/r2_credit.py": {
+      "sha256": "5e8fba962e62d9d8c4a116c480c7c2cb260a62d8aa52d0ec719c47942f068039",
+      "bytes": 12898
+    },
+    "experiments/webshop_r2_aligned/webshop/test_r2_aligned.py": {
+      "sha256": "bd6bcb641c6241500b157e35c91893586ebb4c4c4a9823680958e5c22ad096b4",
+      "bytes": 9661
+    },
+    "experiments/webshop_r2_aligned/webshop/test_webshop.py": {
+      "sha256": "dfe1624546e666cfe0437444ec77fdeaa9572cc9f8bcd1dfd83e50c0c73db081",
+      "bytes": 18722
+    },
+    "reports/gradus/publication_checks.json": {
+      "sha256": "84f5af10bc80c7a53d3fd2ba465e2eb23ddf78481f41ef159552c78a62b2642f",
+      "bytes": 1912
+    },
+    "reports/gradus/results.json": {
+      "sha256": "f7edbb710ed14b7dd369923d71073aaec8a41755c1dc76c288c5500f44982c69",
+      "bytes": 4549
+    },
+    "reports/gradus/runtime_metadata.json": {
+      "sha256": "367bca9bfc8d0d5311f55aac9be3381b5f8923d43efb0abdafd7b2750825a5b0",
+      "bytes": 662
+    },
+    "reports/gradus/upstream_equivalence.json": {
+      "sha256": "bd93ef031fb1bf4dda388b6bb3b90e1174a8bec2293454658122ddbea53e2778",
+      "bytes": 570
+    },
+    "scripts/verify_snapshots.py": {
+      "sha256": "a762aa52f2edaa71315da6857a5e7eb79392b0ae57e55ce494b9d7c427db1854",
+      "bytes": 2245
+    }
+  }
+}
